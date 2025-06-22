@@ -2,7 +2,7 @@
 	name 					= "belly"
 	desc 					= "You see a belly on their midsection."
 	icon_state 				= "belly"
-	icon 					= 'hyperstation/icons/obj/genitals/belly.dmi'
+	icon 					= 'modular_gs/icons/mob/human/genitals/belly.dmi'
 	zone 					= BODY_ZONE_CHEST
 	slot 					= ORGAN_SLOT_BELLY
 	w_class 				= 3
@@ -34,19 +34,19 @@
 	var/datum/sprite_accessory/S = GLOB.belly_shapes_list[shape] //GS13 - get belly shape
 	var/icon_shape_state = S ? S.icon_state : "belly" //fallback to default belly in case we cant find a shape
 	icon_state = "belly_[icon_shape_state]_[size]"
-	var/icon_shape = S ? S.icon : "hyperstation/icons/obj/genitals/belly.dmi" //fallback to default belly in case we cant find a shape
+	var/icon_shape = S ? S.icon : "modular_gs/icons/mob/human/genitals/belly.dmi" //fallback to default belly in case we cant find a shape
 	icon = icon_shape
 
 	// Change belly sprite and size based on current fullness
 	switch(owner.fullness)
 		if(FULLNESS_LEVEL_BLOATED to FULLNESS_LEVEL_BEEG)
-			icon = 'hyperstation/icons/obj/genitals/belly_round.dmi' //We use round belly to represent stuffedness
+			icon = 'modular_gs/icons/mob/human/genitals/belly_round.dmi' //We use round belly to represent stuffedness
 			icon_state = "belly_round_[size]"
 		if(FULLNESS_LEVEL_BEEG to FULLNESS_LEVEL_NOMOREPLZ)
-			icon = 'hyperstation/icons/obj/genitals/belly_round.dmi'
+			icon = 'modular_gs/icons/mob/human/genitals/belly_round.dmi'
 			icon_state = "belly_round_[size+1]"
 		if(FULLNESS_LEVEL_NOMOREPLZ to INFINITY)
-			icon = 'hyperstation/icons/obj/genitals/belly_round.dmi'
+			icon = 'modular_gs/icons/mob/human/genitals/belly_round.dmi'
 			icon_state = "belly_round_[size+2]"
 
 	if(owner)
