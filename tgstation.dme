@@ -6982,6 +6982,7 @@
 #include "modular_gs\code\modules\client\preferences\wg_source_preferences.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_items.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_clothing\dual_tone.dm"
+#include "modular_gs\code\modules\customization\modules\language\ranchspeak.dm"
 #include "modular_gs\code\modules\customization\modules\mob\living\carbon\human\species\hemophage\hemophage_status_effects.dm"
 #include "modular_gs\code\modules\customization\species\proteans\organs\protean_stomach.dm"
 #include "modular_gs\code\modules\food_and_drinks\bigbottle.dm"
