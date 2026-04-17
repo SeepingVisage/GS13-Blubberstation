@@ -7068,6 +7068,7 @@
 #include "modular_gs\code\modules\client\preferences\wg_source_preferences.dm"
 #include "modular_gs\code\modules\clothing\under\button_up.dm"
 #include "modular_gs\code\modules\clothing\under\dual_tone_jumpsuit.dm"
+#include "modular_gs\code\modules\clothing\under\accessories\skirts.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_items.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_clothing\button_up.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_clothing\dual_tone.dm"
