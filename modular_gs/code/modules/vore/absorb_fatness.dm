@@ -8,7 +8,7 @@
 
 /// Handles weight gain (in fatness) from absorbing mobs
 /obj/vore_belly/proc/absorb_fatness(mob/living/pred, mob/living/carbon/prey)
-	if(!istype(prey) && prey?.fatness_real) // No fatness to grab
+	if(!istype(prey) || !prey?.fatness_real) // No fatness to grab
 		return FALSE
 
 	if(ticks_left_in_stage) //Move onto the next stage
@@ -20,8 +20,13 @@
 		return TRUE
 
 	fatness_left_to_absorb = get_weight_delta_negative(prey.fatness_real)
-	if(!fatness_left_to_absorb) // This bitch empty.
-		return FALSE
+	if(!fatness_left_to_absorb && prey.fatness_real)
+		prey.adjust_fatness(-1, FATTENING_TYPE_ALMIGHTY, TRUE)
+		fatness_left_to_absorb = get_weight_delta_negative(prey.fatness_real)
+
+		if(!fatness_left_to_absorb) // Shit.
+			return FALSE
+
 
 	// get the amount of ticks we need to get to the next stage.
 	if(fatness_left_to_absorb < ABSORB_WEIGHT_AMOUNT_SMALL)
