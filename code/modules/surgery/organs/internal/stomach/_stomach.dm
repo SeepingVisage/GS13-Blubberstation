@@ -204,7 +204,7 @@
 		human.adjust_fatness(nutritionThatBecomesFat, FATTENING_TYPE_FOOD)
 
 	handle_weight_gain(human)
-	human.fullness_reduction()
+	human.fullness_adjustment()
 	//GS13 EDIT END
 
 	//Hunger slowdown for if mood isn't enabled
