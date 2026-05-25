@@ -167,6 +167,7 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 			if (!berry.check_prefs_in_view(/datum/preference/toggle/see_bursting, berry.loc))
 				berry.visible_message("<span class='warning'>[berry]'s body creaks loudly. But they seem to be holding on for now... (people with bursting presfs disabled are near)</span>", "<span class='warning'>Your body creaks loudly. But it seem to be holding on for now... (people with bursting presfs disabled are near)</span>")
 				return
+
 			berry.visible_message("<span class='warning'>[berry]'s body creaks loudly. They look ready to burst!</span>", pick(GLOB.blueberry_about_to_blow_flavour))
 			berry.trigger_burst()
 
