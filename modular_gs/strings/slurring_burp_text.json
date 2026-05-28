@@ -1,0 +1,18 @@
+{
+	"replacements": {
+		"characters": {
+			"common": {
+				"o": "+BURRP+",
+				"s": "+URP+",
+				"a": "+GWUURRP+",
+				"u": "+BUUURRP+",
+				"c": "+BURP+"
+			},
+			"uncommon": {
+				" ": "...+GWWUUARRP+...",
+				".": " +BWUUARRP+.",
+				",": ", +GLURRRN+ "
+			}
+		}
+	}
+}

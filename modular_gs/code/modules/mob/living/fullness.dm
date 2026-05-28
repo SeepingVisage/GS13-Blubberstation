@@ -4,13 +4,14 @@
 
 	if(fullness >= FULLNESS_LEVEL_BLOATED && fullness_reduction_timer + FULLNESS_REDUCTION_COOLDOWN < world.time)
 
-		fullness -= amount // Remove Fullness
+		fullness_adjustment -= amount // Remove Fullness
+		fullness_reduction_timer = world.time
 
 		if(!notify)
 			return
 
-		if(amount <= 5)
+		if(amount <= 60)
 			to_chat(src, "You felt that make some space")
-		if(amount > 5)
+		if(amount > 60)
 			to_chat(src, "You felt that make a lot of space")
 

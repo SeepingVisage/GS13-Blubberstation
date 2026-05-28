@@ -15,8 +15,8 @@
 	//playsound_prefed(user, tmp_sound, /datum/preference/toggle/digestive_noises, 100, TRUE, -4)
 
 /datum/emote/living/burp
-	var/reduction_min = 4
-	var/reduction_max = 8
+	var/reduction_min = 50 //adjusted because "fullness reduction" happens at a rate of 15 every 2 seconds, and emotes can only reduce it every 5
+	var/reduction_max = 70
 	var/noise_pref = /datum/preference/numeric/volume/burping_noises
 
 /datum/emote/living/burp/proc/get_sound_gs13()
@@ -66,8 +66,8 @@
 	key_third_person = "belches loudly"
 	message = "belches."
 	//god hates me for this -Metha
-	reduction_min = 6
-	reduction_max = 12
+	reduction_min = 60
+	reduction_max = 80
 
 /datum/emote/living/burp/belch/get_sound_gs13()
 	return pick('modular_gs/sound/voice/belch1.ogg', 'modular_gs/sound/voice/belch2.ogg',
@@ -81,8 +81,8 @@
 	key = "brap"
 	key_third_person = "braps"
 	message = "braps."
-	reduction_min = 6
-	reduction_max = 12
+	reduction_min = 60
+	reduction_max = 80
 
 
 /datum/emote/living/burp/fart/brap/get_sound_gs13()
