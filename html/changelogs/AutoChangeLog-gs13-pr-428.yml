@@ -1,6 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - bugfix: "fixes the material icons in the protolathe/mech fabricator/silo being completely and utterly fucked"
-  - bugfix: "fixes the event perk redeemer showing up item amounts as null"
-  - bugfix: "fixes milk melons not being obtainable by mutating melons"
