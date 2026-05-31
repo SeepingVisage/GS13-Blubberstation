@@ -23,3 +23,26 @@
   - rscadd: 'added breasts variant: no nipples'
   - rscadd: 'added belly variants: no bellybutton/nipples & no bellybutton/nipples/fat
       arms'
+2026-05-31:
+  Grarem:
+  - rscadd: Prefed bursting related sounds
+  - balance: small increase in damage done while crit bursting
+  Icepick200:
+  - rscadd: Added the Silverscale tongue to the augments+ menu and tweaked how it
+      works. Gargoyles rejoice!
+  Swan:
+  - bugfix: fixes the material icons in the protolathe/mech fabricator/silo being
+      completely and utterly fucked
+  - bugfix: fixes the event perk redeemer showing up item amounts as null
+  - bugfix: fixes milk melons not being obtainable by mutating melons
+  - rscadd: thick fingers from weight helplessness mechanic no longer gives the clumsy
+      trait
+  - bugfix: fixes the MOD mobility assist module breaking helplessness mechanics triggering
+  - code_imp: refactored helplessness code. Again.
+  evilew:
+  - map: GATOified Biodome
+  - map: Persistence Syndicate Outpost got a larger section for feeder den esque stuff,
+      including a new vendor with kink tools
+  - map: 'Persistence also got 2 new ghost roles: Syndicate Feedee & Feeder. Feedee
+      is functionally the same to Syndicate Hostage, and Feeder is the same to a normal
+      Brig Syndie, but they''ve been renamed for visibility'

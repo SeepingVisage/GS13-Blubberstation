@@ -1,6 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - rscadd: "thick fingers from weight helplessness mechanic no longer gives the clumsy trait"
-  - bugfix: "fixes the MOD mobility assist module breaking helplessness mechanics triggering"
-  - code_imp: "refactored helplessness code. Again."

@@ -1,5 +1,0 @@
-author: "Grarem"
-delete-after: True
-changes:
-  - rscadd: "Prefed bursting related sounds"
-  - balance: "small increase in damage done while crit bursting"
