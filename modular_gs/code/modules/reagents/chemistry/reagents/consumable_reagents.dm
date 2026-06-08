@@ -34,8 +34,14 @@
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/fizulphite/on_mob_life(mob/living/carbon/M)
-	M.adjust_burpslurring_effect(3)
-	M.fullness_adjustment += 35
+	if (M && M?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
+		M.adjust_burpslurring_effect(3)
+		M.fullness_adjustment += 35
+		if(prob(10))
+			if(prob(75))
+				M.emote("burp")
+			else
+				M.emote("belch")
 	// if(M && M?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
 	// 	M.burpslurring = max(M.burpslurring,50)
 	// 	M.burpslurring += 2
@@ -57,11 +63,9 @@
 	// 	M.burpslurring -= 3
 	// else
 	// 	M.burpslurring -= 0
-
-	if(M.fullness>10)
-		M.fullness -= 6
-	else
-		M.fullness -= 0
+	if (M && M?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
+		if(M.fullness > FULLNESS_LEVEL_BLOATED)
+			M.fullness_adjustment -= 50
 	..()
 
 //FARTY CHEM
