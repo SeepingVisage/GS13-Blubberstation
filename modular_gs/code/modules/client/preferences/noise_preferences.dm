@@ -13,3 +13,7 @@
 	savefile_key = "sound_digestive"
 	savefile_identifier = PREFERENCE_PLAYER
 
+/datum/preference/numeric/volume/sound_bursting
+	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	savefile_key = "sound_bursting"
+	savefile_identifier = PREFERENCE_PLAYER
