@@ -60,7 +60,7 @@
 	if(owner.stat == DEAD || HAS_TRAIT(owner, TRAIT_STASIS))
 		return
 
-	// Every tick, the drunk value decrases by
+	// Every tick, the gassy value decrases by
 	// 0.001 + 4% the current gassy_value
 	// (until it reaches 0 and terminates)
 	set_gassy_value(gassy_value - (gassy_value * 0.04 + 0.001)) // SKYRAT EDIT CHANGE - ALCOHOL_PROCESSING - ORIGINAL: set_drunk_value(gassy_value - (0.01 + gassy_value * 0.04)
@@ -105,7 +105,7 @@
 	var/current_gassiness = owner.get_gassy_amount()
 	// These numbers are arbitarily picked
 	// Common replacements start at about 20, and maxes out at about 85
-	common_prob = clamp((current_gassiness * 0.8) - 16, 4, 50)
+	common_prob = clamp((current_gassiness * 0.8), 4, 50)
 	// Uncommon replacements (burping) start at 50 and max out at 110 (when you are dying)
-	uncommon_prob = clamp((current_gassiness * 0.3) - 10, 0, 12)
+	uncommon_prob = clamp((current_gassiness * 0.3), 0, 35)
 	return ..()

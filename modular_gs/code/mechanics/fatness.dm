@@ -40,7 +40,6 @@
 
 	var/fullness = 20
 	/// by how much we reduce the mob fullness compared to what it actually is
-	var/fullness_reduction = 0
 	var/fullness_reduction_timer = 0 // When was the last time they emoted to reduce their fullness
 	var/fullness_adjustment = 0
 	var/fullness_increasement = 0
@@ -242,19 +241,10 @@
 	fullness_adjustment = clamp(fullness_adjustment, -max_fullness_reduction, FULLNESS_MAX - fullness)
 
 
-/mob/living/carbon/proc/fullness_reduction()
-	var/max_fullness_reduction = max(fullness + 500, 600)
-	fullness_reduction -= 15
-	fullness_reduction = clamp(fullness_reduction, 0, max_fullness_reduction)
-
-// /mob/living/carbon/proc/fullness_increasement(amount)
-// 	fullness_increasement += amount
-// 	fullness_increasement = clamp(fullness_increasement, 0, FULLNESS_MAX)
 
 /// adjusts the mob hunger - essentially just reduces fullness. Calling this is preferred to doint it manually since it adjusts for the default hunger reduction rate
 /mob/living/carbon/proc/adjust_hunger(amount)
 	fullness_adjustment -= (15 + amount)
-	// fullness_reduction += 15 + amount
 
 /mob/living/carbon/fully_heal(admin_revive)
 	fatness = 0
