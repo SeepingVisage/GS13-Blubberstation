@@ -1,6 +1,0 @@
-author: "evilew"
-delete-after: True
-changes:
-  - map: "GATOified Biodome"
-  - map: "Persistence Syndicate Outpost got a larger section for feeder den esque stuff, including a new vendor with kink tools"
-  - map: "Persistence also got 2 new ghost roles: Syndicate Feedee & Feeder. Feedee is functionally the same to Syndicate Hostage, and Feeder is the same to a normal Brig Syndie, but they've been renamed for visibility"

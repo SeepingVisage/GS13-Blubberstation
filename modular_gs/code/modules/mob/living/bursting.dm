@@ -209,10 +209,11 @@
 		if (client?.prefs?.read_preference(/datum/preference/toggle/glutton_enable_sounds)) //Check if the player wants sounds
 			//Compare the two capcity percentages to each other and play sounds if they're higher than a percentage of the other
 			if ((bursting_capacity_fullness > bursting_capacity_fatness * BURSTING_SOUND_RATIO)) //Do fullness sounds
-				playsound(src.loc, pick(BURSTING_GURGLE_SOUNDS), BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+				playsound(src.loc, pick(BURSTING_GURGLE_SOUNDS), BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE, volume_preference = /datum/preference/numeric/volume/sound_bursting)
+
 
 			if ((bursting_capacity_fatness > bursting_capacity_fullness * BURSTING_SOUND_RATIO)) //Do fatness sounds
-				playsound(src.loc, pick(BURSTING_FAT_SLOSH_SOUNDS), BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+				playsound(src.loc, pick(BURSTING_FAT_SLOSH_SOUNDS), BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE, volume_preference = /datum/preference/numeric/volume/sound_bursting)
 
 	if (!client?.prefs?.read_preference(/datum/preference/toggle/glutton_see_bursting))
 		return FALSE
@@ -270,7 +271,7 @@
 		abs(BURSTING_ANIMATE_SCALE_X * cos(lying_angle) + BURSTING_ANIMATE_SCALE_Y * sin(lying_angle)),
 		abs(BURSTING_ANIMATE_SCALE_Y * cos(lying_angle) + BURSTING_ANIMATE_SCALE_X * sin(lying_angle))
 	)
-	playsound(src.loc, BURSTING_CRESCENDO, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+	playsound(src.loc, BURSTING_CRESCENDO, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE, volume_preference = /datum/preference/numeric/volume/sound_bursting)
 	animate(src, time = BURSTING_ANIMATE_TIME SECONDS, transform = transform * scale_transform, easing = SINE_EASING, flags = ANIMATION_PARALLEL)
 	Stun(BURSTING_ANIMATE_TIME SECONDS, TRUE)
 
@@ -282,13 +283,13 @@
 			span_warning("[src] makes a loud creak as the swelling stops on the verge of bursting, they seem to be holding together for now... (People with bursting prefs disabled are in view!)"),
 			span_warning("You make a loud creak as the swelling momentarily stops as you struggle to hold together... (Someone with bursting prefs disabled is in view!)")
 		)
-		playsound(src.loc, BURSTING_CRESCENDO_DELAY, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+		playsound(src.loc, BURSTING_CRESCENDO_DELAY, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE, volume_preference = /datum/preference/numeric/volume/sound_bursting)
 		addtimer(CALLBACK(src, PROC_REF(burst_glutton)), 8.4 SECONDS) //Delay for the duration of the sound
 		return
 
 	var/bursting_pref = get_bursting_pref()
 	if (bursting_pref != BURSTING_PREF_DISABLED) //Do one last check to make sure the player actually wanted it
-		playsound(src.loc, BURSTING_BURST, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+		playsound(src.loc, BURSTING_BURST, BURSTING_SOUND_VOLUME, 1, 1, 1.2, ignore_walls = FALSE, volume_preference = /datum/preference/numeric/volume/sound_bursting)
 		visible_message(span_warning("[src]'s body lets out a final creak before bursting!"), span_warning("You feel your body let out a creak as the pressure becomes too much before bursting!"))
 
 		//Get the fatness pref again incase it was changed since they burst and use it to determine the reduction so that the player doesn't repeatedly burst
@@ -334,7 +335,7 @@
 
 				//Injure modes
 				if (bursting_pref == BURSTING_PREF_INJURE || bursting_pref == BURSTING_PREF_CRIT)
-					var/bursting_chest_damage = bursting_pref == BURSTING_PREF_INJURE ? 40 : 100 ///40 damage if in injure, 110 if in crit mode
+					var/bursting_chest_damage = bursting_pref == BURSTING_PREF_INJURE ? 40 : 110 ///40 damage if in injure, 110 if in crit mode
 					var/bursting_limb_damage = bursting_pref == BURSTING_PREF_INJURE ? 5 : 10 ///How much damage to do to the limbs if fatness bursting
 					var/bursting_stomach_damage = bursting_pref == BURSTING_PREF_INJURE ? 30 : 100 ///How much damage to do to the stomach when fullness bursting
 

@@ -21,28 +21,15 @@
 	return trigger_weight
 
 /datum/helplessness/clumsy
-	helplessness_trait = TRAIT_CLUMSY
+	helplessness_trait = TRAIT_CHUNKYFINGERS
 	default_trigger_weight = FATNESS_LEVEL_BARELYMOBILE
 	override_quirk = TRAIT_HELPLESS_CLUMSY
 	preference = /datum/preference/numeric/helplessness/clumsy
 	gain_message = "Your newfound weight has made it hard to manipulate objects."
 	lose_message = "You feel like you have lost enough weight to recover your dexterity."
 
-/datum/helplessness/clumsy/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
-	. = ..()
-	var/should_be_active = .
-
-	if (should_be_active)
-		if (!HAS_TRAIT_FROM(fatty, TRAIT_CHUNKYFINGERS, HELPLESSNESS_TRAIT))
-			ADD_TRAIT(fatty, TRAIT_CHUNKYFINGERS, HELPLESSNESS_TRAIT)
-	else
-		if (HAS_TRAIT_FROM(fatty, TRAIT_CHUNKYFINGERS, HELPLESSNESS_TRAIT))
-			REMOVE_TRAIT(fatty, TRAIT_CHUNKYFINGERS, HELPLESSNESS_TRAIT)
-	
-	return should_be_active
-
 /datum/helplessness/nearsighted
-	helplessness_trait = 0	// nearsighted isn't a trait the same way others are
+	helplessness_trait = null	// nearsighted isn't a trait the same way others are
 	default_trigger_weight = FATNESS_LEVEL_BLOB
 	override_quirk = TRAIT_HELPLESS_BIG_CHEEKS
 	preference = /datum/preference/numeric/helplessness/nearsighted
@@ -50,34 +37,31 @@
 	lose_message = "You are thin enough to see your environment better."
 
 /datum/helplessness/nearsighted/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
-	if (trigger_weight <= 0)
-		fatty.remove_fov_trait(TRAIT_VERY_LOW_FOV, FOV_270_DEGREES)
-		fatty.remove_fov_trait(TRAIT_LOW_FOV, FOV_180_DEGREES)
-		REMOVE_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
-		REMOVE_TRAIT(fatty, TRAIT_LOW_FOV, HELPLESSNESS_TRAIT)
-		return FALSE
-
 	if(fatness >= 2 * trigger_weight)
 		if(!HAS_TRAIT(fatty, TRAIT_VERY_LOW_FOV))
 			to_chat(fatty, span_warning(gain_message))
 			ADD_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
 			REMOVE_TRAIT(fatty, TRAIT_LOW_FOV, HELPLESSNESS_TRAIT)
 			fatty.add_fov_trait(TRAIT_LOW_FOV, FOV_270_DEGREES)
-		return TRUE
+			return TRUE
 
-	if(fatness >= trigger_weight)
-		if(!HAS_TRAIT(fatty, TRAIT_LOW_FOV))
-			to_chat(fatty, span_warning(gain_message))
-			ADD_TRAIT(fatty, TRAIT_LOW_FOV, HELPLESSNESS_TRAIT)
-			REMOVE_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
-			fatty.add_fov_trait(TRAIT_LOW_FOV, FOV_180_DEGREES)
-		return TRUE
+		return FALSE
 
+	if(!HAS_TRAIT(fatty, TRAIT_LOW_FOV))
+		to_chat(fatty, span_warning(gain_message))
+		ADD_TRAIT(fatty, TRAIT_LOW_FOV, HELPLESSNESS_TRAIT)
+		REMOVE_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
+		fatty.add_fov_trait(TRAIT_LOW_FOV, FOV_180_DEGREES)
+		return TRUE
+	
+	return FALSE
+
+/datum/helplessness/nearsighted/disable_helplessness(mob/living/carbon/human/fatty)
 	fatty.remove_fov_trait(TRAIT_VERY_LOW_FOV, FOV_270_DEGREES)
 	fatty.remove_fov_trait(TRAIT_LOW_FOV, FOV_180_DEGREES)
 	REMOVE_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
 	REMOVE_TRAIT(fatty, TRAIT_LOW_FOV, HELPLESSNESS_TRAIT)
-	return FALSE
+	return TRUE
 
 /datum/helplessness/hidden_face
 	helplessness_trait = TRAIT_DISFIGURED
@@ -105,18 +89,19 @@
 
 /datum/helplessness/immobile_arms/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	. = ..()
-	var/should_be_active = .
+	var/activated = .
 
-	if (should_be_active)
-		if (!HAS_TRAIT_FROM(fatty, TRAIT_PARALYSIS_R_ARM, HELPLESSNESS_TRAIT))
-			ADD_TRAIT(fatty, TRAIT_PARALYSIS_R_ARM, HELPLESSNESS_TRAIT)
-			fatty.update_body_parts()
-	else
-		if (HAS_TRAIT_FROM(fatty, TRAIT_PARALYSIS_R_ARM, HELPLESSNESS_TRAIT))
-			REMOVE_TRAIT(fatty, TRAIT_PARALYSIS_R_ARM, HELPLESSNESS_TRAIT)
-			fatty.update_body_parts()
-	
-	return should_be_active
+	if (activated)
+		ADD_TRAIT(fatty, TRAIT_PARALYSIS_R_ARM, HELPLESSNESS_TRAIT)
+		fatty.update_body_parts()
+
+/datum/helplessness/immobile_arms/disable_helplessness(mob/living/carbon/human/fatty)
+	. = ..()
+	var/disabled_helplessness = .
+
+	if (disabled_helplessness)
+		REMOVE_TRAIT(fatty, TRAIT_PARALYSIS_R_ARM, HELPLESSNESS_TRAIT)
+		fatty.update_body_parts()
 
 /datum/helplessness/jumpsuit_bursting
 	helplessness_trait = TRAIT_NO_JUMPSUIT
@@ -127,19 +112,12 @@
 	lose_message = "You feel thin enough to put on jumpsuits now."
 
 /datum/helplessness/jumpsuit_bursting/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
-	. = ..()
-	// the super function to this returns true if the helplessness mechanic is active, and false otherwise
-	var/should_be_active = .
-
-	if (!should_be_active)
-		return should_be_active
+	..()
 	
 	var/obj/item/clothing/under/jumpsuit = fatty.w_uniform
 	if(istype(jumpsuit))
 		to_chat(fatty, span_warning("[jumpsuit] can no longer contain your weight!"))
 		fatty.dropItemToGround(jumpsuit)
-	
-	return should_be_active
 
 /datum/helplessness/misc_clothing_bursting
 	helplessness_trait = TRAIT_NO_MISC
@@ -151,11 +129,6 @@
 
 /datum/helplessness/misc_clothing_bursting/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	. = ..()
-	// the super function to this returns true if the helplessness mechanic is active, and false otherwise
-	var/should_be_active = .
-
-	if (!should_be_active)
-		return should_be_active
 	
 	var/obj/item/clothing/suit/worn_suit = fatty.wear_suit
 	if(istype(worn_suit) && !istype(worn_suit, /obj/item/clothing/suit/mod))
@@ -171,8 +144,6 @@
 	if(istype(worn_shoes) && !istype(worn_shoes, /obj/item/clothing/shoes/mod))
 		to_chat(fatty, span_warning("[worn_shoes] can no longer contain your weight!"))
 		fatty.dropItemToGround(worn_shoes)
-	
-	return should_be_active
 
 /datum/helplessness/belt_bursting	// my beloved
 	helplessness_trait = TRAIT_NO_BELT
@@ -184,10 +155,6 @@
 
 /datum/helplessness/belt_bursting/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	. = ..()
-	var/should_be_active = .
-
-	if (!should_be_active)
-		return should_be_active
 
 	var/obj/item/bluespace_belt/primitive/PBS_belt = fatty.belt
 	if(istype(PBS_belt) && fatness > trigger_weight)
@@ -201,8 +168,6 @@
 			span_warning("With a loud ripping sound, [fatty]'s [belt] snaps open!"),
 			span_warning("With a loud ripping sound, your [belt] snaps open!"))
 		fatty.dropItemToGround(belt)
-	
-	return should_be_active
 
 /datum/helplessness/back_clothing
 	helplessness_trait = TRAIT_NO_BACKPACK
@@ -214,17 +179,11 @@
 
 /datum/helplessness/back_clothing/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	. = ..()
-	var/should_be_active = .
-
-	if (!should_be_active)
-		return should_be_active
 
 	var/obj/item/back_item = fatty.back
 	if(istype(back_item) && !istype(back_item, /obj/item/mod))
 		to_chat(fatty, span_warning("Your weight makes it impossible for you to carry [back_item]."))
 		fatty.dropItemToGround(back_item)
-	
-	return should_be_active
 
 /datum/helplessness/no_buckle
 	helplessness_trait = TRAIT_NO_BUCKLE
@@ -244,18 +203,11 @@
 
 /datum/helplessness/no_neck/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	. = ..()
-	// the super function to this returns true if the helplessness mechanic is active, and false otherwise
-	var/should_be_active = .
-
-	if (!should_be_active)
-		return should_be_active
 	
 	var/obj/item/clothing/neck/neckwear = fatty.wear_neck
 	if(istype(neckwear))
 		to_chat(fatty, span_warning("[neckwear] can no longer fit around your neck!"))
 		fatty.dropItemToGround(neckwear)
-	
-	return should_be_active
 
 #define MAX_PRESSURE_DEBUFF 0.5
 /*

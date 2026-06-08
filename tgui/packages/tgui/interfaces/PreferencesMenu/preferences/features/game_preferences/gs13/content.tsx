@@ -108,3 +108,10 @@ export const sound_digestive: Feature<number> = {
   description: 'Volume of eating, drinking, and gurgling.',
   component: FeatureSliderInput,
 };
+
+export const sound_bursting: Feature<number> = {
+  name: 'Bursting sounds volume',
+  category: 'SOUND',
+  description: 'Volume of the sounds associated with bursting.',
+  component: FeatureSliderInput,
+};

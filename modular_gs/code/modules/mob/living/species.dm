@@ -53,10 +53,8 @@
 		update_body_size(H, weight_stage + 1)
 
 /mob/living/carbon/human/proc/handle_helplessness()
-	for (var/helplessness_mechanic in subtypesof(/datum/helplessness))
-		var/datum/helplessness/helplessness_datum = new helplessness_mechanic
-		helplessness_datum.handle_helplessness(src)
-		qdel(helplessness_datum)
+	for (var/datum/helplessness/helplessness_mechanic as anything in GLOB.helplessness_mechanics)
+		helplessness_mechanic.handle_helplessness(src)
 
 /datum/movespeed_modifier/fatness
 	id = "fat"
