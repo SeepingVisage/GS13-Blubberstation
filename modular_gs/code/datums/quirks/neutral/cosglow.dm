@@ -46,8 +46,8 @@
 	desc = "You emit a customizable soft glow! This isn't bright enough to replace your flashlight."
 	value = 0
 	gain_text = span_notice("You feel glowy!")
-	lose_text = span_notice("You loose that glow!")
-	medical_record_text = "Patient emits a subtle emissive aura."
+	lose_text = span_notice("You lose that glow!")
+	medical_record_text = "Patient emits a subtle aura of light."
 	mob_trait = TRAIT_COSGLOW
 	icon = FA_ICON_MAGIC_WAND_SPARKLES
 	mail_goodies = list(
