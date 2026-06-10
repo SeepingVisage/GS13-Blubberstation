@@ -194,3 +194,8 @@
 	name = "Pair (Alt GS13, No Nipples)"
 	icon = 'modular_gs/icons/obj/genitals/breasts_smooth_onmob.dmi'
 	icon_state = "pair"
+
+/datum/sprite_accessory/genital/breasts/alt_GS13/teshari // Teshari only (duh)
+	name = "Pair (Teshari)"
+	icon = 'modular_gs/icons/obj/genitals/teshbreasts.dmi'
+	icon_state = "pair"
