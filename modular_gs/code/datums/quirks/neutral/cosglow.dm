@@ -1,6 +1,3 @@
-#define COSGLOW_THICKNESS_MIN 1
-#define COSGLOW_THICKNESS_MAX 3
-#define COSGLOW_THICKNESS_DEFAULT 2
 #define COSGLOW_LAMP_RANGE_MIN 0
 #define COSGLOW_LAMP_RANGE_MAX 2
 #define COSGLOW_LAMP_RANGE_DEFAULT 1.5
@@ -100,9 +97,6 @@
 /datum/status_effect/cosglow/get_examine_text()
 	return span_notice("[owner.p_They()] emit[owner.p_s()] a harmless glowing aura.")
 
-#undef COSGLOW_THICKNESS_MIN
-#undef COSGLOW_THICKNESS_MAX
-#undef COSGLOW_THICKNESS_DEFAULT
 #undef COSGLOW_LAMP_RANGE_MIN
 #undef COSGLOW_LAMP_RANGE_MAX
 #undef COSGLOW_LAMP_RANGE_DEFAULT

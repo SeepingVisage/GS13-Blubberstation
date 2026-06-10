@@ -1,7 +1,3 @@
-#define COSGLOW_THICKNESS_MIN 1
-#define COSGLOW_THICKNESS_MAX 3
-#define COSGLOW_THICKNESS_DEFAULT 2
-
 /datum/quirk_constant_data/cosglow
 	associated_typepath = /datum/quirk/cosglow
 	customization_options = list(
@@ -33,7 +29,3 @@
 
 /datum/preference/numeric/cosglow_thickness/create_default_value()
 	return COSGLOW_THICKNESS_DEFAULT
-
-#undef COSGLOW_THICKNESS_MIN
-#undef COSGLOW_THICKNESS_MAX
-#undef COSGLOW_THICKNESS_DEFAULT

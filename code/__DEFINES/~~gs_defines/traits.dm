@@ -87,3 +87,8 @@
 #define TRAIT_ABOUT_TO_BURST "about_to_burst"
 #define TRAIT_NO_BURST "trait_no_burst"
 #define TRAIT_WARNED_ABOUT_BURSTING "trait_burst_warning"
+
+// Illuminated quirk defines
+#define COSGLOW_THICKNESS_MIN 1
+#define COSGLOW_THICKNESS_MAX 3
+#define COSGLOW_THICKNESS_DEFAULT 2
