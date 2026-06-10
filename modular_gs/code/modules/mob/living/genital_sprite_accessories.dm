@@ -52,3 +52,13 @@
 	icon = 'modular_gs/icons/mob/human/genitals/belly_smooth_noarms.dmi'
 	icon_state = "smoothnoarms"
 	name = "Smooth Belly (No Nipples/Bellybutton/Arms)"
+
+/datum/sprite_accessory/genital/belly/belly_teshari
+	icon = 'modular_gs/icons/mob/human/genitals/teshbelly.dmi'
+	icon_state = "teshbelly"
+	name = "Teshari Belly (Teshari Only)"
+
+/datum/sprite_accessory/genital/butt/butt_teshari
+	icon = 'modular_gs/icons/mob/human/genitals/teshbutt.dmi'
+	icon_state = "teshbutt"
+	name = "Teshari Butt (Teshari Only)"
