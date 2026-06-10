@@ -42,11 +42,6 @@
 				M.emote("burp")
 			else
 				M.emote("belch")
-	// if(M && M?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
-	// 	M.burpslurring = max(M.burpslurring,50)
-	// 	M.burpslurring += 2
-	// else
-	// 	M.burpslurring += 0
 	..()
 
 //ANTI-BURPY CHEM
@@ -59,10 +54,6 @@
 	metabolization_rate = 0.8 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/extilphite/on_mob_life(mob/living/carbon/M)
-	// if(M && M?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
-	// 	M.burpslurring -= 3
-	// else
-	// 	M.burpslurring -= 0
 	if (M && M?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
 		if(M.fullness > FULLNESS_LEVEL_BLOATED)
 			M.fullness_adjustment -= 50

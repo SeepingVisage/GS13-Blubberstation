@@ -18,7 +18,7 @@
 	status_type = STATUS_EFFECT_REPLACE
 	remove_on_fullheal = TRUE
 	alert_type = null
-	/// The level of drunkness we are currently at.
+	/// The level of gassiness we are currently at.
 	var/gassy_value = 0
 
 /datum/status_effect/burpslurring/on_creation(mob/living/new_owner, gassy_value = 0)
@@ -26,11 +26,11 @@
 	set_gassy_value(gassy_value)
 
 /datum/status_effect/burpslurring/get_examine_text()
-	// Dead people don't look drunk
+	// Dead people don't look gassy
 	if(owner.stat == DEAD || HAS_TRAIT(owner, TRAIT_FAKEDEATH))
 		return null
 
-	// .01s are used in case the drunk value ends up to be a small decimal.
+	// .01s are used in case the gassy value ends up to be a small decimal.
 	switch(gassy_value)
 		if(11 to 21)
 			return span_warning("[owner.p_They()] [owner.p_are()] mildly gassy.")
@@ -47,7 +47,7 @@
 
 	return null
 
-/// Sets the drunk value to set_to, deleting if the value drops to 0 or lower
+/// Sets the gassy value to set_to, deleting if the value drops to 0 or lower
 /datum/status_effect/burpslurring/proc/set_gassy_value(set_to)
 	if(!isnum(set_to))
 		CRASH("[type] - invalid value passed to set_gassy_value. (Got: [set_to])")
@@ -71,27 +71,6 @@
 
 /datum/status_effect/burpslurring/proc/on_tick_effects()
 	owner.adjust_burpslurring(4 SECONDS)
-	// owner.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/speech/slurring/burp, max_duration = 20 SECONDS)
-	// if(gassy_value >= 43.4)
-	// 	if(prob(clamp(gassy_value - 8, 0, 100)))
-	// 		owner.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/speech/slurring/burp, max_duration = 20 SECONDS)
-	// 	if(prob(10))
-	// 		owner.adjust_confusion(4 SECONDS)
-
-	// // Over 61, we start to get blurred vision
-	// if(gassy_value >= 63.4)
-	// 	owner.set_dizzy_if_lower(45 SECONDS)
-	// 	if(prob(15))
-	// 		owner.adjust_eye_blur_up_to(4 SECONDS, 20 SECONDS)
-
-	// // Over 71, we will constantly have blurry eyes, we might vomit
-	// if(gassy_value >= 73.4)
-	// 	owner.set_eye_blur_if_lower(20 SECONDS)
-	// 	if(prob(3))
-	// 		owner.adjust_confusion(15 SECONDS)
-	// 		if(iscarbon(owner))
-	// 			var/mob/living/carbon/carbon_owner = owner
-	// 			carbon_owner.vomit() // Vomiting clears toxloss - consider this a blessing
 
 /datum/status_effect/speech/slurring/burp
 	id = "burp_slurring"
@@ -103,9 +82,7 @@
 
 /datum/status_effect/speech/slurring/burp/handle_message(datum/source, list/message_args)
 	var/current_gassiness = owner.get_gassy_amount()
-	// These numbers are arbitarily picked
-	// Common replacements start at about 20, and maxes out at about 85
+	// These numbers are arbitarily picked and based on drunk slurring
 	common_prob = clamp((current_gassiness * 0.8), 4, 50)
-	// Uncommon replacements (burping) start at 50 and max out at 110 (when you are dying)
 	uncommon_prob = clamp((current_gassiness * 0.3), 0, 35)
 	return ..()

@@ -1,6 +1,3 @@
-// /mob/living
-// 	var/burpslurring = 0 //GS13 - necessary due to "say" being defined by mob/living
-
 /// Helper to get the amount of gassiness the mob's currently experiencing.
 /mob/living/proc/get_gassy_amount()
 	var/datum/status_effect/burpslurring/burpslur = has_status_effect(/datum/status_effect/burpslurring)
@@ -42,7 +39,6 @@
 	/// by how much we reduce the mob fullness compared to what it actually is
 	var/fullness_reduction_timer = 0 // When was the last time they emoted to reduce their fullness
 	var/fullness_adjustment = 0
-	var/fullness_increasement = 0
 
 	/// How many humanoid mobs have been digested by this mob?
 	var/carbons_digested = 0
