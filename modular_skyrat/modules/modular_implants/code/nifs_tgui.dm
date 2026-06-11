@@ -145,3 +145,9 @@
 
 			nifsoft_to_keep.keep_installed = !nifsoft_to_keep.keep_installed
 			update_static_data_for_all_viewers()
+
+		//GS13 EDIT Fatness Drain on NIFs
+		if("toggle_fatness_drain")
+			toggle_fatness_drain()
+			return TRUE
+		//GS13 EDIT End

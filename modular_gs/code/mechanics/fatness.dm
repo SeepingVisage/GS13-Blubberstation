@@ -242,10 +242,37 @@
 /mob/living/carbon/proc/adjust_hunger(amount)
 	fullness_adjustment -= (15 + amount)
 
-/mob/living/carbon/fully_heal(admin_revive)
+/// Remove all of the real fatness from a mob.
+/mob/living/carbon/proc/fully_heal_fatness(remove_perma = FALSE, custom_remove_text, custom_perma_remove_text)
+	var/regular_remove_text = "You feel much lighter."
+	var/perma_remove_text = "The weight that you've held onto for so long, just vanishes away."
+
+	if(custom_remove_text)
+		regular_remove_text = custom_remove_text
+	if(custom_perma_remove_text)
+		perma_remove_text = perma_remove_text
+
 	fatness = 0
 	fatness_real = 0
-	. = ..()
+
+	if(regular_remove_text)
+		to_chat(src, span_boldnicegreen(regular_remove_text))
+
+	if(remove_perma)
+		fatness_perma = 0
+		if(perma_remove_text)
+			to_chat(src, span_boldnicegreen(perma_remove_text))
+
+/// Virtual sin forgiveness
+/mob/living/carbon/proc/fully_heal_fatness_shitpost(remove_perma = FALSE)
+	var/regular_text = "I absolve you of your sins, you have been forgvien"
+	var/perma_text = ""
+
+	if(remove_perma)
+		perma_text = regular_text
+		regular_text = ""
+
+	fully_heal_fatness(remove_perma, regular_text, perma_text)
 
 ///Checks the parent mob's prefs to see if they can be fattened by the fattening_type
 /mob/living/carbon/proc/check_weight_prefs(type_of_fattening = FATTENING_TYPE_ITEM)

@@ -18,10 +18,14 @@
 
 /obj/item/clothing/neck/kink_collar/locked/antiburst/Initialize(mapload)
 	. = ..()
+	set_frequency(frequency)
 	update_icon(UPDATE_OVERLAYS)
 	var/list/reskin_components = GetComponents(/datum/component/reskinable_item)
 	for(var/datum/component/reskinable_item/reskin_component as anything in reskin_components)
 		qdel(reskin_component)
+
+/obj/item/clothing/neck/kink_collar/locked/antiburst/attack_self(mob/user)
+	return ui_interact(user)
 
 /obj/item/clothing/neck/kink_collar/locked/antiburst/examine(mob/user)
 	. = ..()
@@ -38,8 +42,11 @@
 	. = ..()
 	if(!ishuman(user))
 		return
+
 	var/mob/living/carbon/wearer = user
-	if((wearer?.get_item_by_slot(ITEM_SLOT_NECK) == src) && !QDELETED(src))
+	var/is_worn = (wearer?.get_item_by_slot(ITEM_SLOT_NECK) == src)
+	var/is_qdeleted = QDELETED(src)
+	if(is_worn && !is_qdeleted && field_active)
 		disable_field()
 
 /// Toggles the anti-bursting field on and off
@@ -87,6 +94,9 @@
 	if(field_active && !isinhands)
 		. += mutable_appearance('modular_zubbers/icons/obj/clothing/GAGS/collar.dmi', "collar_mob_tracker_light")
 		. += emissive_appearance('modular_zubbers/icons/obj/clothing/GAGS/collar.dmi', "collar_mob_tracker_light", src, alpha = src.alpha)
+
+/obj/item/clothing/neck/kink_collar/locked/antiburst/ui_state(mob/user)
+	return GLOB.hands_state
 
 // Yes we are using mostly copy and pasted vibrator code.
 /obj/item/clothing/neck/kink_collar/locked/antiburst/ui_interact(mob/user, datum/tgui/ui)
