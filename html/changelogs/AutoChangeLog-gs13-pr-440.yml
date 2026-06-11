@@ -1,0 +1,8 @@
+author: "sheepishgoat"
+delete-after: True
+changes:
+  - bugfix: "Fixes absorbing prey stopping once a prey reaches the exact value of a weight stage."
+  - bugfix: "The menu for the blueberry collar is now accessible. (Due to an upstream bug, frequency and codes still cannot be changed.)"
+  - bugfix: "The fat drain mode on NIFs now works."
+  - bugfix: "Legion cores and other full heal methods no longer remove fatness."
+  - code_imp: "fat removal is now it's own proc: `fully_heal_fatness`, with a meme version: `fully_heal_fatness_shitpost`"
