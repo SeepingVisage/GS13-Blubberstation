@@ -1,5 +1,9 @@
 /obj/machinery/door/airlock/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
+
+	if (. == FALSE)
+		return .
+
 	if (!istype(mover, /mob/living/carbon))
 		return .
 
@@ -55,6 +59,10 @@
 
 /obj/structure/mineral_door/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
+
+	if (. == FALSE)
+		return .
+
 	if (!istype(mover, /mob/living/carbon))
 		return .
 
