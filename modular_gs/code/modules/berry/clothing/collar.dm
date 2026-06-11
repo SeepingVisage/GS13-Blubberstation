@@ -42,8 +42,11 @@
 	. = ..()
 	if(!ishuman(user))
 		return
+
 	var/mob/living/carbon/wearer = user
-	if((wearer?.get_item_by_slot(ITEM_SLOT_NECK) == src) && !QDELETED(src) && field_active)
+	var/is_worn = (wearer?.get_item_by_slot(ITEM_SLOT_NECK) == src)
+	var/is_qdeleted = QDELETED(src)
+	if(is_worn && !is_qdeleted && field_active)
 		disable_field()
 
 /// Toggles the anti-bursting field on and off
@@ -157,4 +160,3 @@
 		return
 
 	toggle_field()
-	return
