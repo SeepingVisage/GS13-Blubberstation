@@ -907,6 +907,10 @@ export function MainPage(props: MainPageProps) {
         {/* BUBBER EDIT CHANGE BEGIN: Swappable pref menus */}
         <Stack.Item grow basis={0} ml="4px">
           <Stack vertical fill>
+            {/* GS13 EDIT */}
+            <Stack vertical>
+            <Stack.Item>
+            {/* GS13 END EDIT */}
             <Stack>
               <Stack.Item grow={2}>
                 <PageButton
@@ -954,6 +958,10 @@ export function MainPage(props: MainPageProps) {
                 </PageButton>
               </Stack.Item>
               {/* GS13 EDIT */}
+              </Stack>
+              </Stack.Item>
+              <Stack.Item>
+                <Stack>
               <Stack.Item grow={2}>
                 <PageButton
                   currentPage={currentPrefPage}
@@ -980,6 +988,8 @@ export function MainPage(props: MainPageProps) {
               <Stack.Item>{blueberry_contents}</Stack.Item>
               <Stack.Item>{glutton_bursting_contents}</Stack.Item>
               {/* GS13 END EDIT */}
+            </Stack>
+            </Stack.Item>
             </Stack>
           </Stack>
         </Stack.Item>
