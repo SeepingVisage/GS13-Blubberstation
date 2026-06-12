@@ -30,8 +30,6 @@
 	var/flip_gain_rate = FALSE
 	/// whether we flip the sign on the final WL rate. This will make any slimming action make you gain weight
 	var/flip_loss_rate = FALSE
-	//Variable related to door stuckage code
-	var/doorstuck = 0
 	/// What is the maximum amount of weight we can put on?
 	var/max_weight
 
