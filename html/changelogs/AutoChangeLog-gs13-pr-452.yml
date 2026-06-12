@@ -1,0 +1,5 @@
+author: "Swan"
+delete-after: True
+changes:
+  - rscadd: "Getting stuck in doors because of fatness no longer stuns and knocks down the player. It now behaves in the same way as getting stuck in spider webs."
+  - rscadd: "Getting stuck in doors now deals them 1 (one) damage per each failed attempt at passing them."
