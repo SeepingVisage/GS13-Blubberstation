@@ -2,6 +2,7 @@
 
 //the butt itself
 /datum/preference/choiced/genital/butt
+	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	savefile_key = "feature_butt"
 	relevant_mutant_bodypart = ORGAN_SLOT_BUTT
 	default_accessory_type = /datum/sprite_accessory/genital/butt/none
@@ -60,6 +61,7 @@
 
 //tummy
 /datum/preference/choiced/genital/belly
+	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	savefile_key = "feature_belly"
 	relevant_mutant_bodypart = ORGAN_SLOT_BELLY
 	default_accessory_type = /datum/sprite_accessory/genital/belly/none
