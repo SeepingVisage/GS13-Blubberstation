@@ -1,0 +1,4 @@
+author: "Swan"
+delete-after: True
+changes:
+  - bugfix: "the character creator tabs are no longer extending past the window borders"
