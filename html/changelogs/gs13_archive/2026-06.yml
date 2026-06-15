@@ -5,8 +5,9 @@
       from the discord.
   - bugfix: fixed teshari layering
   SeepingVisage:
-  - refactor: fullness
-  - bugfix: fizulphite
+  - refactor: refactors fullness. It will not work with fullness reducing emotes
+      like *burp and *belch
+  - bugfix: fixes fizulphite not working
   Swan:
   - rscadd: Getting stuck in doors because of fatness no longer stuns and knocks down
       the player. It now behaves in the same way as getting stuck in spider webs.
