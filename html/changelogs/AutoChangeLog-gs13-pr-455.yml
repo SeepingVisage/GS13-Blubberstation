@@ -1,4 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - bugfix: "Fixes the fattywank vendor being buildable through the custom vendor board"

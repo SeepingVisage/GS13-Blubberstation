@@ -1,0 +1,26 @@
+2026-06-15:
+  Icepick200:
+  - rscadd: Added the Illuminated Quirk, allowing you to cosmetically glow.
+  - rscadd: Added sprites for Teshari WG by Cowlamari, Pavvodeville, and Softymarshmellow
+      from the discord.
+  - bugfix: fixed teshari layering
+  SeepingVisage:
+  - refactor: refactors fullness. It will now work with fullness reducing emotes
+      like *burp and *belch
+  - bugfix: fixes fizulphite not working
+  Swan:
+  - rscadd: Getting stuck in doors because of fatness no longer stuns and knocks down
+      the player. It now behaves in the same way as getting stuck in spider webs.
+  - rscadd: Getting stuck in doors now deals them 1 (one) damage per each failed attempt
+      at passing them.
+  - bugfix: the character creator tabs are no longer extending past the window borders
+  - bugfix: Fixes the fattywank vendor being buildable through the custom vendor board
+  sheepishgoat:
+  - bugfix: Fixes absorbing prey stopping once a prey reaches the exact value of a
+      weight stage.
+  - bugfix: The menu for the blueberry collar is now accessible. (Due to an upstream
+      bug, frequency and codes still cannot be changed.)
+  - bugfix: The fat drain mode on NIFs now works.
+  - bugfix: Legion cores and other full heal methods no longer remove fatness.
+  - code_imp: 'fat removal is now it''s own proc: `fully_heal_fatness`, with a meme
+      version: `fully_heal_fatness_shitpost`'
