@@ -37,6 +37,8 @@
 	var/cell_wired = FALSE
 	/// Visual y-offset for the assembly on our lid
 	var/assembly_pixel_y = 0
+	/// If TRUE, after we finish drinking, we try to drink again after do_after
+	var/loop_drink = FALSE
 
 /obj/item/reagent_containers/cup/Initialize(mapload, vol)
 	. = ..()
@@ -103,6 +105,8 @@
 
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(target_mob != user)
+		if(DOING_INTERACTION_WITH_TARGET(user, target_mob))
+			return ITEM_INTERACT_BLOCKING
 		target_mob.visible_message(
 			span_danger("[user] attempts to feed [target_mob] something from [src]."),
 			span_userdanger("[user] attempts to feed you something from [src]."),
@@ -115,8 +119,27 @@
 			span_danger("[user] feeds [target_mob] something from [src]."),
 			span_userdanger("[user] feeds you something from [src]."),
 		)
+		if(target_mob.is_blind())
+			to_chat(target_mob, span_notice("You feel someone feed you something."))
 		log_combat(user, target_mob, "fed", reagents.get_reagent_log_string())
+
 	else
+		if(loop_drink)
+			if(DOING_INTERACTION_WITH_TARGET(user, user))
+				return ITEM_INTERACT_BLOCKING
+			user.visible_message(
+				span_notice("[user] attempts to drink from [src]."),
+				ignored_mobs = list(user),
+			)
+			to_chat(user, span_notice("You attempt to drink from [src]."))
+			if(!do_after(user, 1.25 SECONDS, user))
+				return ITEM_INTERACT_BLOCKING
+			if(!reagents || !reagents.total_volume)
+				return ITEM_INTERACT_BLOCKING
+			user.visible_message(
+				span_notice("[user] drinks from [src]."),
+				ignored_mobs = list(user),
+			)
 		//GS13 EDIT - Bluespace collar addition and interception
 		if (istype(bs_collar_trans, /obj/item/clothing/neck/human_petcollar/locked/bluespace_collar_transmitter) && bs_collar_trans.islinked())
 			to_chat(user, span_notice("You effortlessly swallow a gulp of [src]. It feels like you haven't drank anything at all."))
@@ -124,32 +147,31 @@
 			to_chat(user, span_notice("You swallow a gulp of [src]."))
 		//GS13 END EDIT
 
-	. = ITEM_INTERACT_SUCCESS
 	SEND_SIGNAL(src, COMSIG_GLASS_DRANK, target_mob, user)
 	SEND_SIGNAL(target_mob, COMSIG_GLASS_DRANK, src, user) // SKYRAT EDIT ADDITION - Hemophages can't casually drink what's not going to regenerate their blood
-	var/fraction = min(gulp_size/reagents.total_volume, 1)
+	var/fraction = min(gulp_size / reagents.total_volume, 1)
 	//GS13 EDIT - Bluespace collar addition and interception
 	if (!(istype(bs_collar_trans, /obj/item/clothing/neck/human_petcollar/locked/bluespace_collar_transmitter) && bs_collar_trans.transpose_container(src, target_mob, user)))
-		// All code below up until the GS13 END EDIT tag is original code, just indented.
+		// All code below up until the second GS13 END EDIT tag is original code, just indented.
 		reagents.trans_to(target_mob, gulp_size, transferred_by = user, methods = reagent_consumption_method)
+		var/atom/movable/screen/hunger/hunger_bar = user.hud_used?.screen_objects[HUD_MOB_HUNGER]
+		if (istype(hunger_bar))
+			hunger_bar.update_hunger_bar()
 		checkLiked(fraction, target_mob)
 		//GS13 EDIT
-		playsound(target_mob.loc, consumption_sound, rand(10,50), TRUE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
+		playsound(target_mob, consumption_sound, rand(10, 50), TRUE, volume_preference = /datum/preference/numeric/volume/sound_digestive)
 		//GS13 EDIT END
-		if(!iscarbon(target_mob))
-			return .
-		var/mob/living/carbon/carbon_drinker = target_mob
-		var/list/diseases = carbon_drinker.get_static_viruses()
-		if(!LAZYLEN(diseases))
-			return .
-		var/list/datum/disease/diseases_to_add = list()
-		for(var/datum/disease/malady as anything in diseases)
+		var/list/datum/disease/diseases_to_add
+		for(var/datum/disease/malady as anything in target_mob.get_static_viruses())
 			if(malady.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS)
-				diseases_to_add += malady
+				LAZYADD(diseases_to_add, malady)
 		if(LAZYLEN(diseases_to_add))
 			AddComponent(/datum/component/infective, diseases_to_add)
-	//GS13 END EDIT
-	return .
+		if(loop_drink)
+			return try_drink(target_mob, user) | ITEM_INTERACT_SUCCESS
+	// GS13 END EDIT
+
+	return ITEM_INTERACT_SUCCESS
 
 /obj/item/reagent_containers/cup/interact_with_atom(atom/target, mob/living/user, list/modifiers)
 	. = ..()
@@ -250,7 +272,7 @@
  */
 /obj/item/reagent_containers/cup/on_accidental_consumption(mob/living/carbon/M, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
 	if(isGlass && !custom_materials)
-		set_custom_materials(list(GET_MATERIAL_REF(/datum/material/glass) = 5))//sets it to glass so, later on, it gets picked up by the glass catch (hope it doesn't 'break' things lol)
+		set_custom_materials(list(SSmaterials.get_material(/datum/material/glass) = 5))//sets it to glass so, later on, it gets picked up by the glass catch (hope it doesn't 'break' things lol)
 	return ..()
 
 /// Callback for [datum/component/takes_reagent_appearance] to inherent style footypes
@@ -696,8 +718,7 @@
 	if(grinded)
 		to_chat(user, span_warning("There is something inside already!"))
 		return ITEM_INTERACT_BLOCKING
-	if(!tool.blend_requirements(src))
-		to_chat(user, span_warning("Cannot grind this!"))
+	if(!tool.blend_requirements(src, user))
 		return ITEM_INTERACT_BLOCKING
 	if((length(tool.grind_results()) || tool.reagents?.total_volume) && user.transferItemToLoc(tool, src))
 		grinded = tool

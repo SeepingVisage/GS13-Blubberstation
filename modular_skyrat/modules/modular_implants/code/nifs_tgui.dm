@@ -57,6 +57,7 @@
 	data["max_blood_level"] = linked_mob.blood_volume_normal
 	data["product_notes"] = manufacturer_notes
 	data["stored_points"] = rewards_points
+	data["default_examine_text"] = /datum/component/nif_examine::nif_examine_text
 
 	return data
 
@@ -73,7 +74,7 @@
 	data["nutrition_drain"] = nutrition_drain
 	data["nutrition_level"] = linked_mob.nutrition
 
-	data["blood_level"] = linked_mob.blood_volume
+	data["blood_level"] = linked_mob.get_blood_volume()
 	data["blood_drain"] = blood_drain
 	data["minimum_blood_level"] = minimum_blood_level
 
@@ -81,25 +82,29 @@
 	data["fatness_total"] = linked_mob.fatness //GS13 EDIT SHOW FATNESS ON NIFs
 	data["fat_drain"] = fat_drain //GS13 EDIT SHOW FATNESS ON NIFs
 
-	var/datum/component/nif_examine/nif_examine = linked_mob.GetComponent(/datum/component/nif_examine)
-	data["nif_examine_text"] = nif_examine?.nif_examine_text
-
 	//Durability Variables.
 	data["durability"] = durability
 
+	var/datum/component/nif_examine/examine_datum = linked_mob.GetComponent(/datum/component/nif_examine)
+
+	if(examine_datum && examine_datum.nif_examine_text != initial(examine_datum.nif_examine_text))
+		data["current_examine_text"] = examine_datum.nif_examine_text
+	else
+		data["current_examine_text"] = null
+
 	return data
 
-/obj/item/organ/cyberimp/brain/nif/ui_act(action, list/params)
+/obj/item/organ/cyberimp/brain/nif/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
 
 	switch(action)
 		if("toggle_nutrition_drain")
-			toggle_nutrition_drain()
+			return toggle_nutrition_drain()
 
 		if("toggle_blood_drain")
-			toggle_blood_drain()
+			return toggle_blood_drain()
 
 		if("change_examine_text")
 			var/text_to_use = html_encode(params["new_text"])
@@ -109,10 +114,11 @@
 				return FALSE
 
 			if(!text_to_use || length(text_to_use) <= 6)
-				examine_datum.nif_examine_text = "There's a certain spark to their eyes."
-				return FALSE
+				examine_datum.nif_examine_text = initial(examine_datum.nif_examine_text)
+				return TRUE
 
 			examine_datum.nif_examine_text = text_to_use
+			return TRUE
 
 		if("uninstall_nifsoft")
 			var/nifsoft_to_remove = locate(params["nifsoft_to_remove"]) in loaded_nifsofts
@@ -120,6 +126,7 @@
 				return FALSE
 
 			remove_nifsoft(nifsoft_to_remove)
+			update_static_data(ui.user, ui)
 
 		if("change_theme")
 			var/target_theme = params["target_theme"]
@@ -130,6 +137,7 @@
 			current_theme = target_theme
 			for(var/datum/nifsoft/installed_nifsoft as anything in loaded_nifsofts)
 				installed_nifsoft.update_theme()
+			return TRUE
 
 		if("activate_nifsoft")
 			var/datum/nifsoft/activated_nifsoft = locate(params["activated_nifsoft"]) in loaded_nifsofts
@@ -137,6 +145,7 @@
 				return FALSE
 
 			activated_nifsoft.activate()
+			update_static_data(ui.user, ui)
 
 		if("toggle_keeping_nifsoft")
 			var/datum/nifsoft/nifsoft_to_keep = locate(params["nifsoft_to_keep"]) in loaded_nifsofts
@@ -144,7 +153,7 @@
 				return FALSE
 
 			nifsoft_to_keep.keep_installed = !nifsoft_to_keep.keep_installed
-			update_static_data_for_all_viewers()
+			update_static_data(ui.user, ui)
 
 		//GS13 EDIT Fatness Drain on NIFs
 		if("toggle_fatness_drain")

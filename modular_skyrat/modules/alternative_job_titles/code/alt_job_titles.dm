@@ -412,6 +412,7 @@
 		"Therapist",
 		"Shrink",
 		"Anger Management",
+		"Emotional Support Animal",
 		"Dietician", //GS13 ADDITION - PSYCHOLOGIST DIETICIAN ROLE FLAVORING
 	)
 

@@ -1841,7 +1841,7 @@
 /area/shuttle/sbc_starfury)
 "hc" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/syndicate{
 	id = "syndie_battlecruiser_mech"
 	},
 /turf/open/floor/pod/light,
@@ -2166,12 +2166,11 @@
 /area/shuttle/sbc_starfury)
 "hX" = (
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/highsecurity{
-	id_tag = "syndie_battlecruiser_armory";
-	name = "Starfury Armory"
-	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/machinery/door/airlock/highsecurity/syndicate{
+	name = "Starfury Armory"
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "hZ" = (
@@ -4365,11 +4364,11 @@
 /area/shuttle/sbc_starfury)
 "Ay" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/door/poddoor/shutters{
-	id = "syndie_battlecruiser_mech"
-	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/door/poddoor/shutters/syndicate{
+	id = "syndie_battlecruiser_mech"
+	},
 /turf/open/floor/pod/light,
 /area/shuttle/sbc_starfury)
 "AF" = (
@@ -5814,12 +5813,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/highsecurity{
-	id_tag = "syndie_battlecruiser_armory";
-	name = "Starfury Armory"
-	},
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/machinery/door/airlock/highsecurity/syndicate{
+	name = "Starfury Armory"
+	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_starfury)
 "ZR" = (
