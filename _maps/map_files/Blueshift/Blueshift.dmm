@@ -14802,7 +14802,7 @@
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = 8
 	},
 /turf/open/floor/iron/white,
@@ -18700,7 +18700,7 @@
 "dzt" = (
 /obj/structure/window/spawner/directional/east,
 /obj/structure/table,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/item/stack/medical/suture,
 /obj/item/stack/medical/mesh,
 /obj/item/reagent_containers/syringe/multiver,
@@ -43545,7 +43545,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/mob/living/simple_animal/bot/secbot/beepsky/officer,
+/mob/living/basic/bot/secbot/beepsky/officer,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -48276,7 +48276,7 @@
 "jhL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/mob/living/simple_animal/bot/secbot/beepsky/jr,
+/mob/living/basic/bot/secbot/beepsky/jr,
 /turf/open/floor/iron/dark/side{
 	dir = 1
 	},
@@ -67089,7 +67089,7 @@
 "mKs" = (
 /obj/structure/table/glass,
 /obj/structure/window/spawner/directional/east,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "mKz" = (
@@ -81824,7 +81824,7 @@
 "pzw" = (
 /obj/structure/cable,
 /obj/effect/landmark/event_spawn,
-/mob/living/simple_animal/bot/secbot/beepsky/armsky,
+/mob/living/basic/bot/secbot/beepsky/armsky,
 /obj/machinery/holopad/secure,
 /turf/open/floor/iron,
 /area/station/security/armory)
@@ -85197,7 +85197,7 @@
 "qhl" = (
 /obj/structure/table/glass,
 /obj/structure/window/spawner/directional/west,
-/obj/item/stack/medical/gauze/twelve,
+/obj/item/stack/medical/wrap/gauze/twelve,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "qhn" = (
@@ -85902,7 +85902,7 @@
 	},
 /area/station/hallway/secondary/command)
 "qnM" = (
-/mob/living/simple_animal/bot/secbot/pingsky,
+/mob/living/basic/bot/secbot/pingsky,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -97967,7 +97967,7 @@
 "sBa" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/item/stack/medical/bruise_pack,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical)
@@ -126847,7 +126847,7 @@
 "xXG" = (
 /obj/structure/table,
 /obj/item/stack/medical/mesh,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/item/stack/medical/suture,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4

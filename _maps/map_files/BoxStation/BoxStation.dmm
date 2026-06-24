@@ -21750,7 +21750,7 @@
 /turf/open/floor/wood/tile,
 /area/station/hallway/primary/fore)
 "bwD" = (
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = -2;
 	pixel_y = 8
 	},
@@ -34101,7 +34101,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/mob/living/simple_animal/bot/secbot/pingsky,
+/mob/living/basic/bot/secbot/pingsky,
 /turf/open/floor/iron/dark,
 /area/station/ai/satellite/interior)
 "cuT" = (
@@ -35658,7 +35658,7 @@
 /area/station/science/xenobiology)
 "cCh" = (
 /obj/item/bedsheet/red,
-/mob/living/simple_animal/bot/secbot/beepsky/officer,
+/mob/living/basic/bot/secbot/beepsky/officer,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
@@ -40450,7 +40450,7 @@
 /obj/structure/table,
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light/directional/north,
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = -8;
 	pixel_y = 0
 	},
@@ -60750,7 +60750,7 @@
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/rd)
 "nvX" = (
-/mob/living/simple_animal/bot/secbot/beepsky/armsky,
+/mob/living/basic/bot/secbot/beepsky/armsky,
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/dark,
@@ -61945,7 +61945,7 @@
 /turf/open/floor/iron/dark/textured,
 /area/station/science/genetics)
 "nTs" = (
-/mob/living/simple_animal/bot/secbot/grievous/toy,
+/mob/living/basic/bot/secbot/grievous/toy,
 /turf/open/floor/plating,
 /area/station/ai/satellite/maintenance)
 "nTz" = (
@@ -67962,7 +67962,7 @@
 /area/station/maintenance/port/aft)
 "qHw" = (
 /obj/machinery/light/directional/east,
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = -2;
 	pixel_y = 8
 	},

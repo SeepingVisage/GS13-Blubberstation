@@ -12497,7 +12497,7 @@
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "jfY" = (
 /obj/structure/table/wood,
-/obj/item/stack/medical/gauze/improvised,
+/obj/item/stack/medical/wrap/gauze/improvised,
 /obj/item/stack/medical/suture/bloody{
 	pixel_x = 1;
 	pixel_y = 6
@@ -15984,7 +15984,7 @@
 /turf/open/floor/iron/white/small,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "lDm" = (
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /turf/open/floor/plating,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "lDt" = (

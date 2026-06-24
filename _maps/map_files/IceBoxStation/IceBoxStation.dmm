@@ -3758,7 +3758,7 @@
 /area/station/maintenance/starboard/fore)
 "aXq" = (
 /obj/item/bedsheet/red,
-/mob/living/simple_animal/bot/secbot/beepsky,
+/mob/living/basic/bot/secbot/beepsky,
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
 "aXG" = (
@@ -24830,7 +24830,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "gJI" = (
-/mob/living/simple_animal/bot/secbot/beepsky/armsky,
+/mob/living/basic/bot/secbot/beepsky/armsky,
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/iron/dark/textured,
 /area/station/security/armory)
@@ -47089,7 +47089,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable/layer3,
-/mob/living/simple_animal/bot/secbot/pingsky,
+/mob/living/basic/bot/secbot/pingsky,
 /turf/open/floor/iron/dark,
 /area/station/ai/satellite/interior)
 "mXl" = (
@@ -51527,7 +51527,7 @@
 /area/station/medical/virology)
 "oeW" = (
 /obj/structure/table/glass,
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = 2
 	},
 /obj/item/stack/medical/mesh,
@@ -55847,7 +55847,7 @@
 "pjP" = (
 /obj/structure/cable,
 /obj/structure/table/glass,
-/obj/item/stack/sticky_tape/surgical,
+/obj/item/stack/medical/wrap/sticky_tape/surgical,
 /obj/item/stack/medical/bone_gel,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /obj/machinery/camera/directional/south{
@@ -64355,7 +64355,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/mob/living/simple_animal/bot/secbot/beepsky{
+/mob/living/basic/bot/secbot/beepsky{
 	desc = "Powered by the tears and sweat of laborers.";
 	name = "Prison Ofitser"
 	},
@@ -67709,7 +67709,7 @@
 /area/icemoon/underground/explored)
 "svq" = (
 /obj/structure/table/glass,
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = -2;
 	pixel_y = 8
 	},
@@ -68416,7 +68416,7 @@
 /area/station/engineering/atmos)
 "sEK" = (
 /obj/structure/table/glass,
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = 1
 	},
 /obj/item/stack/medical/mesh,
@@ -73371,7 +73371,7 @@
 "tYA" = (
 /obj/structure/cable,
 /obj/structure/table/glass,
-/obj/item/stack/sticky_tape/surgical,
+/obj/item/stack/medical/wrap/sticky_tape/surgical,
 /obj/item/stack/medical/bone_gel,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
 /turf/open/floor/iron/white,

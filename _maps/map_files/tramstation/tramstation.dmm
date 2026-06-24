@@ -1122,7 +1122,7 @@
 /turf/open/floor/iron,
 /area/station/security/courtroom)
 "adD" = (
-/mob/living/simple_animal/bot/secbot/beepsky/officer,
+/mob/living/basic/bot/secbot/beepsky/officer,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/trimline/neutral/filled/line,
 /obj/machinery/camera/directional/south{
@@ -1535,7 +1535,7 @@
 /turf/open/misc/asteroid/airless,
 /area/station/asteroid)
 "aeX" = (
-/mob/living/simple_animal/bot/secbot/beepsky/armsky,
+/mob/living/basic/bot/secbot/beepsky/armsky,
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -14660,7 +14660,7 @@
 /obj/machinery/firealarm/directional/south,
 /obj/structure/table/glass,
 /obj/item/stack/medical/mesh,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "dRY" = (
@@ -14908,7 +14908,7 @@
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/medbay/central)
 "dWi" = (
-/mob/living/simple_animal/bot/secbot/beepsky,
+/mob/living/basic/bot/secbot/beepsky,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -14997,7 +14997,7 @@
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/stack/medical/gauze{
+/obj/item/stack/medical/wrap/gauze{
 	pixel_x = 8
 	},
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -23063,7 +23063,7 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "gWx" = (
-/mob/living/simple_animal/bot/secbot/pingsky{
+/mob/living/basic/bot/secbot/pingsky{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -36225,7 +36225,7 @@
 	dir = 5
 	},
 /obj/item/stack/medical/mesh,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/structure/table/glass,
 /obj/machinery/digital_clock/directional/north,
 /turf/open/floor/iron/white,
@@ -40294,7 +40294,7 @@
 /area/station/commons/vacant_room/office)
 "mOj" = (
 /obj/structure/table/glass,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/item/stack/medical/suture,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
@@ -48936,7 +48936,7 @@
 "pUT" = (
 /obj/structure/table/glass,
 /obj/item/stack/medical/mesh,
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
@@ -50226,7 +50226,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 5
 	},
-/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/wrap/gauze,
 /obj/item/stack/medical/mesh,
 /obj/item/radio/intercom/directional/east,
 /obj/machinery/light/cold/directional/north,
