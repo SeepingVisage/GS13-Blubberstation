@@ -23811,12 +23811,12 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "gKk" = (
-/obj/item/stack/sticky_tape{
+/obj/item/stack/medical/wrap/sticky_tape{
 	pixel_x = 8;
 	pixel_y = 14
 	},
 /obj/structure/table,
-/obj/item/stack/sticky_tape{
+/obj/item/stack/medical/wrap/sticky_tape{
 	pixel_x = -4;
 	pixel_y = 11
 	},
@@ -27139,11 +27139,10 @@
 /area/station/service/kitchen)
 "hIn" = (
 /obj/structure/cable,
-/obj/item/stack/sticky_tape{
+/obj/item/stack/medical/wrap/sticky_tape{
 	pixel_x = 12;
 	pixel_y = 14
 	},
-/obj/structure/sign/poster/contraband/fake_bombable/directional/south,
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "!";
 	pixel_x = 2;
@@ -196037,7 +196036,7 @@ rKA
 rKA
 rKA
 gKk
-xUW
+tpA
 oQk
 hRj
 hRj
