@@ -147,7 +147,9 @@ GLOBAL_LIST_INIT(stomach_expanding_sounds, list(
 	var/fraction = 0.3
 	fraction = min(foodstuff.bite_consumption / owner.reagents.total_volume, 1)
 	owner.reagents.trans_to(eater, foodstuff.bite_consumption, transferred_by = feeder, methods = INGEST)
-	eater.hud_used?.hunger?.update_hunger_bar()
+	var/atom/movable/screen/hunger/hunger_bar = eater.hud_used?.screen_objects[HUD_MOB_HUNGER]
+	if (istype(hunger_bar))
+		hunger_bar.update_hunger_bar()
 	foodstuff.bitecount++
 
 	foodstuff.checkLiked(fraction, eater)

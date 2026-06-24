@@ -1,6 +1,3 @@
-/datum/bodypart_overlay/mutant/genital
-	var/layer_offset = 0
-
 /datum/bodypart_overlay/mutant/genital/bitflag_to_layer(layer)
 	. = ..()
 	. -= layer_offset

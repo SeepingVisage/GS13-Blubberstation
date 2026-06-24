@@ -10,7 +10,7 @@
 	thermic_constant = 0
 	H_ion_release = 0
 	purity_min = 0
-	reaction_flags = REACTION_INSTANT | REACTION_CLEAR_IMPURE
+	reaction_flags = REACTION_INSTANT
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_DRUG
 
 // /datum/chemical_reaction/lipolicide // why do we have this here when the regular codebase has this already???
@@ -27,7 +27,7 @@
 	thermic_constant = 0
 	H_ion_release = 0
 	purity_min = 0
-	reaction_flags = REACTION_INSTANT | REACTION_CLEAR_IMPURE
+	reaction_flags = REACTION_INSTANT
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_DRINK
 
 //ANTI-BURP / ANTI-FULLNESS CHEM
@@ -40,7 +40,7 @@
 	thermic_constant = 0
 	H_ion_release = 0
 	purity_min = 0
-	reaction_flags = REACTION_INSTANT | REACTION_CLEAR_IMPURE
+	reaction_flags = REACTION_INSTANT
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_DRINK
 
 // brap chem
@@ -53,5 +53,5 @@
 	thermic_constant = 0
 	H_ion_release = 0
 	purity_min = 0
-	reaction_flags = REACTION_INSTANT | REACTION_CLEAR_IMPURE
+	reaction_flags = REACTION_INSTANT
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_DRINK

@@ -86,7 +86,7 @@
 #define SHEATH_MODES list(SHEATH_NONE, SHEATH_NORMAL, SHEATH_SLIT)
 
 #define BUTT_MIN_SIZE 0
-#define BUTT_MAX_SIZE 8
+#define BUTT_MAX_SIZE 10	// to work with OUR butts
 
 #define BELLY_MIN_SIZE 0
 #define BELLY_MAX_SIZE 9 // 10 is in the code, but too much.

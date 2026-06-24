@@ -281,6 +281,9 @@
 
 			dmgreport += "</table></font>"
 			render_list += dmgreport // tables do not need extra linebreak
+		//GS13 EDIT START BFI/WEIGHT ON SCANNERS
+		render_list += healthscan_bfi_info(carbontarget, advanced)
+		//GS13 EDIT END
 
 	if(ishuman(target))
 		var/mob/living/carbon/human/humantarget = target
@@ -445,21 +448,6 @@
 			Possible Cure: [cure_text]</div>\
 			</span>"
 
-	//GS13 EDIT START BFI/WEIGHT ON SCANNERS
-	if(istype(carbontarget))
-		render_list += span_info("Subject weighs [carbontarget.calculate_weight_in_pounds()] pounds ([carbontarget.fatness] BFI).<br>")
-		var/substance_identity_string = "anomalous substances"
-		if (advanced)
-			substance_identity_string = "calorite"
-		if(carbontarget.micro_calorite_poisoning >= 50)
-			render_list += span_danger("WARNING! Large amounts of [substance_identity_string] detected in subject!<br>")
-		else if(carbontarget.micro_calorite_poisoning >= 30)
-			render_list += span_warning("Warning! Significant amounts of [substance_identity_string] detected in subject!<br>")
-		else if (carbontarget.micro_calorite_poisoning >= 10)
-			render_list += span_info("Small amounts of [substance_identity_string] detected in subject.<br>")
-		if (advanced && carbontarget.micro_calorite_poisoning >= 10)
-			render_list += span_info("Poisoning progress: [round(carbontarget.micro_calorite_poisoning, 0.01)]%.<br>")
-	//GS13 EDIT END
 	// Time of death
 	if(target.station_timestamp_timeofdeath && !target.appears_alive())
 		render_list += "<hr>"

@@ -54,4 +54,4 @@
 /datum/crafting_recipe/food/knife/milkmelonslice
 	reqs = list(/obj/item/food/grown/milkmelon = 1)
 	result = /obj/item/food/milkmelonslice
-	category = CAT_SALAD
+	category = DISH_SALAD
