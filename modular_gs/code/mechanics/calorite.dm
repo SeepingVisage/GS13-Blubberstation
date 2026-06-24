@@ -10,6 +10,15 @@
 	// 	MAT_CATEGORY_ITEM_MATERIAL = TRUE,
 	// 	MAT_CATEGORY_ITEM_MATERIAL_COMPLEMENTARY = TRUE,
 	// )
+	mat_properties = list(
+		MATERIAL_DENSITY = 7,
+		MATERIAL_HARDNESS = 2,
+		MATERIAL_FLEXIBILITY = 9,
+		MATERIAL_REFLECTIVITY = 2,
+		MATERIAL_ELECTRICAL = 6,
+		MATERIAL_THERMAL = 6,
+		MATERIAL_CHEMICAL = 4,
+	)
 	sheet_type = /obj/item/stack/sheet/mineral/calorite
 	ore_type = /obj/item/stack/ore/calorite
 	value_per_unit = 110 / SHEET_MATERIAL_AMOUNT

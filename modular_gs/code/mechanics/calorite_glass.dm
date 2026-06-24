@@ -54,6 +54,15 @@ GLOBAL_LIST_INIT(calorite_glass_recipes, list ( \
 	shard_type = /obj/item/shard/calorite_glass
 	// debris_type = /obj/effect/decal/cleanable/glass/calorite_glass
 	value_per_unit = 0.1
+	mat_properties = list(
+		MATERIAL_DENSITY = 6,
+		MATERIAL_HARDNESS = 3,
+		MATERIAL_FLEXIBILITY = 6,
+		MATERIAL_REFLECTIVITY = 4,
+		MATERIAL_ELECTRICAL = 4,
+		MATERIAL_THERMAL = 5,
+		MATERIAL_CHEMICAL = 5,
+	)
 	// categories = list(
 	// 	MAT_CATEGORY_RIGID=TRUE,
 	// 	// MAT_CATEGORY_BASE_RECIPES = TRUE,
