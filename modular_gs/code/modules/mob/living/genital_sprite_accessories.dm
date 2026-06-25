@@ -16,7 +16,7 @@
 
 /datum/sprite_accessory/genital/butt/pair_gs
 	icon = 'modular_gs/icons/mob/human/genitals/butt.dmi'
-	icon_state = "pair"
+	icon_state = "pair_gs"
 	name = "Pair (Gain Station)" //a pair of buns i guess
 
 // /datum/sprite_accessory/genital/belly

@@ -166,10 +166,10 @@ GLOBAL_LIST_INIT(breast_produce, list(
 	savefile_key = "max_belly_size"
 	relevant_mutant_bodypart = ORGAN_SLOT_BELLY
 	minimum = BELLY_MIN_SIZE
-	maximum = MAX_BELLY_SIZE
+	maximum = BELLY_MAX_SIZE
 
 /datum/preference/numeric/max_belly_size/create_default_value()
-	return MAX_BELLY_SIZE
+	return BELLY_MAX_SIZE
 
 /datum/preference/numeric/max_belly_size/is_accessible(datum/preferences/preferences)
 	var/passed_initial_check = ..(preferences)
@@ -214,10 +214,10 @@ GLOBAL_LIST_INIT(breast_produce, list(
 	savefile_key = "max_butt_size"
 	relevant_mutant_bodypart = ORGAN_SLOT_BUTT
 	minimum = 0
-	maximum = MAX_BUTT_SIZE
+	maximum = BUTT_MAX_SIZE
 
 /datum/preference/numeric/max_butt_size/create_default_value()
-	return MAX_BUTT_SIZE
+	return BUTT_MAX_SIZE
 
 /datum/preference/numeric/max_butt_size/is_accessible(datum/preferences/preferences)
 	var/passed_initial_check = ..(preferences)
