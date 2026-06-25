@@ -3,13 +3,7 @@
 	color = "#eb6e00"
 	// strength_modifier = 1.5
 	// integrity_modifier = 0.25
-	// categories = list(
-	// 	MAT_CATEGORY_SILO = TRUE,
-	// 	MAT_CATEGORY_RIGID=TRUE,
-	// 	// MAT_CATEGORY_BASE_RECIPES = FALSE, // doesn't seem to work :(
-	// 	MAT_CATEGORY_ITEM_MATERIAL = TRUE,
-	// 	MAT_CATEGORY_ITEM_MATERIAL_COMPLEMENTARY = TRUE,
-	// )
+	mat_flags = MATERIAL_SILO_STORED | MATERIAL_CLASS_METAL | MATERIAL_CLASS_RIGID
 	mat_properties = list(
 		MATERIAL_DENSITY = 7,
 		MATERIAL_HARDNESS = 2,
