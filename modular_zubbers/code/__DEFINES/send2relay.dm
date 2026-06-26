@@ -13,6 +13,9 @@
 #define NO_RELAY "No Relay (Direct Connect)"
 
 /client/verb/go2relay()
+	// GS13 EDIT - disables relays
+	usr << "This server does not have any relays."
+	/*
 	var/static/list/relays = list(
 		US_EAST_RELAY,
 		US_WEST_RELAY,
@@ -41,6 +44,7 @@
 		winset(usr, null, "command=.quit")
 	else
 		usr << "You didn't select a relay."
+	GS13 END EDIT */
 
 #undef US_EAST_RELAY_ADDR
 #undef US_WEST_RELAY_ADDR
