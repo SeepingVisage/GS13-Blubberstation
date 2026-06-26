@@ -156,7 +156,7 @@ Always compile, always use that verb, and always make sure that it works for wha
 	ZTRAIT_ASHSTORM = FALSE, \
 	ZTRAIT_LAVA_RUINS = FALSE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_BASETURF = /turf/open/lava/smooth/lava_land_surface)
+	ZTRAIT_BASETURF = /turf/open/misc/asteroid/basalt/lava_land_surface)
 //GS13 EDIT END
 ///Z level traits for Away Missions
 #define ZTRAITS_AWAY list(ZTRAIT_AWAY = TRUE)
