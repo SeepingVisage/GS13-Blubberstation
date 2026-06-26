@@ -4,6 +4,9 @@
 	desc = "A novelty pen with the tip made out of calorite, made to celebrate the success of Nutri-Tech! GATO is not liable for any mishandlings of this novelty item."
 	icon = 'modular_gs/icons/obj/caloritepen.dmi'
 	icon_state = "caloritepen"
+	var/poisoning_per_stab = 0.05
+	var/fat_per_stab = 0
+	var/permafat_per_stab = 0
 
 /obj/item/pen/calorite/attack(mob/living/carbon/target, mob/living/user)
     . = ..()
@@ -11,8 +14,19 @@
     if(!istype(target))
         return
 
-    target.adjust_calorite_poisoning(0.01)
+    target.adjust_calorite_poisoning(poisoning_per_stab) //like a hundred stabs will do 1% of poisoning
+	target.adjust_fatness(fat_per_stab) //both of these vars don't do anything in base form, mostly used for the syndie variant
+	target.adjust_perma(permafat_per_stab)
 
-    to_chat(user, span_notice("You prick [target] with the concealed injector."))
+    to_chat(user, span_notice("You prick [target] with the pen."))
     if(target != user)
         to_chat(target, span_warning("You feel a tiny prick."))
+
+/obj/item/pen/calorite/syndicate
+	name = "nefarious calorite pen"
+	desc = "An EVIL syndicate branded pen. Allegedly the tip is made out of galbanic-infused calorite."
+	icon = 'modular_gs/icons/obj/caloritepen.dmi'
+	icon_state = "caloritepen"
+	poisoning_per_stab = 0.5
+	fat_per_stab = 2
+	permafat_per_stab = 10
