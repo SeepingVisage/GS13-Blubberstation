@@ -27154,10 +27154,6 @@
 	pixel_x = 8;
 	pixel_y = 3
 	},
-/obj/item/food/pizza{
-	pixel_x = -12;
-	pixel_y = 9
-	},
 /obj/item/reagent_containers/cup/bigbottle/cola{
 	pixel_x = 2;
 	pixel_y = 5
@@ -30641,10 +30637,6 @@
 /area/lavaland/underground/xenoarch/calorite_temple)
 "vUk" = (
 /obj/structure/bed/double,
-/obj/item/food/pizzaslice{
-	pixel_x = -5;
-	pixel_y = 6
-	},
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/gym)
 "vUm" = (
