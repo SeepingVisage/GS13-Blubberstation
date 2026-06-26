@@ -42,6 +42,8 @@
 						"nullspace_industries",
 						"silveenom",
 						"killmewitha22",
+						"ffsoul",
+						"icepick200",
 						)
 
 /datum/loadout_item/accessory/medal/coder_badge //badge for coders who worked on the codebase at least a few times
