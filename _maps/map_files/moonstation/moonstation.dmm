@@ -43734,7 +43734,9 @@
 /obj/machinery/conveyor{
 	id = "mining"
 	},
-/obj/machinery/bouldertech/refinery/smelter,
+/obj/machinery/bouldertech/refinery/smelter{
+	dir = 1
+	},
 /obj/structure/railing{
 	dir = 8
 	},
@@ -77909,7 +77911,9 @@
 	id = "mining";
 	dir = 4
 	},
-/obj/machinery/bouldertech/refinery,
+/obj/machinery/bouldertech/refinery{
+	dir = 4
+	},
 /obj/structure/railing,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/pod,

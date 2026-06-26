@@ -46626,7 +46626,9 @@
 	dir = 8;
 	id = "boulderbelt"
 	},
-/obj/machinery/bouldertech/refinery/smelter,
+/obj/machinery/bouldertech/refinery/smelter{
+	dir = 8
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/miningdock)
 "hgd" = (
@@ -47772,7 +47774,9 @@
 	dir = 10;
 	id = "boulderbelt"
 	},
-/obj/machinery/bouldertech/refinery,
+/obj/machinery/bouldertech/refinery{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/miningdock)
 "hGz" = (

@@ -8285,7 +8285,9 @@
 /obj/machinery/conveyor{
 	id = "mining_internal"
 	},
-/obj/machinery/bouldertech/refinery,
+/obj/machinery/bouldertech/refinery{
+	dir = 1
+	},
 /obj/machinery/camera/directional/east{
 	c_tag = "Mining Ore Smeltery";
 	network = list("ss13", "mine")
@@ -23016,7 +23018,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/bouldertech/refinery/smelter,
+/obj/machinery/bouldertech/refinery/smelter{
+	dir = 8
+	},
 /turf/open/floor/iron,
 /area/mine/production)
 "gks" = (

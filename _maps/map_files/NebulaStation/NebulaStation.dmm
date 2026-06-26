@@ -683,19 +683,6 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/bamboo,
 /area/station/maintenance/starboard/central)
-"afs" = (
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/bookcase/random/reference,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/item/toy/figure/psychologist{
-	pixel_x = 7;
-	pixel_y = 18
-	},
-/turf/open/floor/wood/parquet,
-/area/station/medical/psychology)
 "aft" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark{
 	dir = 6
@@ -10132,21 +10119,6 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/station/security/armory)
-"bBh" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/structure/chair/office/light,
-/obj/effect/turf_decal/siding/wood,
-/obj/structure/noticeboard/directional/north{
-	dir = 2
-	},
-/obj/effect/landmark/start/psychologist,
-/obj/machinery/door/airlock/medical{
-	name = "Psychology Lobby"
-	},
-/turf/open/floor/wood/parquet,
-/area/station/medical/psychology)
 "bBl" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 8
@@ -62518,17 +62490,6 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /turf/open/space/basic,
 /area/space/nearstation)
-"jnm" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/structure/sign/warning/vacuum/external/directional/south,
-/obj/machinery/light/small/directional/south,
-/obj/structure/chair/sofa/bench/solo{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/station/engineering/main)
 "jnt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/stool/bar/directional/west,
@@ -64135,7 +64096,9 @@
 	dir = 8;
 	id = "mining"
 	},
-/obj/machinery/bouldertech/refinery/smelter,
+/obj/machinery/bouldertech/refinery/smelter{
+	dir = 8
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/miningoffice)
 "jzZ" = (
@@ -64852,18 +64815,6 @@
 /obj/machinery/holopad,
 /turf/open/floor/carpet/purple,
 /area/station/commons/dorms)
-"jDO" = (
-/obj/machinery/door/airlock/medical{
-	name = "Psychology"
-	},
-/obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/mapping_helpers/airlock/access/all/medical/psychology,
-/obj/structure/cable,
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/white,
-/area/station/medical/psychology)
 "jEa" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/door/window/right/directional/south{
@@ -86090,7 +86041,9 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/machinery/bouldertech/refinery,
+/obj/machinery/bouldertech/refinery{
+	dir = 1
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/miningoffice)
 "mOJ" = (
@@ -86734,26 +86687,6 @@
 	},
 /turf/open/floor/iron/dark/airless,
 /area/station/science/ordnance/freezerchamber)
-"mTe" = (
-/obj/structure/table/wood,
-/obj/structure/window/reinforced/spawner/directional/south,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/machinery/fax{
-	fax_name = "Psychology Office";
-	name = "Psychology Office Fax Machine"
-	},
-/obj/item/book/manual/wiki/medicine{
-	page_link = "Psychologist";
-	name = "Brain System"
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/wood/parquet,
-/area/station/medical/psychology)
 "mTg" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/sign/poster/random/directional/east,
@@ -138319,17 +138252,6 @@
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/iron/dark,
 /area/station/security/brig)
-"uAu" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/iron/dark/small,
-/area/station/engineering/main)
-"uAz" = (
-/obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/engine,
-/area/station/science/xenobiology)
 "uAA" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
