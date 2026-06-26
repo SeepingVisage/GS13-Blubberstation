@@ -13001,6 +13001,13 @@
 	},
 /turf/open/floor/glass/reinforced,
 /area/lavaland/underground/xenoarch/caloriteresearch)
+"jyQ" = (
+/obj/machinery/atmospherics/components/tank/air/layer4{
+	open_ports = 2
+	},
+/obj/effect/turf_decal/tile/neutral/full,
+/turf/open/floor/iron/dark/textured_large,
+/area/mine/xenoarch/engineering)
 "jyV" = (
 /obj/structure/railing/corner/end{
 	dir = 8;
@@ -23965,6 +23972,10 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1;
 	alpha = 120
+	},
+/obj/machinery/airalarm{
+	name = "Xenoarch science hallway air alarm";
+	pixel_y = 24
 	},
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
@@ -111248,7 +111259,7 @@ ycz
 gNx
 cix
 oVc
-eke
+jyQ
 dMT
 cNS
 xed
