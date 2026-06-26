@@ -9,18 +9,18 @@
 	var/permafat_per_stab = 0
 
 /obj/item/pen/calorite/attack(mob/living/carbon/target, mob/living/user)
-    . = ..()
+	. = ..()
 
-    if(!istype(target))
-        return
+	if(!istype(target))
+		return
 
-    target.adjust_calorite_poisoning(poisoning_per_stab) //like a hundred stabs will do 1% of poisoning
+	target.adjust_calorite_poisoning(poisoning_per_stab) //like a hundred stabs will do 1% of poisoning
 	target.adjust_fatness(fat_per_stab) //both of these vars don't do anything in base form, mostly used for the syndie variant
 	target.adjust_perma(permafat_per_stab)
 
-    to_chat(user, span_notice("You prick [target] with the pen."))
-    if(target != user)
-        to_chat(target, span_warning("You feel a tiny prick."))
+	to_chat(user, span_notice("You prick [target] with the pen."))
+	if(target != user)
+		to_chat(target, span_warning("You feel a tiny prick."))
 
 /obj/item/pen/calorite/syndicate
 	name = "nefarious calorite pen"
