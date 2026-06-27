@@ -11,3 +11,9 @@
 	mappath = "modular_gs/code/modules/condos/_maps/feeder_basement.dmm"
 	landing_zone_x_offset = 1
 	landing_zone_y_offset = 18
+
+/datum/map_template/condo/caloriteshrine
+	name = "GS13 Condo - Calorite Shrine"
+	mappath = "modular_gs/code/modules/condos/_maps/calorite_shrine.dmm"
+	landing_zone_x_offset = 10
+	landing_zone_y_offset = 2
