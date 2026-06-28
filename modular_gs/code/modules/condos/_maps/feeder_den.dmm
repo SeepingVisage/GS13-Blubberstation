@@ -79,6 +79,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/misc/condo)
+"aK" = (
+/obj/structure/flora/rock/pile,
+/turf/open/misc/asteroid,
+/area/misc/condo)
 "aQ" = (
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
@@ -251,7 +255,7 @@
 	},
 /obj/item/lighter{
 	pixel_x = 3;
-	pixel_y = -12
+	pixel_y = -16
 	},
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 8
@@ -262,6 +266,10 @@
 /obj/item/flashlight/lamp{
 	pixel_x = -6;
 	pixel_y = 9
+	},
+/obj/item/door_remote/omni{
+	pixel_x = 11;
+	pixel_y = -4
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/misc/condo)
@@ -332,7 +340,6 @@
 /turf/closed/wall/r_wall/plastitanium/syndicate,
 /area/misc/condo)
 "cT" = (
-/obj/machinery/computer/security/telescreen/entertainment,
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal,
 /area/misc/condo)
@@ -385,6 +392,10 @@
 	pixel_y = 7
 	},
 /turf/open/floor/carpet/red,
+/area/misc/condo)
+"dJ" = (
+/obj/structure/flora/bush/grassy,
+/turf/open/misc/asteroid,
 /area/misc/condo)
 "dR" = (
 /obj/effect/turf_decal/stripes/line{
@@ -889,7 +900,7 @@
 /area/misc/condo)
 "iO" = (
 /obj/structure/falsewall/plastitanium,
-/obj/structure/fans/tiny/invisible,
+/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/misc/condo)
 "jj" = (
@@ -1418,6 +1429,7 @@
 	pixel_x = 3;
 	pixel_y = -6
 	},
+/obj/structure/sign/poster/official/waddle/directional/north,
 /turf/open/floor/carpet/red,
 /area/misc/condo)
 "oB" = (
@@ -1955,6 +1967,12 @@
 	dir = 5
 	},
 /obj/structure/table/reinforced/plastitaniumglass,
+/obj/effect/turf_decal/tile/neutral/half{
+	alpha = 255;
+	color = "#5d341f";
+	dir = 4;
+	use_holiday_colors = 0
+	},
 /turf/open/floor/wood/tile,
 /area/misc/condo)
 "sl" = (
@@ -2050,11 +2068,6 @@
 	},
 /obj/effect/turf_decal/siding/wideplating_new/dark,
 /obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/tile/neutral/half{
-	alpha = 255;
-	color = "#5d341f";
-	dir = 2
-	},
 /turf/open/floor/wood/tile,
 /area/misc/condo)
 "tn" = (
@@ -2426,7 +2439,6 @@
 "yi" = (
 /obj/item/trash/boritos,
 /obj/machinery/light/directional/north,
-/obj/structure/sign/poster/official/waddle/directional/north,
 /turf/open/floor/carpet/red,
 /area/misc/condo)
 "yq" = (
@@ -2628,6 +2640,7 @@
 /obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 4
 	},
+/obj/structure/sign/poster/contraband/chefpropaganda/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/misc/condo)
 "Af" = (
@@ -2854,6 +2867,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/misc/condo)
 "Ci" = (
@@ -2903,6 +2917,12 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral/half{
+	alpha = 255;
+	color = "#5d341f";
+	dir = 8;
+	use_holiday_colors = 0
 	},
 /turf/open/floor/wood/tile,
 /area/misc/condo)
@@ -3443,6 +3463,12 @@
 	dir = 9
 	},
 /obj/structure/table/reinforced/plastitaniumglass,
+/obj/effect/turf_decal/tile/neutral/half{
+	alpha = 255;
+	color = "#5d341f";
+	dir = 8;
+	use_holiday_colors = 0
+	},
 /turf/open/floor/wood/tile,
 /area/misc/condo)
 "Is" = (
@@ -3620,16 +3646,6 @@
 	dir = 1
 	},
 /turf/open/floor/iron/white/textured,
-/area/misc/condo)
-"Kl" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark,
-/obj/effect/turf_decal/siding/wood,
-/obj/effect/turf_decal/tile/neutral/half{
-	alpha = 255;
-	color = "#5d341f";
-	dir = 2
-	},
-/turf/open/floor/wood/tile,
 /area/misc/condo)
 "Kw" = (
 /obj/structure/disposalpipe/segment{
@@ -3960,7 +3976,7 @@
 /area/misc/condo)
 "Nc" = (
 /obj/item/screwdriver,
-/turf/open/misc/asteroid/airless,
+/turf/open/misc/asteroid,
 /area/misc/condo)
 "Nd" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -3991,15 +4007,7 @@
 /turf/open/floor/plating,
 /area/misc/condo)
 "Nf" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/trimline/dark_red/line,
-/obj/structure/sign/poster/contraband/chefpropaganda/directional/south,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/misc/asteroid,
 /area/misc/condo)
 "Nh" = (
 /obj/structure/cable,
@@ -4729,9 +4737,6 @@
 /obj/machinery/vending/mealdor{
 	free = 1
 	},
-/obj/machinery/light_switch{
-	pixel_y = 28
-	},
 /turf/open/floor/wood/tile,
 /area/misc/condo)
 "UU" = (
@@ -4842,7 +4847,7 @@
 /area/misc/condo)
 "Wh" = (
 /obj/structure/flora/bush/jungle,
-/turf/open/misc/asteroid/airless,
+/turf/open/misc/asteroid,
 /area/misc/condo)
 "Wk" = (
 /obj/structure/reagent_dispensers/servingdish{
@@ -4891,7 +4896,7 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/east,
+/obj/machinery/computer/cryopod/directional/east,
 /turf/open/floor/iron/dark/textured_large,
 /area/misc/condo)
 "WI" = (
@@ -5057,6 +5062,7 @@
 	},
 /obj/effect/turf_decal/siding/dark/corner,
 /obj/effect/turf_decal/bot,
+/obj/item/disk/design_disk/advanced_parts,
 /turf/open/floor/pod/dark,
 /area/misc/condo)
 "XY" = (
@@ -5066,11 +5072,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/safe/abovetilefloor,
-/obj/item/stack/sheet/mineral/calorite/ten,
-/obj/item/stack/sheet/mineral/calorite/ten,
-/obj/item/stack/sheet/mineral/calorite/ten,
 /obj/structure/sign/flag/syndicate/directional/south,
+/obj/machinery/vending/wardrobe/syndie_wardrobe/ghost_cafe,
 /turf/open/floor/wood/tile,
 /area/misc/condo)
 "Ya" = (
@@ -5100,6 +5103,12 @@
 	dir = 4
 	},
 /obj/item/trash/pistachios,
+/obj/effect/turf_decal/tile/neutral/half{
+	alpha = 255;
+	color = "#5d341f";
+	dir = 4;
+	use_holiday_colors = 0
+	},
 /turf/open/floor/wood/tile,
 /area/misc/condo)
 "Ys" = (
@@ -5296,7 +5305,7 @@
 /area/misc/condo)
 "ZW" = (
 /obj/item/radio,
-/turf/open/misc/asteroid/airless,
+/turf/open/misc/asteroid,
 /area/misc/condo)
 
 (1,1,1) = {"
@@ -5511,7 +5520,7 @@ Ni
 Ni
 Ni
 Ni
-eQ
+aK
 VD
 oZ
 hB
@@ -5545,7 +5554,7 @@ Ni
 Ni
 Ni
 Nc
-zB
+Nf
 VD
 yi
 mL
@@ -5578,7 +5587,7 @@ Ni
 Ni
 Ni
 Ni
-zB
+Nf
 SD
 iO
 oz
@@ -5612,8 +5621,8 @@ Ni
 Ni
 Ni
 Ni
-oO
-zB
+dJ
+Nf
 VD
 fv
 At
@@ -5646,7 +5655,7 @@ rp
 Ni
 Ni
 Ni
-eQ
+aK
 ZW
 rB
 VD
@@ -6091,7 +6100,7 @@ Nd
 sg
 Yn
 gI
-Kl
+lZ
 EW
 VD
 lM
@@ -6125,7 +6134,7 @@ FP
 Xw
 Jh
 xj
-Kl
+lZ
 vb
 uT
 Ly
@@ -6193,7 +6202,7 @@ Cu
 eo
 NG
 mb
-Kl
+lZ
 Vu
 uT
 GO
@@ -6227,7 +6236,7 @@ Nd
 Ih
 Cs
 pA
-Kl
+lZ
 El
 VD
 ZT
@@ -6301,7 +6310,7 @@ qy
 qy
 lZ
 Is
-Nf
+Em
 rB
 Gc
 cC
