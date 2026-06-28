@@ -28,11 +28,6 @@
 	var/mod_butt_rec					//^^^ for butt
 	var/mod_belly_rec					//^^^ for belly
 
-/mob/living/carbon/human/doUnEquip(obj/item/item_dropping, force, newloc, no_move, invdrop = TRUE, silent = FALSE)
-	. = ..()
-	if(ispath(item_dropping.type, /obj/item/clothing))
-		update_body()
-
 //General condition for activating modular sprites for an item.
 //When equipped to that item's appropriate slot, if the item has modular icons then initialize it as a modular item
 /obj/item/equipped(mob/user, slot)
@@ -40,17 +35,11 @@
 		add_modular_item(user)
 	..()
 
-/obj/item/clothing/equipped(mob/user, slot)
-	. = ..()
-	if (iscarbon(user))
-		var/mob/living/carbon/humie = user
-		humie.update_body()
-
 //General condition for deactivating modular sprites for an item.
 //When dropped. And/or moved to another slot, works together with equipped checking the approporiate slot
 /obj/item/dropped(mob/user)
-	remove_modular_item(user)
 	..()
+	remove_modular_item(user)
 
 //Initialize a modular item by resetting any recorded sprite names and force a sprite update
 /obj/item/proc/add_modular_item(mob/user)
@@ -71,7 +60,9 @@
 
 //The meat of the system, checks the genitals, compares to recorded size and request
 //the sprites if new ones are needed
-/obj/item/proc/update_modular_overlays(mob/user, force_update = FALSE)
+/obj/item/proc/update_modular_overlays(mob/user)
+	if(modular_icon_location == null)
+		return
 	if(!iscarbon(user))
 		return
 	var/mob/living/carbon/U = user
@@ -104,7 +95,7 @@
 			if(breasts != mod_breasts_rec)
 				mod_breasts_rec = breasts
 				build_modular = TRUE
-	if(!build_modular && !force_update)	//Stop early if no new sprites are needed UPDATE: unless we force it
+	if(!build_modular)	//Stop early if no new sprites are needed UPDATE: unless we force it
 		return
 	delete_modular_overlays(U)	//Delete the old sprites
 
@@ -124,7 +115,6 @@
 			add_modular_overlay(U, mod_breasts_rec, MODULAR_BREASTS_LAYER, greyscale_colors, ORGAN_SLOT_BREASTS)
 			add_modular_overlay(U, "[mod_breasts_rec]_NORTH", BREASTS_BEHIND_LAYER, greyscale_colors, ORGAN_SLOT_BREASTS)
 			add_modular_overlay(U, "[mod_breasts_rec]_SOUTH", BREASTS_FRONT_LAYER, greyscale_colors, ORGAN_SLOT_BREASTS)
-	U.update_body()
 
 //Remove the previously built modular sprite overlays and empty the list of tracked overlays
 /obj/item/proc/delete_modular_overlays(mob/user)

@@ -842,93 +842,97 @@ GLOBAL_LIST_INIT(human_heights_to_offsets, list(
 #define HAIR_LAYER 8
 	/// Special layer for rendering beneath hair, for special facemasks
 	#define BENEATH_HAIR_LAYER 8.1
-	// GS13 EDIT
-	/// Modular Clothes Layer
-	#define BELLY_FRONT_LAYER		8.2
-	/// Modular Clothes Layer
-	#define BREASTS_FRONT_LAYER		8.3
-	/// Modular Clothes Layer
-	#define BUTT_BEHIND_LAYER		8.4
-	// GS13 END EDIT
+// GS13 EDIT
+/// Modular clothing layer
+#define MODULAR_CLOTHING_LAYER 9
+/// Modular Clothes Layer
+#define BREASTS_FRONT_LAYER		9.1
+/// Modular Clothes Layer
+#define BELLY_FRONT_LAYER		9.2
+/// Modular Clothes Layer
+#define BUTT_BEHIND_LAYER		9.3
+// GS13 END EDIT
 /// Back layer (for backpacks and equipment on your back)
-#define BACK_LAYER 9
+#define BACK_LAYER 10	// GS13 EDIT, original: 9
 /// Neck layer (for wearing capes and bedsheets)
-#define NECK_LAYER 10
+#define NECK_LAYER 11	// GS13 EDIT, original: 10
 /// Suit storage layer (tucking a gun or baton underneath your armor)
-#define SUIT_STORE_LAYER 11
-	// GS13 EDIT
-	/// Modular Clothes Belly side layer
-	#define MODULAR_BELLY_LAYER		11.1
-	/// Modular Clothes Breasts side layer
-	#define MODULAR_BREASTS_LAYER	11.2
-	/// Modular Clothes Butt side layer
-	#define MODULAR_BUTT_LAYER		11.3
-	// GS13 END EDIT
+#define SUIT_STORE_LAYER 12	// GS13 EDIT, original: 11
+// GS13 EDIT
+/// Modular clothing secondary layer
+#define MODULAR_CLOTHING_SECONDARY 13
+/// Modular Clothes Butt side layer
+#define MODULAR_BUTT_LAYER		13.1
+/// Modular Clothes Breasts side layer
+#define MODULAR_BREASTS_LAYER	13.2
+/// Modular Clothes Belly side layer
+#define MODULAR_BELLY_LAYER		13.3
+// GS13 END EDIT
 /// Belt layer
-#define BELT_LAYER 12 //Possible make this an overlay of something required to wear a belt?
+#define BELT_LAYER 14 //Possible make this an overlay of something required to wear a belt?	// GS13 EDIT, original: 12
 /// Glasses layer
-#define GLASSES_LAYER 13
+#define GLASSES_LAYER 15	// GS13 EDIT, original: 13
 /// Suit layer (armor, coats, etc.)
-#define SUIT_LAYER 14
+#define SUIT_LAYER 16	// GS13 EDIT, original: 14
 	/// The layer underneath the suit
-	#define UNDER_SUIT_LAYER 14.1
+	#define UNDER_SUIT_LAYER 16.1	// GS13 EDIT, original: 14.1
 	/// Layer for neck apperal that should appear below the suit slot (like neckties)
-	#define LOW_NECK_LAYER 14.2
+	#define LOW_NECK_LAYER 16.2	// GS13 EDIT, original: 14.2
 /// Ears layer (Spessmen have ears? Wow)
-#define EARS_LAYER 15
+#define EARS_LAYER 17	// GS13 EDIT, original: 15
 	/// Layer for masks that are worn below ears and eyes (like Balaclavas) (layers below hair, use flagsinv=HIDEHAIR as needed)
-	#define LOW_FACEMASK_LAYER 15.1
+	#define LOW_FACEMASK_LAYER 17.1	// GS13 EDIT, original: 15.1
 	/// The layer above shoes
-	#define ABOVE_SHOES_LAYER 15.9
+	#define ABOVE_SHOES_LAYER 17.9	// GS13 EDIT, original: 15.9
 /// Shoes layer
-#define SHOES_LAYER 16
+#define SHOES_LAYER 18	// GS13 EDIT, original: 16
 /// Gloves layer
-#define GLOVES_LAYER 17
+#define GLOVES_LAYER 19	// GS13 EDIT, original: 17
 	/// Layer for bodyparts that should appear above every other bodypart - Currently only used for hands
-	#define BODYPARTS_HIGH_LAYER 17.5
+	#define BODYPARTS_HIGH_LAYER 19.5	// GS13 EDIT, original: 17.5
 /// ID card layer
-#define ID_LAYER 18
+#define ID_LAYER 20	// GS13 EDIT, original: 18
 // BUBBER EDIT ADDITION BEGIN
-#define BANDAGE_LAYER 19
-#define NIPPLES_LAYER 20
-#define PENIS_LAYER 21
-#define VAGINA_LAYER 22
-#define ANUS_LAYER 23
+#define BANDAGE_LAYER 21	// GS13 EDIT, original: 19
+#define NIPPLES_LAYER 22	// GS13 EDIT, original: 20
+#define PENIS_LAYER 23	// GS13 EDIT, original: 21
+#define VAGINA_LAYER 24	// GS13 EDIT, original: 22
+#define ANUS_LAYER 25	// GS13 EDIT, original: 23
 // BUBBER EDIT ADDITION END
 /// Jumpsuit clothing layer
-#define UNIFORM_LAYER 24
+#define UNIFORM_LAYER 26	// GS13 EDIT, original: 24
 	/// The layer underneath the uniform
-	#define UNDER_UNIFORM_LAYER 24.1
+	#define UNDER_UNIFORM_LAYER 26.1	// GS13 EDIT, original: 24.1
 // BUBBER EDIT ADDITION BEGIN
 /// This layer is used for things that shouldn't be over clothes, but should be over mutations
-#define BODY_FRONT_UNDER_CLOTHES 25
+#define BODY_FRONT_UNDER_CLOTHES 27	// GS13 EDIT, original: 25
 // BUBBER EDIT ADDITION END
 /// Damage indicators (cuts and burns)
-#define DAMAGE_LAYER 26
+#define DAMAGE_LAYER 28	// GS13 EDIT, original: 26
 	/// Mutations that should appear above everything else (e.g. laser eyes)
-	#define FRONT_MUTATIONS_LAYER 26.9
+	#define FRONT_MUTATIONS_LAYER 28.9	// GS13 EDIT, original: 26.9
 /// Eyes and eyelids
-#define EYES_LAYER 27
+#define EYES_LAYER 29	// GS13 EDIT, original: 27
 /// Underwear, undershirts, socks
-#define BODY_LAYER 28
+#define BODY_LAYER 30	// GS13 EDIT, original: 28
 	/// Mutantrace features (snout, body markings) that must appear above the body parts
-	#define BODY_ADJ_LAYER 28.9
+	#define BODY_ADJ_LAYER 30.9	// GS13 EDIT, original: 28.9
 /// Layer for most bodyparts, appears above BODYPARTS_LOW_LAYER and below BODYPARTS_HIGH_LAYER
-#define BODYPARTS_LAYER 29
+#define BODYPARTS_LAYER 31	// GS13 EDIT, original: 29
 	/// Layer for bodyparts that should appear behind every other bodypart - Mostly, legs when facing WEST or EAST
-	#define BODYPARTS_LOW_LAYER 29.1
+	#define BODYPARTS_LOW_LAYER 31.1	// GS13 EDIT, original: 29.1
 	/// Mutantrace features (tail when looking south) that must appear behind the body parts
-	#define BODY_BEHIND_LAYER 29.2
-	// GS13 EDIT
-	/// Modular clothes layer for breasts viewed from behind
-	#define BREASTS_BEHIND_LAYER	29.3
-	// GS13 END EDIT
+	#define BODY_BEHIND_LAYER 31.2	// GS13 EDIT, original: 29.2
 	/// Mutations layer - Tk headglows, cold resistance glow, etc. Very bottom of the mob
-	#define MUTATIONS_LAYER 29.9
+	#define MUTATIONS_LAYER 31.9	// GS13 EDIT, original: 29.9
+// GS13 EDIT
+/// Modular clothes layer for breasts viewed from behind
+#define BREASTS_BEHIND_LAYER	32
+// GS13 END EDIT
 /// Total number of standing overlays.
 /// KEEP THIS UP-TO-DATE OR SHIT WILL BREAK.
 /// (You ONLY need to update this if you add a standing overlay, adding an integer.)
-#define TOTAL_LAYERS 29
+#define TOTAL_LAYERS 32	// GS13 EDIT, original: 29
 
 #define UPPER_BODY "upper body"
 #define LOWER_BODY "lower body"

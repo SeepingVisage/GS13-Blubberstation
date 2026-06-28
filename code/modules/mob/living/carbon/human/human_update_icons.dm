@@ -78,7 +78,6 @@ There are several things that need to be remembered:
 
 	if(istype(w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/uniform = w_uniform
-		w_uniform.update_modular_overlays(src, TRUE) 		// GS13 EDIT - force modular sprite update
 		if(HAS_TRAIT(uniform, TRAIT_NO_WORN_ICON) || (obscured_slots & HIDEJUMPSUIT))
 			return
 
