@@ -16,6 +16,8 @@ export function NifSettings() {
     stored_points,
     default_examine_text,
     current_examine_text,
+    fatness,
+    fat_drain,
   } = data;
 
   return (
@@ -54,6 +56,17 @@ export function NifSettings() {
           {!nutrition_drain
             ? 'Nutrition Drain Disabled'
             : 'Nutrition Drain Enabled'}
+        </Button>
+      </LabeledList.Item>
+      <LabeledList.Item label="Fat Drain">
+        <Button
+          fluid
+          content={fat_drain === 0 ? 'Fat Drain Disabled' : 'Fat Drain Enabled'}
+          tooltip="Toggles the ability for the NIF to generate power by consuming fat."
+          onClick={() => act('toggle_fatness_drain')}
+          disabled={fatness < 6}
+        >
+          {fat_drain === 0 ? 'Fat Drain Disabled' : 'Fat Drain Enabled'}
         </Button>
       </LabeledList.Item>
       <LabeledList.Item

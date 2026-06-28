@@ -26,6 +26,9 @@ export function NifStats() {
             <NifBloodBar />
           </LabeledList.Item>
         )}
+        <LabeledList.Item label="User BFI">
+          <NifFatBar />
+        </LabeledList.Item>
       </LabeledList>
     </Box>
   );
@@ -104,3 +107,22 @@ export function NifBloodBar() {
     />
   );
 }
+
+const NifFatBar = (props) => {
+  const { act, data } = useBackend();
+  const { fatness, fatness_total } = data;
+  return (
+    <ProgressBar
+      value={fatness_total}
+      minValue={0}
+      maxValue={3500}
+      ranges={{
+        bad: [2540, Infinity],
+        average: [440, 2540],
+        good: [0, 440],
+      }}
+    >
+      {fatness_total} ({fatness} usable)
+    </ProgressBar>
+  );
+};
