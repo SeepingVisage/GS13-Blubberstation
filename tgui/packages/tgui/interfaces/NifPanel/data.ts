@@ -26,6 +26,10 @@ export type NifPanelData = {
   minimum_blood_level: number;
   durability: number;
   current_examine_text?: string;
+  // GS13 Variables
+  fatness: number;
+  fatness_total: number;
+  fat_drain: number;
 
   loaded_nifsofts: NifProgramData[];
   ui_themes: string[];
