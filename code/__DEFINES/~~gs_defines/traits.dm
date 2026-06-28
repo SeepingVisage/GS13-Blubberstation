@@ -92,3 +92,9 @@
 #define COSGLOW_THICKNESS_MIN 1
 #define COSGLOW_THICKNESS_MAX 3
 #define COSGLOW_THICKNESS_DEFAULT 2
+
+// fatty quirks
+#define FAT_AFFINITY_COOLDOWN				"fatty_examine"
+#define FAT_AFFINITY_ACTIVATION_COOLDOWN	"same_fatty_cooldown"
+#define PLEASANTLY_SOFT_COOLDOWN			"pleasantly_soft_examine"
+#define FAT_AVERSION_COOLDOWN				"fat_aversion"

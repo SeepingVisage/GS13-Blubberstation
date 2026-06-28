@@ -112,3 +112,8 @@
 	if(lit)
 		particles = new /particles/smoke/steam/mild
 		particles.position = list(0, 6, 0)
+
+#undef INCENSE_TEMP
+#undef WOOD_FUEL
+#undef PAPER_FUEL
+#undef MAX_FUEL

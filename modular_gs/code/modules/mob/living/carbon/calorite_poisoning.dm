@@ -95,3 +95,7 @@
 	variable = FALSE
 	conflicts_with = CALORITE_POISONING
 	multiplicative_slowdown = 0.6
+
+#undef CALORITE_POISONING
+#undef CALORITE_HUNGER
+#undef CALORITE_STARVATION

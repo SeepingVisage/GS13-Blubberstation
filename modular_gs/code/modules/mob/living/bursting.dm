@@ -1,6 +1,3 @@
-#define COMSIG_LIVING_BURSTING_TRANSFORM_SIGNAL "signal_living_bursting_transformation" ///Signal that bursting is doing transforms to the player
-#define COMSIG_LIVING_BURSTING_BURST "signal_living_bursting_burst" ///Signal that the player has burst and is having transforms done
-
 #define BURSTING_FULLNESS_MIN_THRESHOLD FULLNESS_LEVEL_BLOATED ///Minimum fullness threshold for doing any fullness related messages or code
 #define BURSTING_FATNESS_MIN_THRESHOLD 0.4 ///Remaining percentage of the total fatness capacity needed before doing messages or code
 #define BURSTING_BUFFER_REDUCTION 150 ///How much additional fatness is removed past the threshold as a buffer
@@ -385,6 +382,8 @@
 
 #undef BURSTING_PREF_DISABLED
 #undef BURSTING_PREF_SAFE
+#undef BURSTING_PREF_INJURE
+#undef BURSTING_PREF_CRIT
 #undef BURSTING_PREF_FATAL
 #undef BURSTING_PREF_PERMA_FATAL
 
@@ -405,3 +404,5 @@
 #undef BURSTING_FLAVOR_SUPEROBESE
 #undef BURSTING_FLAVOR_EXTREMELYDOUGHY
 #undef BURSTING_FLAVOR_OVERWHELMING_FATNESS
+
+#undef BURSTING_MACRO_CHECK_THRESHOLD

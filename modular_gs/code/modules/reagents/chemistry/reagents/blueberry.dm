@@ -361,11 +361,24 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 /datum/effect_system/fluid_spread/smoke/blueberry
 	effect_type = /obj/effect/particle_effect/fluid/smoke/blueberry
 
-// /obj/item/food/meat/steak/troll
-// 	name = "Troll steak"
-// 	desc = "In its sliced state it remains dormant, but once the troll meat comes in contact with stomach acids, it begins a perpetual cycle of constant regrowth and digestion. You probably shouldn't eat this."
-// 	var/hunger_threshold = NUTRITION_LEVEL_FULL
-// 	var/nutrition_amount = 20 // somewhere around 5 pounds
-// 	var/fullness_to_add = 10
-// 	var/message = "<span class='notice'>You feel fuller...</span>" // GS13
-
+#undef BLUEBERRY_INFLATION_VOLUME
+#undef BURST_IMMEDIATELY
+#undef BURST_DELAY
+#undef BURST_CONFIRM
+#undef BURST_ABORT
+#undef BURST_DELAY_SECONDS
+#undef BURST_TIME_TO_BURST
+#undef BLUEBERRY_SPILL_BELLY
+#undef BLUEBERRY_SPILL_PENIS
+#undef BLUEBERRY_SPILL_VAGINA
+#undef BLUEBERRY_SPILL_BREASTS
+#undef BLUEBERRY_SPILL_GENERIC
+#undef BLUEBERRY_SPLASH_BELLY
+#undef BLUEBERRY_SPLASH_PENIS
+#undef BLUEBERRY_SPLASH_VAGINA
+#undef BLUEBERRY_SPLASH_BREASTS
+#undef BLUEBERRY_SPLASH_GENERIC
+#undef BLUEBERRY_SPLASH_AMOUNT_PERCENTAGE
+#undef BLUEBERRY_SPLASH_AMOUNT_MAX
+#undef BLUEBERRY_BURST_SPLASH_RANGE
+#undef BLUEBBERY_BURST_SOUND

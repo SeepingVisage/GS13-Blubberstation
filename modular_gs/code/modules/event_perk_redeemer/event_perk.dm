@@ -454,5 +454,6 @@ ADMIN_VERB(event_perk_manager, R_ADMIN, "Event Perk Manager", "Create a new Even
 
 	update_static_data(usr)
 
+#undef EVENT_PERK_JSON_FOLDER
 #undef CAN_REDEEM
 #undef CAN_NOT_REDEEM

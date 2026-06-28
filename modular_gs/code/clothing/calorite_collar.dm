@@ -85,3 +85,5 @@
 	time = 25 SECONDS
 	category = CAT_CLOTHING
 	crafting_flags = CRAFT_SKIP_MATERIALS_PARITY
+
+#undef WEIGHT_GAIN_MODIFIER_COLLAR

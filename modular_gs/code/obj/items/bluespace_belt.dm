@@ -250,3 +250,6 @@
 
 /obj/item/bluespace_belt/primitive/ui_interact(mob/user, datum/tgui/ui)
 	return
+
+#undef MODE_HIDE_AMOUNT
+#undef MODE_SHOW_AMOUNT
