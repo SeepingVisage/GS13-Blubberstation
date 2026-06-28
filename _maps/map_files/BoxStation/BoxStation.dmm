@@ -19508,7 +19508,7 @@
 	location = "QM #1"
 	},
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/bot/mulebot,
+/mob/living/basic/bot/mulebot,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
 "brO" = (
@@ -20883,7 +20883,7 @@
 	location = "QM #3"
 	},
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/bot/mulebot,
+/mob/living/basic/bot/mulebot,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/storage)
 "buE" = (

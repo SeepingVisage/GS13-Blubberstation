@@ -17948,7 +17948,7 @@
 /area/station/engineering/storage)
 "cII" = (
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/bot/mulebot{
+/mob/living/basic/bot/mulebot{
 	home_destination = "QM #2";
 	suffix = "#2"
 	},
@@ -74910,7 +74910,7 @@
 /area/station/engineering/supermatter/room)
 "lcm" = (
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/bot/mulebot{
+/mob/living/basic/bot/mulebot{
 	home_destination = "QM #2";
 	suffix = "#2"
 	},
@@ -90189,7 +90189,7 @@
 /area/station/hallway/primary/fore)
 "nvZ" = (
 /obj/effect/turf_decal/bot,
-/mob/living/simple_animal/bot/mulebot{
+/mob/living/basic/bot/mulebot{
 	home_destination = "QM #2";
 	suffix = "#2"
 	},
