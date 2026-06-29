@@ -7204,6 +7204,7 @@
 #include "modular_gs\code\clothing\calorite_collar.dm"
 #include "modular_gs\code\clothing\head.dm"
 #include "modular_gs\code\clothing\supermatter_pendant.dm"
+#include "modular_gs\code\clothing\under.dm"
 #include "modular_gs\code\controllers\configuration\configuration.dm"
 #include "modular_gs\code\controllers\subsystem\mapping.dm"
 #include "modular_gs\code\datums\_helplessness.dm"

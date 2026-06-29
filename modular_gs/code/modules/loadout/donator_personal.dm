@@ -133,3 +133,8 @@
 	name = "Lipomancer Witch Hat"
 	item_path = /obj/item/clothing/head/lipomancers_hat
 	ckeywhitelist = list("mb62")
+
+/datum/loadout_item/uniform/akali_jumpskirt
+	name = "Akalis jumpskirt"
+	item_path = /obj/item/clothing/under/rank/engineering/engineer/skirt/akali
+	ckeywhitelist = list("barfus")
