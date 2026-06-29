@@ -3,61 +3,49 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/modular_map_connector,
-/turf/closed/indestructible/chocolate,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "c" = (
+/mob/living/basic/cockroach,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/turf/open/chocolateriver,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "g" = (
+/mob/living/basic/cockroach,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/closed/indestructible/chocolate,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "p" = (
+/mob/living/basic/cockroach,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/item/food/chocolateegg{
-	pixel_x = 0;
-	pixel_y = -3
-	},
-/obj/item/food/chocolateegg{
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/obj/item/food/chocolateegg{
-	pixel_x = 7;
-	pixel_y = 6
-	},
-/turf/closed/indestructible/chocolate,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "w" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/mob/living/simple_animal/hostile/feed/chocolate_slime,
-/turf/closed/indestructible/chocolate,
+/obj/effect/spawner/random/trash/botanical_waste,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "x" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/turf/open/chocolateriver,
+/obj/item/cigarette/rollie,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "z" = (
-/mob/living/simple_animal/hostile/feed/chocolate_slime,
-/turf/open/chocolateriver,
+/obj/item/cigbutt/roach,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "E" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/light/warm/directional/south,
-/mob/living/simple_animal/hostile/feed/chocolate_slime,
-/turf/closed/indestructible/chocolate,
+/obj/effect/spawner/random/trash/botanical_waste,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "T" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/item/food/chocolatebunny{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/turf/closed/indestructible/chocolate,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "Z" = (
-/turf/open/chocolateriver,
+/turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 
 (1,1,1) = {"
