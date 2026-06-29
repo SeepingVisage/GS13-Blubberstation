@@ -223,10 +223,7 @@
 /obj/effect/mapping_helpers/requests_console/assistance,
 /obj/item/radio/intercom/directional/west,
 /obj/structure/table/wood,
-/obj/machinery/fax{
-	fax_name = "Head of Security's Office";
-	name = "Head of Security's Fax Machine"
-	},
+/obj/machinery/fax/heads/hos,
 /turf/open/floor/carpet/red,
 /area/station/command/heads_quarters/hos)
 "abU" = (
@@ -625,10 +622,7 @@
 "aed" = (
 /obj/item/radio/intercom/directional/west,
 /obj/structure/table,
-/obj/machinery/fax{
-	fax_name = "Quartermaster's Office";
-	name = "Quartermaster's Fax Machine"
-	},
+/obj/machinery/fax/heads/qm,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/command/heads_quarters/qm)
 "aee" = (
@@ -662,9 +656,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
-"ael" = (
-/turf/closed/wall/r_wall,
-/area/station/engineering/supermatter/emitter)
 "aem" = (
 /obj/machinery/light_switch{
 	pixel_x = -28
@@ -15407,10 +15398,7 @@
 /obj/effect/mapping_helpers/requests_console/announcement,
 /obj/effect/mapping_helpers/requests_console/information,
 /obj/effect/mapping_helpers/requests_console/assistance,
-/obj/machinery/fax{
-	fax_name = "Captain's Office";
-	name = "Captain's Fax Machine"
-	},
+/obj/machinery/fax/heads/captain,
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/command/heads_quarters/captain)
@@ -20442,10 +20430,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/station/command/heads_quarters/hop)
 "btD" = (
-/obj/machinery/fax{
-	fax_name = "Head of Personnel's Office";
-	name = "Head of Personnel's Fax Machine"
-	},
+/obj/machinery/fax/heads/hop,
 /obj/structure/table/reinforced/rglass,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -32154,10 +32139,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
-/obj/machinery/fax{
-	fax_name = "Chief Engineer's Office";
-	name = "Chief Engineer's Fax Machine"
-	},
+/obj/machinery/fax/heads/ce,
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
 /turf/open/floor/iron/white/corner{
 	dir = 1
@@ -38875,10 +38857,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/engineering/atmos)
-"dts" = (
-/obj/effect/spawner/structure/window/reinforced/plasma,
-/turf/open/floor/plating,
-/area/station/engineering/supermatter/emitter)
 "dtB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -43539,9 +43517,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
-"fCd" = (
-/turf/open/floor/iron/dark,
-/area/station/engineering/supermatter/emitter)
 "fCo" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -51212,10 +51187,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/fax{
-	fax_name = "Chief Medical Officer's Office";
-	name = "Chief Medical Officer's Fax Machine"
-	},
+/obj/machinery/fax/heads/cmo,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/cmo)
 "jib" = (
@@ -52805,6 +52777,9 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/service/chapel)
+"jOO" = (
+/turf/closed/wall/r_wall,
+/area/station/engineering/supermatter/emitter)
 "jOV" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/turf_decal/bot,
@@ -59487,6 +59462,16 @@
 /obj/structure/railing,
 /turf/open/water,
 /area/station/security/prison)
+"mPI" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/effect/mapping_helpers/apc/cell_10k,
+/obj/effect/mapping_helpers/apc/full_charge,
+/turf/open/floor/engine,
+/area/station/engineering/supermatter/room)
 "mPX" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -63263,6 +63248,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/medical/pharmacy)
+"owQ" = (
+/obj/effect/spawner/structure/window/reinforced/plasma,
+/turf/open/floor/plating,
+/area/station/engineering/supermatter/emitter)
 "owS" = (
 /obj/machinery/computer/security/wooden_tv,
 /turf/open/floor/wood,
@@ -63831,10 +63820,7 @@
 /area/station/science/ordnance/freezerchamber)
 "oNx" = (
 /obj/structure/table/reinforced/rglass,
-/obj/machinery/fax{
-	fax_name = "Research Director's Office";
-	name = "Research Director's Fax Machine"
-	},
+/obj/machinery/fax/heads/rd,
 /obj/effect/turf_decal/siding/purple{
 	dir = 8
 	},
@@ -77983,16 +77969,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/supply)
-"vaQ" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/effect/mapping_helpers/apc/cell_10k,
-/obj/effect/mapping_helpers/apc/full_charge,
-/turf/open/floor/engine,
-/area/station/engineering/supermatter/room)
 "vbq" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
@@ -80079,6 +80055,9 @@
 	dir = 8
 	},
 /area/station/hallway/primary/central)
+"vWK" = (
+/turf/open/floor/iron/dark,
+/area/station/engineering/supermatter/emitter)
 "vXe" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
@@ -112594,13 +112573,13 @@ cFu
 cFI
 cGd
 egk
-ael
-ael
-ael
-ael
-ael
-ael
-ael
+jOO
+jOO
+jOO
+jOO
+jOO
+jOO
+jOO
 sUX
 bJc
 bJc
@@ -112855,9 +112834,9 @@ cgx
 jMY
 csd
 cHa
-fCd
+vWK
 uhH
-ael
+jOO
 xzh
 bJc
 kBu
@@ -113112,9 +113091,9 @@ cGH
 fsQ
 bmw
 cGR
-fCd
-fCd
-ael
+vWK
+vWK
+jOO
 xzh
 bJc
 kBu
@@ -113371,7 +113350,7 @@ biL
 ciZ
 ciZ
 oDF
-ael
+jOO
 xzh
 bJc
 kBu
@@ -113622,13 +113601,13 @@ cMD
 cFL
 cGf
 kQq
-dts
+owQ
 ciZ
 cGS
 cAu
 cAu
 oYm
-ael
+jOO
 xzh
 bJc
 kBu
@@ -113879,13 +113858,13 @@ cMD
 cFM
 czE
 kQq
-ael
+jOO
 cGT
-fCd
-fCd
-fCd
-fCd
-ael
+vWK
+vWK
+vWK
+vWK
+jOO
 xzh
 bJc
 kBu
@@ -114136,13 +114115,13 @@ cFw
 cFN
 csH
 csR
-dts
+owQ
 cGU
-fCd
-fCd
+vWK
+vWK
 cHo
-fCd
-ael
+vWK
+jOO
 xzh
 bJc
 kBu
@@ -114393,13 +114372,13 @@ cMN
 cFO
 eIE
 cSI
-dts
+owQ
 cGV
-fCd
+vWK
 cGV
 noK
 dJk
-ael
+jOO
 xzh
 bJc
 kBu
@@ -114650,13 +114629,13 @@ cAP
 cFP
 csI
 cAt
-dts
-fCd
-fCd
-fCd
+owQ
+vWK
+vWK
+vWK
 cHp
-fCd
-ael
+vWK
+jOO
 xzh
 bJc
 kBu
@@ -114907,13 +114886,13 @@ cMD
 cFM
 czE
 kQq
-ael
+jOO
 cGT
-fCd
-fCd
-fCd
-fCd
-ael
+vWK
+vWK
+vWK
+vWK
+jOO
 xzh
 bJc
 kBu
@@ -115164,13 +115143,13 @@ cMD
 cFR
 cSJ
 kQq
-dts
+owQ
 ciZ
 cGS
 cHj
 cGS
 ciZ
-ael
+jOO
 xzh
 bJc
 kBu
@@ -115427,7 +115406,7 @@ cGS
 ciZ
 ciZ
 oDF
-ael
+jOO
 xzh
 bJc
 kBu
@@ -115682,9 +115661,9 @@ cGK
 bqd
 nzh
 cGY
-fCd
-fCd
-ael
+vWK
+vWK
+jOO
 xzh
 bJc
 kBu
@@ -115935,13 +115914,13 @@ cAr
 cqb
 cGh
 cGC
-ael
+jOO
 ijc
 ciZ
 cEk
-fCd
+vWK
 udp
-ael
+jOO
 xzh
 bJc
 kBu
@@ -116183,7 +116162,7 @@ cMm
 cDt
 cDy
 cqC
-vaQ
+mPI
 cEi
 cFy
 cBR
@@ -116192,13 +116171,13 @@ cFy
 cBR
 cGi
 cGD
-ael
-ael
-ael
-ael
-ael
-ael
-ael
+jOO
+jOO
+jOO
+jOO
+jOO
+jOO
+jOO
 sUX
 bJc
 bJc

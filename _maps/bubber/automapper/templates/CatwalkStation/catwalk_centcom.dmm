@@ -7,19 +7,15 @@
 	dir = 4
 	},
 /obj/machinery/newscaster/directional/north,
-/turf/template_noop,
-/area/template_noop)
-"e" = (
-/obj/structure/sign/warning/gato/vacuum,
-/turf/closed/wall/r_wall,
+/turf/open/floor/iron/dark,
 /area/station/hallway/secondary/entry)
 "f" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
-/obj/machinery/light/cold/dim/directional/north,
-/turf/template_noop,
-/area/template_noop)
+/obj/machinery/light/cold/dim/directional/east,
+/turf/open/floor/iron/dark,
+/area/station/hallway/secondary/entry)
 "j" = (
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/engine/hull,
@@ -43,6 +39,7 @@
 /area/template_noop)
 "v" = (
 /obj/item/radio/intercom/directional/south,
+/obj/structure/sign/warning/vacuum/external/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/entry)
 "w" = (
@@ -117,11 +114,6 @@
 	},
 /turf/template_noop,
 /area/template_noop)
-"M" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/iron/dark,
-/area/station/hallway/secondary/entry)
 "N" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
@@ -130,12 +122,8 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/entry)
 "P" = (
-/obj/machinery/door/airlock/external{
-	name = "Auxiliary Ship Docks"
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/catwalk_floor,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/iron/dark,
 /area/station/hallway/secondary/entry)
 "Q" = (
 /obj/machinery/door/airlock/external{
@@ -166,7 +154,7 @@
 (1,1,1) = {"
 u
 u
-u
+G
 P
 z
 c
@@ -185,7 +173,7 @@ u
 u
 u
 d
-M
+Y
 Y
 x
 Y
@@ -219,7 +207,7 @@ u
 "}
 (4,1,1) = {"
 u
-u
+G
 f
 E
 Y
@@ -227,7 +215,7 @@ Y
 Y
 Y
 v
-e
+c
 y
 H
 c
@@ -237,8 +225,8 @@ u
 "}
 (5,1,1) = {"
 u
-u
-u
+G
+G
 G
 z
 z
@@ -256,10 +244,10 @@ u
 (6,1,1) = {"
 u
 u
-u
 Z
-u
-u
+Z
+Z
+Z
 u
 u
 u
