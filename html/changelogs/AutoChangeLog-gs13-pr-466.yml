@@ -1,7 +1,0 @@
-author: "evilew"
-delete-after: True
-changes:
-  - map: "small mapping fixes to xenoarch, like broken air tanks or error pizzas"
-  - map: "removed Feeder Basement & Calorite Shrine from Ghost Cafe (moved to condos)"
-  - map: "new condos: Feeder Basement & Calorite Temple"
-  - rscadd: "calorite pen: a novelty item that adds a lil bit of poisoning upon stabbing, with a stronger variant of a calorite pen that does far more poisoning and adds permafat, available via opfor or uplink"
