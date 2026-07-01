@@ -29,7 +29,7 @@
 	H_ion_release		= 0.02 		// pH change per 1u reaction (inverse for some reason)
 	rate_up_lim			= 2 		// Optimal/max rate possible if all conditions are perfect
 	purity_min 			= 0.1
-	reaction_flags 		= REACTION_CLEAR_RETAIN
+	// reaction_flags 		= REACTION_CLEAR_RETAIN
 
 //When added
 /datum/reagent/fermi_fat/on_mob_add(mob/living/carbon/M)
@@ -147,7 +147,7 @@
 	H_ion_release		= -0.02		// pH change per 1u reaction (inverse for some reason)
 	rate_up_lim 		= 2 		// Optimal/max rate possible if all conditions are perfect
 	purity_min 			= 0.1
-	reaction_flags 		= REACTION_CLEAR_RETAIN
+	// reaction_flags 		= REACTION_CLEAR_RETAIN
 
 //Effects
 /datum/reagent/fermi_slim/on_mob_life(mob/living/carbon/fatty)

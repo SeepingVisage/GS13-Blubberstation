@@ -1,35 +1,38 @@
 /datum/material/calorite
 	name = "calorite"
 	color = "#eb6e00"
-	strength_modifier = 1.5
-	integrity_modifier = 0.25
-	categories = list(
-		MAT_CATEGORY_SILO = TRUE,
-		MAT_CATEGORY_RIGID=TRUE,
-		// MAT_CATEGORY_BASE_RECIPES = FALSE, // doesn't seem to work :(
-		MAT_CATEGORY_ITEM_MATERIAL = TRUE,
-		MAT_CATEGORY_ITEM_MATERIAL_COMPLEMENTARY = TRUE,
+	// strength_modifier = 1.5
+	// integrity_modifier = 0.25
+	mat_flags = MATERIAL_SILO_STORED | MATERIAL_CLASS_METAL | MATERIAL_CLASS_RIGID
+	mat_properties = list(
+		MATERIAL_DENSITY = 7,
+		MATERIAL_HARDNESS = 2,
+		MATERIAL_FLEXIBILITY = 9,
+		MATERIAL_REFLECTIVITY = 2,
+		MATERIAL_ELECTRICAL = 6,
+		MATERIAL_THERMAL = 6,
+		MATERIAL_CHEMICAL = 4,
 	)
 	sheet_type = /obj/item/stack/sheet/mineral/calorite
 	ore_type = /obj/item/stack/ore/calorite
 	value_per_unit = 110 / SHEET_MATERIAL_AMOUNT
 	tradable = TRUE
 	tradable_base_quantity = MATERIAL_QUANTITY_RARE
-	beauty_modifier = 0.05
-	armor_modifiers = list(MELEE = 1.1, BULLET = 1.1, LASER = 1.15, ENERGY = 1.15, BOMB = 1, BIO = 1, FIRE = 0.7, ACID = 1.1) // Same armor as gold.
+	// beauty_modifier = 0.05
+	// armor_modifiers = list(MELEE = 1.1, BULLET = 1.1, LASER = 1.15, ENERGY = 1.15, BOMB = 1, BIO = 1, FIRE = 0.7, ACID = 1.1) // Same armor as gold.
 	mineral_rarity = MATERIAL_RARITY_PRECIOUS
 	points_per_unit = 40 / SHEET_MATERIAL_AMOUNT
-	fish_weight_modifier = 1.5 // fishing values copied from gold
-	fishing_difficulty_modifier = -8
-	fishing_cast_range = 1
-	fishing_experience_multiplier = 0.75
-	fishing_completion_speed = 1.2
-	fishing_bait_speed_mult = 1.1
-	fishing_deceleration_mult = 1.2
-	fishing_bounciness_mult = 0.8
-	fishing_gravity_mult = 1.2
+	// fish_weight_modifier = 1.5 // fishing values copied from gold
+	// fishing_difficulty_modifier = -8
+	// fishing_cast_range = 1
+	// fishing_experience_multiplier = 0.75
+	// fishing_completion_speed = 1.2
+	// fishing_bait_speed_mult = 1.1
+	// fishing_deceleration_mult = 1.2
+	// fishing_bounciness_mult = 0.8
+	// fishing_gravity_mult = 1.2
 
-/datum/material/calorite/on_applied(atom/source, amount, multiplier) // used to be material_flags instead of multiplier
+/datum/material/calorite/on_applied(atom/source, amount, multiplier, from_slot) // used to be material_flags instead of multiplier
 	. = ..()
 	// if(!(material_flags & MATERIAL_AFFECT_STATISTICS))
 	// 	return
@@ -43,7 +46,7 @@
 		FATTENING_TYPE_ITEM\
 		)
 
-/datum/material/calorite/on_removed(atom/source, multiplier) // used to be material_flags instead of multiplier
+/datum/material/calorite/on_removed(atom/source, multiplier, from_slot) // used to be material_flags instead of multiplier
 	// if(!(material_flags & MATERIAL_AFFECT_STATISTICS))
 	// 	return ..()
 
@@ -106,11 +109,11 @@
 	message = "cm3 of calorite"
 
 /turf/closed/mineral/calorite
-	mineralType = /obj/item/stack/ore/calorite
+	mineral_type = /obj/item/stack/ore/calorite
 	scan_state = "rock_Calorite"
 
 /turf/closed/mineral/calorite/volcanic //for mapping
-	mineralType = /obj/item/stack/ore/calorite
+	mineral_type = /obj/item/stack/ore/calorite
 	scan_state = "rock_Calorite"
 	turf_type = /turf/open/misc/asteroid/basalt/lava_land_surface
 	baseturfs = /turf/open/misc/asteroid/basalt/lava_land_surface

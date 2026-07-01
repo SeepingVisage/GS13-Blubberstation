@@ -17,4 +17,4 @@
 		/datum/reagent/consumable/cream = 50
 	)
 	result = /obj/item/food/cake/hugecookiecream
-	category = CAT_CAKE
+	category = DISH_CAKE

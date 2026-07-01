@@ -62,3 +62,5 @@
 		else if(amount > 0)
 			F = apply_status_effect(STATUS_EFFECT_FATSTUN, amount, updating)
 		return F
+
+#undef STATUS_EFFECT_FATSTUN
