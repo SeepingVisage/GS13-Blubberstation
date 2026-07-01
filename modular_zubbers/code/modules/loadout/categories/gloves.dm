@@ -115,6 +115,11 @@
 	item_path = /obj/item/clothing/gloves/color/black/security
 	restricted_roles = list(ALL_JOBS_SEC)
 
+/datum/loadout_item/gloves/color/black/peacekeeper/armadyne
+	name = "Armadyne Combat Gloves"
+	item_path = /obj/item/clothing/gloves/color/black/peacekeeper/armadyne
+	restricted_roles = list(ALL_JOBS_SEC)
+
 /datum/loadout_item/gloves/frontier_colonist
 	name = "Frontier Gloves"
 	item_path = /obj/item/clothing/gloves/frontier_colonist/loadout
@@ -137,6 +142,11 @@
 	name = "Starlight Singer Gloves"
 	item_path = /obj/item/clothing/gloves/mikugloves
 	//ckeywhitelist = list("grandvegeta")
+
+/datum/loadout_item/gloves/elofy
+	name = "Solar Admiral Gloves"
+	item_path = /obj/item/clothing/gloves/elofy
+//	ckeywhitelist = list("october23")
 
 /datum/loadout_item/gloves/hypnoring_sharkenning
 	name = "Suspiciously Glossy Ring"
@@ -180,6 +190,15 @@
 	name = "Hypnodemon's Ring"
 	item_path = /obj/item/clothing/gloves/ring/hypno/bippys
 	ckeywhitelist = list("bippys")
+
+/datum/loadout_item/gloves/ba_cheerleader
+	name = "NT Cheerleading Gloves"
+	item_path = /obj/item/clothing/gloves/ba_cheerleader
+
+/datum/loadout_item/gloves/ba_cheerleader_command
+	name = "NT Command Cheerleading Gloves"
+	item_path = /obj/item/clothing/gloves/ba_cheerleader/command
+	restricted_roles = list(JOB_CAPTAIN, JOB_HEAD_OF_PERSONNEL, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_CHIEF_ENGINEER, JOB_CHIEF_MEDICAL_OFFICER, JOB_QUARTERMASTER, JOB_NT_REP)
 
 /datum/loadout_item/gloves/latex_gloves
 	name = "Latex Gloves"

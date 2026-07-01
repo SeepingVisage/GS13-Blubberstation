@@ -92,7 +92,7 @@
 /turf/open/floor/mineral/calorite/dance,
 /area/ruin/space)
 "xU" = (
-/obj/structure/closet/crate/grave/skeleton,
+/obj/structure/closet/crate/grave,
 /turf/open/floor/grass,
 /area/ruin/space)
 "zk" = (

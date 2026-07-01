@@ -54,3 +54,6 @@
 		/obj/item/trash/fatoray_scrap2
 		)
 	hidden = TRUE
+
+#undef TECHWEB_NODE_NUTRIWEAPONS
+#undef TECHWEB_NODE_NUTRITOOLS

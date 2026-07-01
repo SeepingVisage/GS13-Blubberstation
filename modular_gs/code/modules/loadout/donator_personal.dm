@@ -42,6 +42,8 @@
 						"nullspace_industries",
 						"silveenom",
 						"killmewitha22",
+						"ffsoul",
+						"icepick200",
 						)
 
 /datum/loadout_item/accessory/medal/coder_badge //badge for coders who worked on the codebase at least a few times
@@ -131,3 +133,8 @@
 	name = "Lipomancer Witch Hat"
 	item_path = /obj/item/clothing/head/lipomancers_hat
 	ckeywhitelist = list("mb62")
+
+/datum/loadout_item/uniform/alkali_jumpskirt
+	name = "Alkali jumpskirt"
+	item_path = /obj/item/clothing/under/rank/engineering/engineer/skirt/alkali
+	ckeywhitelist = list("barfus")

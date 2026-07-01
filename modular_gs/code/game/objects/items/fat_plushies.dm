@@ -129,3 +129,7 @@
 	else if(prey_plush)
 		. += span_abductor("[src] seems like it can be devoured by certain other plushies.")
 
+#undef PLUSHIE_FOOD_VALUE
+#undef PLUSHIE_VORE_VALUE
+#undef PLUSHIE_DIGESTION_TIME_VORE
+#undef PLUSHIE_DIGESTION_TIME_FOOD

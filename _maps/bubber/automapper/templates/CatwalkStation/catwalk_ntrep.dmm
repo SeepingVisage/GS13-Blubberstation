@@ -111,7 +111,6 @@
 	pixel_x = 7
 	},
 /obj/structure/sign/flag/galfed/directional/north,
-/obj/item/sign/flag/gato,
 /turf/open/floor/carpet/green,
 /area/station/command/heads_quarters/nt_rep)
 "qL" = (
@@ -211,8 +210,8 @@
 /area/station/hallway/primary/starboard)
 "Iv" = (
 /obj/machinery/fax{
-	fax_name = "GATO Consultant's Office";
-	name = "GATO Consultant's Fax Machine"
+	fax_name = "Nanotrasen Consultant's Office";
+	name = "Nanotrasen Consultant's Fax Machine"
 	},
 /obj/structure/table/wood,
 /turf/open/floor/carpet/green,
@@ -228,10 +227,7 @@
 /turf/closed/wall,
 /area/station/hallway/primary/central)
 "Ld" = (
-/obj/structure/sign/flag/gato{
-	pixel_x = 0;
-	pixel_y = -32
-	},
+/obj/structure/sign/flag/nanotrasen/directional/south,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/nt_rep)
 "Mm" = (
