@@ -41,6 +41,9 @@
 		blood_thirst_satiated.perma_blood_fatness = victim.fatness_perma  * client_mult
 	victim.adjust_perma(-sqrt(victim.fatness_perma) * 9, FATTENING_TYPE_WEIGHT_LOSS)
 
+#undef HEMOPHAGE_DRAIN_AMOUNT_GS
+#undef BLOOD_DRAIN_MULTIPLIER_CKEY_GS
+
 /* in case I fucking break it
 // GS13 - It doesn't return anything so I can't ever know if the drain was successful if I override and call the parent.
 // Gotta just duplicate it and add in our stuff.

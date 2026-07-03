@@ -110,7 +110,7 @@ GLOBAL_DATUM(event_perk_tgui_holder, /datum/event_perk)
 	
 	fdel(file_path)
 
-/datum/event_perk/proc/copy(var/datum/event_perk/perk)
+/datum/event_perk/proc/copy(datum/event_perk/perk)
 	src.name = perk.name
 	src.description = perk.description
 	src.expiry_date = perk.expiry_date
@@ -454,5 +454,6 @@ ADMIN_VERB(event_perk_manager, R_ADMIN, "Event Perk Manager", "Create a new Even
 
 	update_static_data(usr)
 
+#undef EVENT_PERK_JSON_FOLDER
 #undef CAN_REDEEM
 #undef CAN_NOT_REDEEM

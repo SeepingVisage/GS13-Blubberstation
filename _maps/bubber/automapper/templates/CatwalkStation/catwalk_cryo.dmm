@@ -75,11 +75,11 @@
 /turf/open/floor/iron/dark,
 /area/station/common/cryopods)
 "o" = (
-/obj/effect/turf_decal/bot_blue,
-/obj/machinery/cryopod/tele{
+/obj/machinery/cryopod{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/obj/effect/turf_decal/bot_blue,
+/turf/open/floor/iron/dark,
 /area/station/common/cryopods)
 "q" = (
 /obj/effect/turf_decal/siding/blue/corner{
@@ -102,6 +102,7 @@
 /area/station/commons/dorms)
 "s" = (
 /obj/structure/cable,
+/obj/effect/turf_decal/siding/corner,
 /turf/open/floor/iron,
 /area/station/common/cryopods)
 "w" = (
@@ -129,12 +130,12 @@
 /turf/open/floor/iron/dark,
 /area/station/common/cryopods)
 "D" = (
-/obj/effect/turf_decal/bot_blue,
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/cryopod/tele{
+/obj/machinery/cryopod{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/obj/effect/turf_decal/bot_blue,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/iron/dark,
 /area/station/common/cryopods)
 "E" = (
 /obj/structure/flora/bush/flowers_pp{
@@ -151,12 +152,12 @@
 /turf/open/floor/iron/dark,
 /area/station/common/cryopods)
 "G" = (
-/obj/structure/window/reinforced/spawner/directional/west,
-/obj/effect/turf_decal/bot_blue,
-/obj/machinery/cryopod/tele{
+/obj/machinery/cryopod{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_large,
+/obj/structure/window/reinforced/spawner/directional/west,
+/obj/effect/turf_decal/bot_blue,
+/turf/open/floor/iron/dark,
 /area/station/common/cryopods)
 "H" = (
 /obj/effect/turf_decal/siding/purple,
@@ -242,7 +243,12 @@
 /turf/closed/wall/r_wall,
 /area/station/engineering/storage/tech)
 "Z" = (
-/obj/machinery/light/cold/directional/west,
+/obj/effect/turf_decal/siding{
+	dir = 4
+	},
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/apc/cell_10k,
 /turf/open/floor/iron,
 /area/station/common/cryopods)
 

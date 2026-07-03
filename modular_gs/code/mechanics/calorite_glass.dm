@@ -48,32 +48,41 @@ GLOBAL_LIST_INIT(calorite_glass_recipes, list ( \
 	alpha = 150
 	starlight_color = COLOR_TAN_ORANGE
 	init_flags = MATERIAL_INIT_MAPLOAD
-	integrity_modifier = 0.15
-	armor_modifiers = list(MELEE = 0.25, BULLET = 0.25, LASER = 1.1, ENERGY = 1.1, BOMB = 0.1, BIO = 1.2, FIRE = 2, ACID = 2)
+	// integrity_modifier = 0.15
+	// armor_modifiers = list(MELEE = 0.25, BULLET = 0.25, LASER = 1.1, ENERGY = 1.1, BOMB = 0.1, BIO = 1.2, FIRE = 2, ACID = 2)
 	sheet_type = /obj/item/stack/sheet/calorite_glass
 	shard_type = /obj/item/shard/calorite_glass
 	// debris_type = /obj/effect/decal/cleanable/glass/calorite_glass
 	value_per_unit = 0.1
-	categories = list(
-		MAT_CATEGORY_RIGID=TRUE,
-		// MAT_CATEGORY_BASE_RECIPES = TRUE,
-		MAT_CATEGORY_ITEM_MATERIAL = TRUE,
-		MAT_CATEGORY_ITEM_MATERIAL_COMPLEMENTARY = TRUE,
+	mat_properties = list(
+		MATERIAL_DENSITY = 6,
+		MATERIAL_HARDNESS = 3,
+		MATERIAL_FLEXIBILITY = 6,
+		MATERIAL_REFLECTIVITY = 4,
+		MATERIAL_ELECTRICAL = 4,
+		MATERIAL_THERMAL = 5,
+		MATERIAL_CHEMICAL = 5,
 	)
+	// categories = list(
+	// 	MAT_CATEGORY_RIGID=TRUE,
+	// 	// MAT_CATEGORY_BASE_RECIPES = TRUE,
+	// 	MAT_CATEGORY_ITEM_MATERIAL = TRUE,
+	// 	MAT_CATEGORY_ITEM_MATERIAL_COMPLEMENTARY = TRUE,
+	// )
 	composition = list(/datum/material/glass = 0.5, /datum/material/calorite = 1)
-	fish_weight_modifier = 1.2
-	fishing_difficulty_modifier = 5
-	fishing_experience_multiplier = 1.3
-	fishing_gravity_mult = 0.9
+	// fish_weight_modifier = 1.2
+	// fishing_difficulty_modifier = 5
+	// fishing_experience_multiplier = 1.3
+	// fishing_gravity_mult = 0.9
 
-/datum/material/alloy/calorite_glass/on_applied(atom/source, amount, multiplier)
+/datum/material/alloy/calorite_glass/on_applied(atom/source, amount, multiplier, from_slot)
 	. = ..()
 
 	if (isobj(source))
 		var/obj/source_obj = source
 		source_obj.damtype = FAT
 
-/datum/material/alloy/calorite_glass/on_removed(atom/source, multiplier)
+/datum/material/alloy/calorite_glass/on_removed(atom/source, multiplier, from_slot)
 	if (isobj(source))
 		var/obj/source_obj = source
 		source_obj.damtype = initial(source_obj.damtype)

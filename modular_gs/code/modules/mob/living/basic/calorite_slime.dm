@@ -1,5 +1,10 @@
 #define SLIME_TYPE_CALORITE "calorite"
 #define COLOR_SLIME_CALORITE "#E4823F"
+#define FEEDING_OFFSET "feeding"
+/// The minimum amount of water stacks needed to start washing off the slime.
+#define MIN_WATER_STACKS 5
+/// The minimum amount of health a mob has to have before the status effect is removed.
+#define MIN_HEALTH 10
 
 /datum/slime_type/calorite
 	colour = SLIME_TYPE_CALORITE
@@ -88,8 +93,6 @@
 	set_slime_type(/datum/slime_type/calorite)
 	amount_grown = 0
 	mutator_used = FALSE
-
-#define FEEDING_OFFSET "feeding"
 
 //Changing the applied status while feeding to a custom one
 /mob/living/basic/slime/calorite/start_feeding(mob/living/target_mob)
@@ -228,10 +231,6 @@
 /datum/status_effect/slimed/calorite
 	alert_type = /atom/movable/screen/alert/status_effect/slimed/calorite
 
-/// The minimum amount of water stacks needed to start washing off the slime.
-#define MIN_WATER_STACKS 5
-/// The minimum amount of health a mob has to have before the status effect is removed.
-#define MIN_HEALTH 10
 //Tweaking the effect to do fat stuff with humans but retain its base functionalities on other mobs
 /datum/status_effect/slimed/calorite/tick(seconds_between_ticks)
 	// remove from the mob once we have dealt enough damage
@@ -462,3 +461,9 @@
 		affected_mob.adjust_nutrition(6 * seconds_per_tick)
 		return
 	. = ..()
+
+#undef SLIME_TYPE_CALORITE
+#undef COLOR_SLIME_CALORITE
+#undef FEEDING_OFFSET
+#undef MIN_WATER_STACKS
+#undef MIN_HEALTH

@@ -100,6 +100,20 @@
 	cost = PAYCHECK_COMMAND * 5
 	contains = list(/obj/item/storage/box/offstation_deathrattle)
 
+/datum/supply_pack/goody/ntusp_single
+	name = "NT22-HCS 'Enforcer' Single-Pack"
+	desc = "Contains one NT22-HCS 'Enforcer' pistol case, a non-lethal weapon that fires hardlight, non-lethal projectiles. Includes two power pack magazines."
+	cost = PAYCHECK_CREW * 12
+	access_view = ACCESS_SECURITY
+	contains = list(/obj/item/storage/toolbox/guncase/skyrat/pistol/ntusp)
+
+/datum/supply_pack/goody/ntmp5_single
+	name = "NT22-HCS-MP 'Lancer' Single-Pack"
+	desc = "Contains one NT22-HCS-MP 'Lancer' submachine gun, a non-lethal weapon that fires hardlight, non-lethal projectiles at high speed. It comes with a retractable stock. Includes two power pack magazines."
+	cost = PAYCHECK_COMMAND * 8
+	access_view = ACCESS_SECURITY
+	contains = list(/obj/item/storage/toolbox/guncase/skyrat/pistol/ntmp5)
+
 /datum/supply_pack/goody/pepperball_gun
 	name = "Pepperball Gun Single-Pack"
 	desc = "Contains one pepperball gun, a non-lethal weapon that fires pepper-filled projectiles."
@@ -186,3 +200,67 @@
 	access_view = ACCESS_WEAPONS
 	contains = list(/obj/item/gun/energy/tacticool)
 
+/datum/supply_pack/goody/seclite_implant
+	name = "Seclite Implant"
+	desc = "Contains a seclite implant for lighting up dark maintenance tunnels."
+	cost = PAYCHECK_CREW * 7
+	contains = list(/obj/item/organ/cyberimp/arm/toolkit/seclite)
+
+/datum/supply_pack/goody/penfour_implant
+	name = "Fingertip Four Color Pen Implant"
+	desc = "An implanted four colour pen, replacing a fingertip. What more could you want?"
+	cost = PAYCHECK_CREW * 5
+	contains = list(/obj/item/organ/cyberimp/arm/toolkit/penfour)
+
+/datum/supply_pack/goody/tape_recorder_implant
+	name = "Universal Recorder Implant"
+	desc = "A recording device installed in the forearm under a discrete panel. Accepts standard EMP resistant tapes. Spare tape included."
+	cost = PAYCHECK_CREW * 6
+	contains = list(/obj/item/organ/cyberimp/arm/toolkit/tape_recorder, /obj/item/tape/random)
+
+/datum/supply_pack/goody/foamforce_implant
+	name = "Pop-up Donksoft Blaster Implant"
+	desc = "Donksoft's pop-up blaster is great for annoying coworkers. Pack contains one implant and a mini box of spare darts."
+	cost = PAYCHECK_CREW * 8
+	contains = list(/obj/item/organ/cyberimp/arm/toolkit/foamforce_implant, /obj/item/ammo_box/foambox/mini)
+
+/datum/supply_pack/goody/defender_revolver
+	name = "'Defender' Revolver Single-Pack"
+	desc = "Contains one 'Defender' revolver. Cheap and prone to the occasional misfire. Fires .38 rounds.'"
+	cost = PAYCHECK_COMMAND * 3
+	access_view = ACCESS_WEAPONS
+	contains = list(/obj/item/gun/ballistic/revolver/defender_revolver)
+
+/datum/supply_pack/goody/miecz
+	name = "Miecz Submachinegun Single-Pack"
+	desc = "Contains one Miecz Submachinegun, one of the newest guns to make it out of the PSC. Due to import fees and general rarity, this one's gonna be expensive. Contains two magazines, as well."
+	cost = PAYCHECK_COMMAND * 10*1.25
+	access_view = ACCESS_WEAPONS
+	contains = list(/obj/item/gun/ballistic/automatic/miecz, /obj/item/ammo_box/magazine/miecz, /obj/item/ammo_box/magazine/miecz)
+
+/datum/supply_pack/goody/mieczmag
+	name = "Miecz Submachinegun Magazine Goodie Pack"
+	desc = "Contains a single magazine for the Miecz Submachinegun."
+	cost = PAYCHECK_COMMAND * 1.5
+	contains = list(/obj/item/ammo_box/magazine/miecz)
+
+/datum/supply_pack/goody/security_bow
+	name = "Hardlight Bow Single-Pack"
+	desc = "Contains a hardlight bow capable of defeating armor, alongside a quiver with nonlethal arrows. Ask your blacksmith for lethal arrows."
+	cost = PAYCHECK_COMMAND * 5
+	access_view = ACCESS_WEAPONS
+	contains = list(/obj/item/gun/ballistic/bow/security, /obj/item/storage/bag/quiver/lesser/security)
+
+/datum/supply_pack/goody/russianammo
+	name = ".310 Ammo Box Single-Pack"
+	desc = "Contains a single pack of .310 rounds."
+	cost = PAYCHECK_COMMAND * 2.5
+	access_view = ACCESS_WEAPONS
+	contains = list(/obj/item/ammo_box/c310_cargo_box)
+
+/datum/supply_pack/goody/lancamag
+	name = "Lanca Magazine Single-Pack"
+	desc = "Contains a single Lanca rifle magazine"
+	cost = PAYCHECK_COMMAND * 1.5
+	contains = list(/obj/item/ammo_box/magazine/lanca)
+	order_flags = ORDER_CONTRABAND

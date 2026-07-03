@@ -65,8 +65,17 @@
 /// The trait that determines if someone has the robotic limb reattachment quirk.
 #define TRAIT_ROBOTIC_LIMBATTACHMENT "trait_robotic_limbattachment"
 
-/// Trait that removes mood and replaces it with hunger bar.
-#define TRAIT_NOMOOD "trait_nomood"
+/// Prevents examining of mobs completely, replacing it with a string.
+#define TRAIT_PARANOIAS_EYE "paranoias_eye"
+/// Used by the Trickster's Promise heretic spell. This food tastes better and has trace healing chems.
+#define TRAIT_TRICKSTER_TASTE "trickster_taste"
+/// Used by The Blacksmith's Hammer heretic ritual - tracks if their funny hand will emag the next thing they right click with
+#define TRAIT_EMAGGING_HAND "emagging_hand"
+/// Used by the irreality collar - prevents use of rituals and most spells from Acolytes.
+#define TRAIT_MANSUS_INHIBITION "mansus_inhibition"
 
 /// Trait that gives your brain traumas more resilance
 #define TRAIT_RESILIENT_TRAUMAS "trait_resilient_traumas"
+
+/// Trait used to block telepathy types (Genetics, Xenomorph, Revenant, Slime. Ideally should be all.)
+#define TRAIT_PSIONIC_DAMPENER "psionic_dampener"

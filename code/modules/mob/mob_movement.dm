@@ -27,7 +27,7 @@
  * in the parent proc with istype checks right?):
  * * having incorporeal_move set (calls Process_Incorpmove() instead)
  * * being grabbed
- * * being buckled  (relaymove() is called to the buckled atom instead)
+ * * being buckled (relaymove() is called to the buckled atom instead)
  * * having your loc be some other mob (relaymove() is called on that mob instead)
  * * Not having MOBILITY_MOVE
  * * Failing Process_Spacemove() call
@@ -93,7 +93,6 @@
 		return loc_atom.relaymove(mob, direct)
 
 	if(!mob.Process_Spacemove(direct))
-		SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_MOVE_NOGRAV, args)
 		return FALSE
 
 	//GS13 EDIT
@@ -288,9 +287,6 @@
 	if (SEND_SIGNAL(src, COMSIG_MOB_ATTEMPT_HALT_SPACEMOVE, movement_dir, continuous_move, backup) & COMPONENT_PREVENT_SPACEMOVE_HALT)
 		return FALSE
 
-	if (drift_handler?.attempt_halt(movement_dir, continuous_move, backup))
-		return FALSE
-
 	if(continuous_move || !istype(backup) || !movement_dir || backup.anchored)
 		return TRUE
 
@@ -403,7 +399,7 @@
 
 ///Validate the client's mob has a valid zone selected
 /client/proc/check_has_body_select()
-	return mob && mob.hud_used && mob.hud_used.zone_select && istype(mob.hud_used.zone_select, /atom/movable/screen/zone_sel)
+	return istype(mob?.hud_used?.screen_objects[HUD_MOB_ZONE_SELECTOR], /atom/movable/screen/zone_sel)
 
 /**
  * Hidden verbs to set desired body target zone
@@ -428,7 +424,7 @@
 		else
 			next_in_line = BODY_ZONE_HEAD
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(next_in_line, mob)
 
 ///Hidden verb to target the head, unbound by default.
@@ -439,7 +435,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_HEAD, mob)
 
 ///Hidden verb to target the eyes, bound to 7
@@ -450,7 +446,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_PRECISE_EYES, mob)
 
 ///Hidden verb to target the mouth, bound to 9
@@ -461,7 +457,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_PRECISE_MOUTH, mob)
 
 ///Hidden verb to target the right arm, bound to 4
@@ -472,7 +468,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_R_ARM, mob)
 
 ///Hidden verb to target the chest, bound to 5
@@ -483,7 +479,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_CHEST, mob)
 
 ///Hidden verb to target the left arm, bound to 6
@@ -494,7 +490,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_L_ARM, mob)
 
 ///Hidden verb to target the right leg, bound to 1
@@ -505,7 +501,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_R_LEG, mob)
 
 ///Hidden verb to target the groin, bound to 2
@@ -516,7 +512,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_PRECISE_GROIN, mob)
 
 ///Hidden verb to target the left leg, bound to 3
@@ -527,7 +523,7 @@
 	if(!check_has_body_select())
 		return
 
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.screen_objects[HUD_MOB_ZONE_SELECTOR]
 	selector.set_selected_zone(BODY_ZONE_L_LEG, mob)
 
 ///Verb to toggle the walk or run status
@@ -554,18 +550,13 @@
 			return FALSE
 		//SKYRAT EDIT ADDITION END
 		move_intent = MOVE_INTENT_RUN
-	if(hud_used?.static_inventory)
-		for(var/atom/movable/screen/mov_intent/selector in hud_used.static_inventory)
-			selector.update_appearance()
-	update_move_intent_slowdown()
 
+	hud_used?.screen_objects[HUD_MOB_MOVE_INTENT]?.update_appearance()
+	update_move_intent_slowdown()
 	SEND_SIGNAL(src, COMSIG_MOVE_INTENT_TOGGLED)
 
 ///Moves a mob upwards in z level
-/mob/verb/up()
-	set name = "Move Upwards"
-	set category = "IC"
-
+/mob/proc/up()
 	if(remote_control)
 		return remote_control.relaymove(src, UP)
 
@@ -589,10 +580,7 @@
 		to_chat(src, span_notice("You move upwards."))
 
 ///Moves a mob down a z level
-/mob/verb/down()
-	set name = "Move Down"
-	set category = "IC"
-
+/mob/proc/down()
 	if(remote_control)
 		return remote_control.relaymove(src, DOWN)
 
@@ -621,3 +609,8 @@
 	if(new_turf && (istype(new_turf, /turf/cordon/secret) || is_secret_level(new_turf.z)) && !client?.holder)
 		return
 	return ..()
+
+/mob/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change)
+	. = ..()
+	if(client?.sound_tokens.len)
+		SSsound_tokens.clients_needing_update[client] = TRUE
