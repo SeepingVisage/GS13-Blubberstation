@@ -66,6 +66,8 @@
 #define TRAIT_HELPLESS_STUCKAGE			"stuckage_helpless"
 #define TRAIT_HELPLESS_THICK_NECK		"thick_neck"
 #define TRAIT_HELPLESS_WEAK_LUNGS		"weak_lungs"
+#define TRAIT_HELPLESS_WADDLING         "waddling_helpless"
+#define TRAIT_WADDLE					"waddle"
 
 // GS13 positive quirks
 #define TRAIT_BLOB_BED					"blob_bed"

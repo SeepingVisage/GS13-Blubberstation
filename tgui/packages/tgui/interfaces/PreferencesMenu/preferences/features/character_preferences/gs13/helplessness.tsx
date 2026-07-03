@@ -106,6 +106,12 @@ export const no_neck: Feature<number> = {
   component: FeatureNumberInput,
 };
 
+export const waddle: Feature<number> = {
+  name: 'Waddling',
+  description: 'At what weight do you start waddling? 0 disables this.',
+  component: FeatureNumberInput,
+};
+
 /*
 export const weak_lungs: Feature<number> = {
   name: 'Weak lungs',
