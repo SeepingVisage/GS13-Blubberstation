@@ -17,7 +17,7 @@
 			trigger_weight = FATNESS_LEVEL_BLOB
 		if (HAS_TRAIT(fatty, TRAIT_WEAKLEGS))
 			trigger_weight = FATNESS_LEVEL_BARELYMOBILE
-	
+
 	return trigger_weight
 
 /datum/helplessness/clumsy
@@ -53,7 +53,7 @@
 		REMOVE_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
 		fatty.add_fov_trait(TRAIT_LOW_FOV, FOV_180_DEGREES)
 		return TRUE
-	
+
 	return FALSE
 
 /datum/helplessness/nearsighted/disable_helplessness(mob/living/carbon/human/fatty)
@@ -113,7 +113,7 @@
 
 /datum/helplessness/jumpsuit_bursting/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	..()
-	
+
 	var/obj/item/clothing/under/jumpsuit = fatty.w_uniform
 	if(istype(jumpsuit))
 		to_chat(fatty, span_warning("[jumpsuit] can no longer contain your weight!"))
@@ -129,7 +129,7 @@
 
 /datum/helplessness/misc_clothing_bursting/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	. = ..()
-	
+
 	var/obj/item/clothing/suit/worn_suit = fatty.wear_suit
 	if(istype(worn_suit) && !istype(worn_suit, /obj/item/clothing/suit/mod))
 		to_chat(fatty, span_warning("[worn_suit] can no longer contain your weight!"))
@@ -203,11 +203,31 @@
 
 /datum/helplessness/no_neck/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
 	. = ..()
-	
+
 	var/obj/item/clothing/neck/neckwear = fatty.wear_neck
 	if(istype(neckwear))
 		to_chat(fatty, span_warning("[neckwear] can no longer fit around your neck!"))
 		fatty.dropItemToGround(neckwear)
+
+/datum/helplessness/waddle
+	helplessness_trait = TRAIT_WADDLE
+	default_trigger_weight = FATNESS_LEVEL_BARELYMOBILE
+	override_quirk = TRAIT_HELPLESS_WADDLING
+	preference = /datum/preference/numeric/helplessness/waddle
+	gain_message = "Your legs are too thick to walk straight."
+	lose_message = "Your legs are thin enough to walk normally again."
+
+/datum/helplessness/waddle/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
+	. = ..()
+	if (!.)
+		return
+	fatty.AddElementTrait(TRAIT_WADDLING, REF(fatty), /datum/element/waddling)
+
+/datum/helplessness/waddle/disable_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
+	. = ..()
+	if (!.)
+		return
+	REMOVE_TRAIT(fatty, TRAIT_WADDLING, REF(fatty))
 
 #define MAX_PRESSURE_DEBUFF 0.5
 /*
@@ -225,11 +245,11 @@
 
 	if(!should_be_active)
 		return should_be_active
-	
+
 	var/obj/item/organ/lungs/holder_lungs = fatty.get_organ_slot(ORGAN_SLOT_LUNGS)
 	if (isnull(holder_lungs))
 		return FALSE
-	
+
 	var/pressure_debuff = (fatness - trigger_weight) / (2 * trigger_weight)	// 1 when fatness = 3x trigger weight
 	pressure_debuff = pressure_debuff * MAX_PRESSURE_DEBUFF		// scale it to be in range [0; MAX_PRESSURE_DEBUFF]
 	pressure_debuff = max(1 - pressure_debuff, MAX_PRESSURE_DEBUFF)		// and in result, we reach this cap when fatness = 3x trigger weight
