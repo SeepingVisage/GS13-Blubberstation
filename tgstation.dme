@@ -7439,6 +7439,7 @@
 #include "modular_gs\code\structures\sink.dm"
 #include "modular_gs\code\structures\trapped_items.dm"
 #include "modular_gs\gatofication\obj\signs.dm"
+#include "modular_gs\modules\modular_items\code\fan.dm"
 #include "modular_gs\modules\plumbing\plumbing_machines.dm"
 #include "modular_skyrat\master_files\code\_globalvars\configuration.dm"
 #include "modular_skyrat\master_files\code\_globalvars\regexes.dm"
