@@ -1,6 +1,6 @@
-/datum/quirk/lisp
+/datum/quirk/lisp //Ported from Monkestation.
 	name = "Lisp"
-	desc = "You have a hard time pronoucing thome letterth. Not reccomended for people with lizard tongues, Use the organs menu to swap it out."
+	desc = "You have a hard time pronoucing thome letterth. Not recommended for people with lizard tongues, Use the organs menu to swap it out."
 	value = 0
 	icon = FA_ICON_GRIN_TONGUE
 
