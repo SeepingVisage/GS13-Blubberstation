@@ -7226,6 +7226,7 @@
 #include "modular_gs\code\datums\quirks\negative\fat_aversion.dm"
 #include "modular_gs\code\datums\quirks\negative\negative_quirks.dm"
 #include "modular_gs\code\datums\quirks\neutral\cosglow.dm"
+#include "modular_gs\code\datums\quirks\neutral\lisp.dm"
 #include "modular_gs\code\datums\quirks\neutral\metal_cruncher.dm"
 #include "modular_gs\code\datums\quirks\neutral\neutral_quirks.dm"
 #include "modular_gs\code\datums\quirks\neutral\tail_sweep.dm"
