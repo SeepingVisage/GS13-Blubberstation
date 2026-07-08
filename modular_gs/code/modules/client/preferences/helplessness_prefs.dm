@@ -91,6 +91,10 @@
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "waddle"
 
+/datum/preference/numeric/helplessness/lisp
+	category = HELPLESSNESS_PREFERENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "lisp"
 /*
 /datum/preference/numeric/helplessness/weak_lungs
 	category = HELPLESSNESS_PREFERENCES
