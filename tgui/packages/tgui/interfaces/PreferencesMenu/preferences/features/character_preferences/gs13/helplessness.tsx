@@ -112,6 +112,12 @@ export const waddle: Feature<number> = {
   component: FeatureNumberInput,
 };
 
+export const lisp: Feature<number> = {
+  name: 'Lisping',
+  description: 'At what weight do you start talking with a lisp? 0 disables this.',
+  component: FeatureNumberInput,
+};
+
 /*
 export const weak_lungs: Feature<number> = {
   name: 'Weak lungs',

@@ -68,6 +68,8 @@
 #define TRAIT_HELPLESS_WEAK_LUNGS		"weak_lungs"
 #define TRAIT_HELPLESS_WADDLING         "waddling_helpless"
 #define TRAIT_WADDLE					"waddle"
+#define TRAIT_HELPLESS_LISP				"lisp_helpless"
+#define TRAIT_LISP						"lisp"
 
 // GS13 positive quirks
 #define TRAIT_BLOB_BED					"blob_bed"

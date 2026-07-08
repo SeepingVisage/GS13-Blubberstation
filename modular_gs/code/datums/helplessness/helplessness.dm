@@ -229,6 +229,36 @@
 		return
 	REMOVE_TRAIT(fatty, TRAIT_WADDLING, REF(fatty))
 
+/datum/helplessness/lisp
+	helplessness_trait = TRAIT_LISP
+	default_trigger_weight = FATNESS_LEVEL_BARELYMOBILE
+	override_quirk = TRAIT_HELPLESS_LISP
+	preference = /datum/preference/numeric/helplessness/lisp
+	gain_message = "Your face feelth too big to pronouce thome letterth."
+	lose_message = "Your face has shrunk enough to talk normally again."
+
+/datum/helplessness/lisp/apply_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
+	. = ..()
+	if (!.)
+		return
+	RegisterSignal(fatty, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
+/datum/helplessness/lisp/disable_helplessness(mob/living/carbon/human/fatty, trigger_weight, fatness)
+	. = ..()
+	if (!.)
+		return
+	UnregisterSignal(fatty, COMSIG_MOB_SAY)
+
+/datum/helplessness/lisp/proc/handle_speech(datum/source, list/speech_args)
+	SIGNAL_HANDLER
+	if(HAS_TRAIT(source, TRAIT_SIGN_LANG))
+		return
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message)
+		message = replacetext(message,"s","th")
+		message = replacetext(message,"x","th")
+		speech_args[SPEECH_MESSAGE] = message
+
 #define MAX_PRESSURE_DEBUFF 0.5
 /*
 /datum/helplessness/weak_lungs
