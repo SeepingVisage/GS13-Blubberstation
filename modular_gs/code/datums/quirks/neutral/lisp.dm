@@ -1,6 +1,7 @@
 /datum/quirk/lisp //Ported from Monkestation.
 	name = "Lisp"
 	desc = "You have a hard time pronoucing thome letterth. Not recommended for people with lizard tongues, Use the organs menu to swap it out."
+	medical_record_text = "Patient has a lisp."
 	value = 0
 	icon = FA_ICON_GRIN_TONGUE
 
