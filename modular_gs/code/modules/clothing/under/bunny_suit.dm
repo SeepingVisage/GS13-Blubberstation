@@ -5,7 +5,6 @@
 	modular_icon_location = 'modular_gs/icons/mob/modclothes/bunny_suit.dmi'
 	greyscale_colors = "#FFFFFF#FFFFFF#FFFFFF"
 
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
 	icon = 'modular_gs/icons/obj/clothing/modclothes/bunny_suit.dmi'
 	icon_state = "bunny_suit_preview"
 	worn_icon_state = "bunny_suit"
@@ -13,7 +12,6 @@
 	worn_icon_taur_snake = 'modular_gs/icons/mob/modclothes/bunny_suit_taur_snake.dmi'
 	post_init_icon_state = "bunny_suit"		// but why does it have to be this way
 
-	armor_type = /datum/armor/clothing_under
 	greyscale_config = /datum/greyscale_config/bunny_suit
 	greyscale_config_worn = /datum/greyscale_config/bunny_suit/worn
 	greyscale_config_worn_digi = /datum/greyscale_config/bunny_suit/worn/digi
