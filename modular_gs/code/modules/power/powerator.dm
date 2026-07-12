@@ -1,5 +1,5 @@
 /obj/machinery/powerator/examine(mob/user)
 	. = ..()
 	if (credits_account == ACCOUNT_CAR)
-		. += span_notice("The energy market has a baseline capacity to buy [POWERATOR_MONEY_LIMIT] credits worth of power without big changes to the price.")
-		. += span_notice("Currently, the market has gave out [GLOB.powerator_total_cash_made + GLOB.powerator_cash_made] credits, modifying the price of electricity by [GLOB.powerator_cash_modifier].")
+		. += span_notice("The energy market has a baseline capacity to buy [POWERATOR_MONEY_LIMIT] credits worth of power without large changes to the selling price.")
+		. += span_notice("Currently, the market has provided [GLOB.powerator_total_cash_made + GLOB.powerator_cash_made] credits, modifying the price of electricity by [GLOB.powerator_cash_modifier].")
