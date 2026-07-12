@@ -7208,7 +7208,6 @@
 #include "modular_gs\code\clothing\supermatter_pendant.dm"
 #include "modular_gs\code\clothing\under.dm"
 #include "modular_gs\code\controllers\configuration\configuration.dm"
-#include "modular_gs\code\controllers\subsystem\persistence\powerator.dm"
 #include "modular_gs\code\controllers\subsystem\mapping.dm"
 #include "modular_gs\code\controllers\subsystem\persistence\_persistence.dm"
 #include "modular_gs\code\controllers\subsystem\persistence\powerator.dm"
