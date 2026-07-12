@@ -34,6 +34,7 @@
 		powerator_money_modifier = 1
 	
 	powerator_money_modifier = clamp(powerator_money_modifier, POWERATOR_MAXIMUM_PENALTY, POWERATOR_MAXIMUM_BONUS)
+	powerator_total_money_made = max(0, powerator_total_money_made)
 	
 	GLOB.powerator_total_cash_made = powerator_total_money_made
 	GLOB.powerator_cash_modifier = powerator_money_modifier
