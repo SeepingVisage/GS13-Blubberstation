@@ -7395,7 +7395,6 @@
 #include "modular_gs\code\modules\storyteller\auto_storyteller_vote.dm"
 #include "modular_gs\code\modules\storyteller\auto_vote_config.dm"
 #include "modular_gs\code\modules\storyteller\gamemode.dm"
-#include "modular_gs\code\modules\storyteller\storytellers\tellers\storyteller_7_relaxed.dm"
 #include "modular_gs\code\modules\surgery\organs\augments.dm"
 #include "modular_gs\code\modules\surgery\organs\internal\lungs.dm"
 #include "modular_gs\code\modules\surgery\organs\internal\stomach\stomach_ethereal.dm"
