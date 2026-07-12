@@ -7,7 +7,10 @@
 
 	powerator_total_money_made += powerator_money_made
 
-	powerator_cash_modifier = POWERATOR_MONEY_LIMIT / powerator_total_money_made
+	if (powerator_total_money_made == 0)
+		powerator_cash_modifier = POWERATOR_MAXIMUM_BONUS
+	else
+		powerator_cash_modifier = POWERATOR_MONEY_LIMIT / powerator_total_money_made
 	powerator_total_money_made -= POWERATOR_MONEY_LIMIT
 	powerator_total_money_made = max(0, powerator_total_money_made)
 	GLOB.powerator_total_cash_made = powerator_total_money_made
