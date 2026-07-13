@@ -89441,6 +89441,7 @@
 "xYe" = (
 /obj/effect/turf_decal/tile/brown/half/contrasted,
 /obj/structure/cable,
+/obj/structure/reagent_dispensers/reagent_smithing_basin/prefilled,
 /turf/open/floor/iron/checker,
 /area/station/cargo/blacksmith)
 "xYh" = (
