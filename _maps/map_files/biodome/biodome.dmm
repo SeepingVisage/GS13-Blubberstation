@@ -6233,6 +6233,7 @@
 /turf/open/floor/iron/terracotta/small,
 /area/station/service/hydroponics)
 "cja" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
@@ -8634,7 +8635,7 @@
 /turf/closed/wall/mineral/titanium/interior,
 /area/station/asteroid)
 "cZQ" = (
-/obj/machinery/computer/rdconsole/unlocked{
+/obj/machinery/computer/rdconsole{
 	dir = 8
 	},
 /obj/effect/turf_decal/bot,
@@ -16989,12 +16990,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
-"gbw" = (
-/obj/machinery/atmospherics/components/binary/pump/off{
-	dir = 1
-	},
-/turf/open/floor/engine,
-/area/station/engineering/supermatter/room)
 "gbB" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -26551,10 +26546,6 @@
 /obj/machinery/plate_press,
 /turf/open/floor/plating,
 /area/station/security/prison/work)
-"jwj" = (
-/obj/structure/cable,
-/turf/closed/wall/r_wall,
-/area/station/ai/satellite/chamber)
 "jws" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -38312,6 +38303,7 @@
 	c_tag = "Engineering - Supermatter Aft";
 	network = list("ss13","engine")
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "nrX" = (
@@ -106508,7 +106500,7 @@ pSY
 myo
 uiV
 kIX
-gbw
+gXp
 wtl
 sMH
 keR
@@ -107023,7 +107015,7 @@ hiO
 uiV
 tbB
 gXp
-gXp
+wqN
 jLf
 nYz
 siV
@@ -107794,7 +107786,7 @@ vvx
 nlO
 xlK
 gXp
-gXp
+wqN
 jLf
 dae
 vFo
@@ -156745,11 +156737,7 @@ yiK
 ulw
 npE
 lRp
-<<<<<<< HEAD
-jwj
-=======
 rCO
->>>>>>> bubber/master
 naC
 uio
 nKg
