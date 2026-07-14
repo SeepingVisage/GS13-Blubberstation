@@ -45,6 +45,7 @@
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /turf/open/floor/iron/dark/textured_large,
 /area/xenoarch/lavaland/med)
 "abK" = (
@@ -53,6 +54,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "abR" = (
@@ -810,13 +812,13 @@
 /turf/open/floor/iron/white/small,
 /area/lavaland/underground/xenoarch/candy_outpost)
 "ayv" = (
-/obj/structure/closet/secure_closet/engineering_welding,
 /obj/effect/turf_decal/box,
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1;
 	alpha = 120
 	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "ayw" = (
@@ -996,6 +998,7 @@
 	alpha = 120
 	},
 /obj/machinery/camera/directional/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "aFE" = (
@@ -1307,6 +1310,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/external,
 /turf/open/floor/plating{
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
@@ -1789,10 +1793,6 @@
 /turf/open/floor/iron/white/small,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "biM" = (
-/obj/structure/tank_dispenser,
-/obj/effect/turf_decal/bot{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 10
 	},
@@ -1995,6 +1995,7 @@
 	dir = 1;
 	alpha = 120
 	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "bpI" = (
@@ -2163,11 +2164,8 @@
 /turf/open/floor/iron/smooth,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "bwY" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/box,
-/obj/machinery/power/port_gen/pacman{
-	anchored = 1
-	},
+/obj/structure/tank_dispenser,
 /turf/open/floor/plating{
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
@@ -3794,6 +3792,9 @@
 	name = "Xenoarchaeology Hallway"
 	},
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/any/supply/mining_station,
+/obj/effect/mapping_helpers/airlock/access/any/service/hydroponics,
+/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/arch)
 "cFq" = (
@@ -6380,7 +6381,6 @@
 /turf/open/floor/iron,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "eyK" = (
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/light/directional/west,
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -6898,7 +6898,9 @@
 "eTK" = (
 /obj/structure/table/reinforced,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/window/right/directional/south,
+/obj/machinery/door/window/right/directional/north{
+	req_access = list("hydroponics")
+	},
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/bot)
 "eTV" = (
@@ -7858,7 +7860,7 @@
 	dir = 8
 	},
 /obj/machinery/light,
-/obj/machinery/suit_storage_unit/mining,
+/obj/structure/closet/secure_closet/miner,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/corner{
 	dir = 1
@@ -9171,6 +9173,9 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Engineering Ladder"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/construction)
 "gFh" = (
@@ -9359,7 +9364,8 @@
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},
-/obj/machinery/vending/tool,
+/obj/machinery/power/adipoelectric_generator,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "gNV" = (
@@ -10842,11 +10848,11 @@
 	pixel_x = 6;
 	pixel_y = -2
 	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -3;
-	pixel_y = 13
-	},
 /obj/effect/turf_decal/trimline/yellow/filled/line,
+/obj/item/clothing/gloves/color/fyellow{
+	pixel_y = 6;
+	pixel_x = -7
+	},
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "hMf" = (
@@ -11656,7 +11662,10 @@
 /area/lavaland/underground/xenoarch/calorite_temple)
 "ild" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/window/left/directional/east,
+/obj/machinery/door/window/left/directional/west{
+	name = "Cargo Desk";
+	req_access = list("cargo")
+	},
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/arch)
 "ilF" = (
@@ -11785,7 +11794,9 @@
 	input_dir = 8;
 	output_dir = 4
 	},
-/obj/machinery/door/window/right/directional/east,
+/obj/machinery/door/window/right/directional/west{
+	req_access = list("cargo")
+	},
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/arch)
 "isX" = (
@@ -11851,10 +11862,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/purple,
-/obj/machinery/computer/rdconsole{
-	dir = 1;
-	pixel_x = -2
-	},
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 1
@@ -13853,9 +13860,11 @@
 /turf/open/floor/iron/dark,
 /area/xenoarch/lavaland/foyer)
 "jWd" = (
-/obj/structure/cable,
 /obj/effect/turf_decal/box,
-/obj/machinery/power/adipoelectric_generator,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/cable,
 /turf/open/floor/plating{
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
@@ -13943,7 +13952,9 @@
 "jZN" = (
 /obj/machinery/biogenerator,
 /obj/effect/turf_decal/delivery,
-/obj/machinery/door/window/left/directional/south,
+/obj/machinery/door/window/left/directional/north{
+	req_access = list("hydroponics")
+	},
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/bot)
 "kam" = (
@@ -14088,6 +14099,9 @@
 	name = "Xenoarchaeology Hallway"
 	},
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/any/supply/mining_station,
+/obj/effect/mapping_helpers/airlock/access/any/service/hydroponics,
+/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/arch)
 "kfm" = (
@@ -14528,13 +14542,11 @@
 /turf/open/indestructible/chocolate,
 /area/lavaland/underground/xenoarch/candyland)
 "kvn" = (
-/obj/machinery/suit_storage_unit/engine,
-/obj/effect/turf_decal/bot{
-	dir = 1
-	},
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 9
 	},
+/obj/structure/reagent_dispensers/fueltank/large,
+/obj/effect/turf_decal/box,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "kvo" = (
@@ -14903,7 +14915,8 @@
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/tool,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "kHJ" = (
@@ -15310,6 +15323,7 @@
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/medical/general,
 /turf/open/floor/iron/dark/textured_large,
 /area/xenoarch/lavaland/med)
 "kWH" = (
@@ -16820,21 +16834,11 @@
 /turf/closed/wall,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "lWB" = (
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/rods/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/electronics/airlock,
-/obj/item/electronics/airlock,
-/obj/item/stock_parts/power_store/cell/high,
-/obj/item/stack/sheet/mineral/plasma{
-	amount = 30
-	},
-/obj/structure/closet/crate/engineering,
-/obj/effect/turf_decal/box,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1;
 	alpha = 120
 	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "lXc" = (
@@ -16938,11 +16942,11 @@
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "mar" = (
 /obj/structure/table,
+/obj/structure/window/reinforced/spawner/directional/west,
 /obj/item/clothing/head/utility/welding{
 	pixel_x = -3;
 	pixel_y = 5
 	},
-/obj/structure/window/reinforced/spawner/directional/west,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "maB" = (
@@ -17096,10 +17100,21 @@
 /turf/closed/wall/mineral/iron,
 /area/lavaland/underground/xenoarch/donut_factory)
 "mfm" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/effect/turf_decal/box,
 /obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -3;
+	pixel_y = 13
+	},
+/obj/item/storage/toolbox/emergency{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/item/storage/toolbox/electrical{
+	pixel_x = -3;
+	pixel_y = -2
+	},
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "mfp" = (
@@ -17795,6 +17810,9 @@
 	name = "Xenoarchaeology Hallway"
 	},
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/any/supply/mining_station,
+/obj/effect/mapping_helpers/airlock/access/any/service/hydroponics,
+/obj/effect/mapping_helpers/airlock/access/any/science/general,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/arch)
 "mFD" = (
@@ -19231,14 +19249,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/research{
-	dir = 4;
-	name = "Xenobotany";
-	opacity = 0
-	},
+/obj/machinery/door/airlock/hydroponics/glass,
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/bot)
 "nDK" = (
@@ -20029,12 +20044,12 @@
 /area/lavaland/underground/xenoarch/calorite_temple)
 "oav" = (
 /obj/machinery/portable_atmospherics/pump,
-/obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1;
 	alpha = 120
 	},
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer4,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "oaN" = (
@@ -21463,6 +21478,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/science/general,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/arch)
 "pdy" = (
@@ -22039,13 +22055,13 @@
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "pyY" = (
 /obj/structure/cable,
-/obj/machinery/portable_atmospherics/scrubber,
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
-/obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1;
 	alpha = 120
 	},
+/obj/effect/turf_decal/box,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/structure/reagent_dispensers/watertank/high,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "pzm" = (
@@ -23211,12 +23227,11 @@
 /turf/open/floor/iron,
 /area/xenoarch/lavaland/public)
 "qtr" = (
-/obj/machinery/door/airlock/glass{
-	name = "Xenoarch Radio&Silo Room"
-	},
+/obj/machinery/door/airlock/engineering,
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/tcoms,
 /turf/open/floor/iron/dark/textured_large,
 /area/xenoarch/lavaland/foyer)
 "qty" = (
@@ -23888,6 +23903,7 @@
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
+/obj/item/stock_parts/power_store/cell/high,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "qUd" = (
@@ -25454,6 +25470,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/service/janitor,
 /turf/open/floor/iron/dark/textured_large,
 /area/xenoarch/lavaland/public)
 "rXK" = (
@@ -26989,6 +27006,7 @@
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/security/general,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/sec)
 "tdU" = (
@@ -27068,6 +27086,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/atmos,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
+/obj/structure/cable,
 /turf/open/floor/iron/dark/textured_large,
 /area/mine/xenoarch/engineering)
 "tfE" = (
@@ -29607,6 +29628,8 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/plating{
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
@@ -29753,6 +29776,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/all/service/janitor,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/public)
 "uQG" = (
@@ -30785,6 +30809,16 @@
 /obj/effect/turf_decal/candy/greenwhite1,
 /turf/open/candyfloor,
 /area/lavaland/underground/xenoarch/candyland)
+"vDP" = (
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/electronics/airlock,
+/obj/item/electronics/airlock,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/rods/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/turf/open/floor/plating,
+/area/xenoarch/lavaland/construction)
 "vDR" = (
 /turf/closed/wall,
 /area/xenoarch/lavaland/bathroom)
@@ -32908,7 +32942,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/mining,
+/obj/structure/closet/secure_closet/miner,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 1
@@ -33146,6 +33180,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/atmos,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /turf/open/floor/iron/dark/textured_large,
 /area/mine/xenoarch/engineering)
 "xmR" = (
@@ -33367,11 +33403,7 @@
 /turf/open/floor/iron,
 /area/lavaland/underground/xenoarch/candy_outpost)
 "xww" = (
-/obj/machinery/door/airlock/research{
-	dir = 4;
-	name = "Xenoarch Mining Supplies";
-	opacity = 0
-	},
+/obj/machinery/door/airlock/mining/glass,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -33382,6 +33414,7 @@
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
+/obj/effect/mapping_helpers/airlock/access/any/supply/mining_station,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/arch)
 "xwA" = (
@@ -33650,13 +33683,13 @@
 /turf/open/floor/iron/smooth,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "xIn" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/structure/reagent_dispensers/fueltank/large,
-/obj/effect/turf_decal/box,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 1;
 	alpha = 120
 	},
+/obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "xIJ" = (
@@ -34030,7 +34063,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/purple,
-/obj/machinery/rnd/production/protolathe/department/science,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/corner{
 	dir = 1
@@ -34393,7 +34425,6 @@
 /obj/effect/turf_decal/trimline/purple/mid_joiner{
 	dir = 8
 	},
-/obj/structure/chair/office/light,
 /turf/open/floor/iron/white/smooth_edge{
 	dir = 8
 	},
@@ -45320,7 +45351,7 @@ prQ
 hrf
 kaU
 tNq
-kaU
+vDP
 aDV
 tNq
 lvX
