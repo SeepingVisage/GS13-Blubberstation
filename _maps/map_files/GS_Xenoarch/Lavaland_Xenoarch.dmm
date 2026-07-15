@@ -10129,7 +10129,9 @@
 	pixel_x = -29;
 	pixel_y = 0
 	},
-/obj/machinery/vending/hydroseeds,
+/obj/machinery/vending/hydroseeds{
+	all_products_free = 0
+	},
 /obj/machinery/camera/directional/west,
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 4
@@ -25724,7 +25726,9 @@
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 6
 	},
-/obj/machinery/vending/hydronutrients,
+/obj/machinery/vending/hydronutrients{
+	all_products_free = 0
+	},
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},
