@@ -1,4 +1,4 @@
-/**
+/** 
 * Adjusts the fatness level of the parent mob.
 *
 * * adjustment_amount - adjusts how much weight is gained or loss. Positive numbers add weight.
@@ -11,68 +11,75 @@
 	if(!adjustment_amount || !type_of_fattening)
 		return FALSE
 
-	if(!HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER) && client?.prefs)
-		if(!check_weight_prefs(type_of_fattening))
-			return FALSE
+	if(!check_weight_prefs(type_of_fattening))
+		return FALSE
 
-	var/amount_to_change = adjustment_amount
+	adjustment_amount = get_fatness_adjustment_amount(adjustment_amount, ignore_rate)
 
-	var/gain_rate = get_weight_gain_rate()
-	var/lose_rate = get_weight_loss_rate()
+	if(fatness_real + adjustment_amount < 0)
+		adjustment_amount = -fatness_real
 
-	if(!ignore_rate)
-		if(adjustment_amount > 0)
-			amount_to_change = amount_to_change * gain_rate
-		else
-			amount_to_change = amount_to_change * lose_rate
-
-	if(fatness_real + amount_to_change < 0)
-		amount_to_change = -fatness_real
-
-	fatness_real += amount_to_change
-	fatness_real = max(fatness_real, 0) //It would be a little silly if someone got negative fat. This is now redundant, but I'll leave this here for safety sake
+	fatness_real += adjustment_amount
 
 	if(max_weight && !HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
 		fatness_real = min(fatness_real, (max_weight - 1))
 
 	calculate_fatness()
 
-	return amount_to_change
+	return adjustment_amount
 
+/** 
+* Adjusts the perma fatness level of the parent mob.
+*
+* * adjustment_amount - adjusts how much weight is gained or loss. Positive numbers add weight.
+* * type_of_fattening - what type of fattening is being used. Look at the traits in fatness.dm for valid options.
+* * ignore_rate - do we want to ignore the mob's weight gain/loss rate? This is only here for niche uses.
+*
+* * returns the amount of BFI applied onto target
+*/
 /mob/living/carbon/proc/adjust_perma(adjustment_amount, type_of_fattening = FATTENING_TYPE_ITEM, ignore_rate = FALSE)
-	if(isnull(client))
-		return FALSE
-	if(type_of_fattening != FATTENING_TYPE_ALMIGHTY && !client.prefs.read_preference(/datum/preference/toggle/weight_gain_permanent))
-		return FALSE
-
 	if(!adjustment_amount || !type_of_fattening)
 		return FALSE
 
-	if(!HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER) && client?.prefs)
-		if(!check_weight_prefs(type_of_fattening))
-			return FALSE
+	if(!check_weight_prefs(type_of_fattening, TRUE))
+		return FALSE
+	
+	adjustment_amount = get_fatness_adjustment_amount(adjustment_amount, ignore_rate)
 
-	var/amount_to_change = adjustment_amount
+	if(fatness_perma + adjustment_amount < 0)
+		adjustment_amount = -fatness_perma
 
-	var/gain_rate = get_weight_gain_rate()
-	var/lose_rate = get_weight_loss_rate()
-
-	if(!ignore_rate)
-		if(adjustment_amount > 0)
-			amount_to_change = amount_to_change * gain_rate
-		else
-			amount_to_change = amount_to_change * lose_rate
-
-	if(fatness_perma + amount_to_change < 0)
-		amount_to_change = -fatness_perma
-
-	fatness_perma += amount_to_change
-	fatness_perma = max(fatness_perma, 0)
+	fatness_perma += adjustment_amount
 
 	if(max_weight && !HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
 		fatness_perma = min(fatness_perma, (max_weight - 1))
 
-	return amount_to_change
+	return adjustment_amount
+
+/** 
+ * Returns the actual amount of fatness that should be applied to a mob when WG/L rate modifiers are applied.
+ * If `adjustment_amount` if positive, uses WG rate. If `adjustment_amount` is negative uses the WL rate.
+ * 
+ * Params:
+ * 
+ * `adjustment_amount` - the base amount of fatness we want to apply
+ * `ignore_rate` - whether we take into consideration the WG/L rates. Default is `FALSE`
+ * 
+ * Returns `adjustment_amount` if `ignore_rate` is set to `TRUE`. Returns `adjustment_amount` multiplied by 
+ * our current WG/L rate if `ignore_rate` is set to `FALSE`
+*/
+/mob/living/carbon/proc/get_fatness_adjustment_amount(adjustment_amount, ignore_rate = FALSE)
+	if (ignore_rate)
+		return adjustment_amount
+
+	if(adjustment_amount > 0)
+		var/gain_rate = get_weight_gain_rate()
+		adjustment_amount = adjustment_amount * gain_rate
+	else
+		var/lose_rate = get_weight_loss_rate()
+		adjustment_amount = adjustment_amount * lose_rate
+	
+	return adjustment_amount
 
 /// Remove all of the real fatness from a mob.
 /mob/living/carbon/proc/fully_heal_fatness(remove_perma = FALSE, custom_remove_text, custom_perma_remove_text)
@@ -106,56 +113,73 @@
 
 	fully_heal_fatness(remove_perma, regular_text, perma_text)
 
-/// Checks the parent mob's prefs to see if they can be fattened by the fattening_type
-/mob/living/carbon/proc/check_weight_prefs(type_of_fattening = FATTENING_TYPE_ITEM)
+/** 
+ * Checks the parent mob's prefs to see if they can be fattened by the fattening_type
+ * 
+ * type_of_fattening - the type of fattening we are being affected by, as defined in 
+ * `code/__DEFINES/~~gs_defines/misc.dm`
+ * perma - whether we are adjusting perma fatness or not, default is FALSE
+ * 
+ * returns TRUE if our prefs match or we for some reason override them.
+ * 
+ * returns FALSE if our prefs don't match and we don't have anything that overrides them
+*/
+/mob/living/carbon/proc/check_weight_prefs(type_of_fattening = FATTENING_TYPE_ITEM, perma = FALSE)
 	if(HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
+		return TRUE
+
+	if (type_of_fattening == FATTENING_TYPE_ALMIGHTY)
 		return TRUE
 
 	if(!client?.prefs || !type_of_fattening)
 		return FALSE
 
+	if (perma && !client.prefs.read_preference(/datum/preference/toggle/weight_gain_permanent))
+		return FALSE
+
 	switch(type_of_fattening)
 		if(FATTENING_TYPE_ITEM)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_items))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_items))
+				return TRUE
 
 		if(FATTENING_TYPE_FOOD)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_food))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_food))
+				return TRUE
 
 		if(FATTENING_TYPE_CHEM)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
+				return TRUE
 
 		if(FATTENING_TYPE_WEAPON)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_weapons))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_weapons))
+				return TRUE
 
 		if(FATTENING_TYPE_MAGIC)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_magic))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_magic))
+				return TRUE
 
 		if(FATTENING_TYPE_VIRUS)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_viruses))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_viruses))
+				return TRUE
 
 		if(FATTENING_TYPE_NANITES)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_nanites))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_nanites))
+				return TRUE
 
 		if(FATTENING_TYPE_ATMOS)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_atmos))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_atmos))
+				return TRUE
 
 		if(FATTENING_TYPE_MOBS)
-			if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_mobs))
-				return FALSE
+			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_mobs))
+				return TRUE
 
 		if(FATTENING_TYPE_WEIGHT_LOSS)
 			if(HAS_TRAIT(src, TRAIT_WEIGHT_LOSS_IMMUNE))
 				return FALSE
+			return TRUE
 
-	return TRUE
+	return FALSE
 
 /mob/living/carbon/proc/perma_apply()
 	fatness = fatness + fatness_perma	// we're adding it to fatness rather than fatness_real because here we SHOULD be after the hiders were applied
