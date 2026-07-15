@@ -1,6 +1,5 @@
 /// Handles weight gain from digesting food/stomach contents
 /mob/living/carbon/proc/handle_weight_gain()
-	handle_calorite_poisoning()
 	calculate_fatness()
 
 	handle_fatness()
@@ -10,16 +9,6 @@
 
 	if (handle_bursting()) //We want to skip the rest if we exploded
 		return
-
-	switch(get_fullness())
-		if(0 to FULLNESS_LEVEL_BLOATED)
-			clear_alert("fullness")
-		if(FULLNESS_LEVEL_BLOATED to FULLNESS_LEVEL_BEEG)
-			throw_alert("fullness", /atom/movable/screen/alert/gs13/bloated)
-		if(FULLNESS_LEVEL_BEEG to FULLNESS_LEVEL_NOMOREPLZ)
-			throw_alert("fullness", /atom/movable/screen/alert/gs13/stuffed)
-		if(FULLNESS_LEVEL_NOMOREPLZ to INFINITY)
-			throw_alert("fullness", /atom/movable/screen/alert/gs13/beegbelly)
 
 	/*
 	var/obj/item/organ/genital/external/belly/B = getorganslot("belly")
@@ -88,3 +77,14 @@
 
 		if(0 to FATNESS_LEVEL_FAT)
 			clear_alert("muscle")
+
+/mob/living/carbon/proc/handle_fullness_alert()
+	switch(get_fullness())
+		if(0 to FULLNESS_LEVEL_BLOATED)
+			clear_alert("fullness")
+		if(FULLNESS_LEVEL_BLOATED to FULLNESS_LEVEL_BEEG)
+			throw_alert("fullness", /atom/movable/screen/alert/gs13/bloated)
+		if(FULLNESS_LEVEL_BEEG to FULLNESS_LEVEL_NOMOREPLZ)
+			throw_alert("fullness", /atom/movable/screen/alert/gs13/stuffed)
+		if(FULLNESS_LEVEL_NOMOREPLZ to INFINITY)
+			throw_alert("fullness", /atom/movable/screen/alert/gs13/beegbelly)

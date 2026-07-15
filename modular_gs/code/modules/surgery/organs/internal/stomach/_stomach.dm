@@ -5,3 +5,7 @@
 		var/nutritionThatBecomesFat = max((nutrition - NUTRITION_LEVEL_FULL)*(fatConversionRate / 100),1)
 		human.adjust_nutrition(-nutritionThatBecomesFat, TRUE) // Force adjust_nutrition to happen ignoring TRAIT_NOHUNGER
 		human.adjust_fatness(nutritionThatBecomesFat, FATTENING_TYPE_FOOD)
+	
+	// it pains me to do this on the stomach but this has to be done
+	human.handle_calorite_poisoning()
+	human.handle_fullness_alert()

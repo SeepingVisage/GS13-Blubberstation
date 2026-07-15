@@ -34,6 +34,10 @@
 
 	adjust_hunger(calorite_poisoning * 2)
 
+	if (calorite_poisoning > 0.3)
+		if (prob(5))
+			emote("gurgle")
+
 	if (calorite_poisoning > 0.4)
 		remove_quirk(/datum/quirk/fat_aversion)
 
