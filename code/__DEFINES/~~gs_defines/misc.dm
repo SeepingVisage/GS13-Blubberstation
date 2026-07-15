@@ -1,18 +1,19 @@
 #define MINIMUM_FATNESS_LEVEL 0
 
-#define FATTENING_TYPE_ITEM "item"
-#define FATTENING_TYPE_FOOD "food"
-#define FATTENING_TYPE_CHEM "chem"
-#define FATTENING_TYPE_WEAPON "weapon"
-#define FATTENING_TYPE_MAGIC "magic"
-#define FATTENING_TYPE_VIRUS "virus"
-#define FATTENING_TYPE_NANITES "nanites"
-#define FATTENING_TYPE_ATMOS "atmos"	// yeah I'm taking the name atmos instead of gasses, because fuck you I'm not calling my pref "inflation type gas", some people will get confused, if you wanna do inflation just call it that lol
-#define FATTENING_TYPE_RADIATIONS "radiations"
-#define FATTENING_TYPE_MOBS "mobs"
-#define FATTENING_TYPE_WEIGHT_LOSS "weight_loss"
-#define FATTENING_TYPE_ALMIGHTY "almighty" //This ignores prefs, please only use this for smites and other admin controlled instances.
-#define TRANSFORMATION "transformation"
+// using numbers here is probably a bad idea but I wanna experiment
+#define FATTENING_TYPE_ITEM 1
+#define FATTENING_TYPE_FOOD 2
+#define FATTENING_TYPE_CHEM 3
+#define FATTENING_TYPE_WEAPON 4
+#define FATTENING_TYPE_MAGIC 5
+#define FATTENING_TYPE_VIRUS 6
+#define FATTENING_TYPE_NANITES 7
+#define FATTENING_TYPE_ATMOS 8
+#define FATTENING_TYPE_RADIATIONS 9
+#define FATTENING_TYPE_MOBS 10
+#define FATTENING_TYPE_WEIGHT_LOSS 11
+/// This ignores prefs, please only use this for smites and other admin controlled instances.
+#define FATTENING_TYPE_ALMIGHTY 2137	// papaja is inevitable
 
 #define FATNESS_TO_WEIGHT_RATIO 0.25
 #define MUSCLE_TO_WEIGHT_RATIO 0.5 // Muscle is heavier than fat.
