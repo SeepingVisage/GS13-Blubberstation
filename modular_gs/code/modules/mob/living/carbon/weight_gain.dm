@@ -1,10 +1,13 @@
 /// Handles weight gain from digesting food/stomach contents
 /mob/living/carbon/human/proc/handle_weight_gain()
+	handle_calorite_poisoning()
+	calculate_fatness()
+
 	handle_fatness()
+	fullness_adjustment()
 	handle_helplessness()
 	handle_modular_items()
-	handle_calorite_poisoning()
-	fullness_adjustment()
+
 	if (handle_bursting()) //We want to skip the rest if we exploded
 		return
 
