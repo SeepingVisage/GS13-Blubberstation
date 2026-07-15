@@ -1,5 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - bugfix: "fixes Teshari bellies disappearing when using the \"belly uses skin tone\" option"
-  - code_imp: "merges with upstream"
