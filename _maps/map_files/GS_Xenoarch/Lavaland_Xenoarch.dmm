@@ -6388,7 +6388,6 @@
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "eyK" = (
 /obj/machinery/light/directional/west,
-/obj/structure/cable,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
 	},
