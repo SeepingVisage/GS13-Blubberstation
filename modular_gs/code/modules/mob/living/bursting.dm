@@ -124,7 +124,7 @@
 #define BURSTING_MACRO_CHECK_THRESHOLD(percentageA, percentageB) (percentageA > percentageB * BURSTING_SOUND_RATIO)
 
 ///Gets the players bursting type pref, returns a number coresponding to said pref
-/mob/living/carbon/proc/get_bursting_pref()
+/mob/living/carbon/human/proc/get_bursting_pref()
 	switch(client?.prefs?.read_preference(/datum/preference/choiced/glutton_bursting_type))
 		if (BURSTING_TYPE_PREF_SAFE)
 			return BURSTING_PREF_SAFE
@@ -144,7 +144,7 @@
 		else
 			return BURSTING_PREF_DISABLED
 
-/mob/living/carbon
+/mob/living/carbon/human
 	///How full is the player according to their bursting prefs
 	var/bursting_capacity_fullness = -1
 	///How fat is the player according to their bursting pref
@@ -153,7 +153,7 @@
 	var/bursting_capacity_percentage = -1
 
 ///Handles bursting for either eating too much or too high of a BFI, returns a bool for whether or not the character burst or is in the process of doing so
-/mob/living/carbon/proc/handle_bursting()
+/mob/living/carbon/human/proc/handle_bursting()
 
 	//Get prefs
 	var/fullness_bursting_pref = client?.prefs?.read_preference(/datum/preference/numeric/helplessness/glutton_fullness_before_burst)
@@ -231,7 +231,7 @@
 	return TRUE
 
 ///Opens the tgui popup for deciding wether to burst or delay
-/mob/living/carbon/proc/trigger_glutton_burst(burst_type, bursting_type_pref)
+/mob/living/carbon/human/proc/trigger_glutton_burst(burst_type, bursting_type_pref)
 	//Add self removing trait so that bursting doesn't repeatedly trigger, dual purpose as our delay if the delay button is pressed and a cooldown to delay repeated bursting
 	ADD_TRAIT(src, BURSTING_ABOUT_TO_BURST, TRAUMA_TRAIT)
 
@@ -276,7 +276,7 @@
 	Stun(BURSTING_ANIMATE_TIME SECONDS, TRUE)
 
 ///Makes our glutton explode, using the character's original transform to restore their shape if there's safe bursting
-/mob/living/carbon/proc/burst_glutton()
+/mob/living/carbon/human/proc/burst_glutton()
 	//Check surrounding area if anyone will see them explode who would not want to, delay for a moment
 	if (!check_prefs_in_view(/datum/preference/toggle/glutton_see_bursting, src.loc))
 		visible_message(
