@@ -1,0 +1,5 @@
+author: "Swan"
+delete-after: True
+changes:
+  - map: "heavily restricts access to some xenoarch areas"
+  - map: "removes a lot of high value items from xenoarch"
