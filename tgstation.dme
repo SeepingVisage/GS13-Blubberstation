@@ -7401,6 +7401,7 @@
 #include "modular_gs\code\modules\storyteller\storytellers\tellers\storyteller_7_relaxed.dm"
 #include "modular_gs\code\modules\surgery\organs\augments.dm"
 #include "modular_gs\code\modules\surgery\organs\internal\lungs.dm"
+#include "modular_gs\code\modules\surgery\organs\internal\stomach\_stomach.dm"
 #include "modular_gs\code\modules\surgery\organs\internal\stomach\stomach_ethereal.dm"
 #include "modular_gs\code\modules\uplink\uplink_items\adipowarfare.dm"
 #include "modular_gs\code\modules\vending\games.dm"
