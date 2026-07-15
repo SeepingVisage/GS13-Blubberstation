@@ -1,5 +1,5 @@
 /// Handles weight gain from digesting food/stomach contents
-/mob/living/carbon/human/proc/handle_weight_gain()
+/mob/living/carbon/proc/handle_weight_gain()
 	handle_calorite_poisoning()
 	calculate_fatness()
 

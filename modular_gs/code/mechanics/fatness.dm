@@ -187,7 +187,7 @@
 		fatness = min(fatness, (max_weight - 1))
 
 /// Handles calculating our resulting `fatness` from our `fatness_real`, `fatness_perma` as well as any hiders we may have
-/mob/living/carbon/human/proc/calculate_fatness()
+/mob/living/carbon/proc/calculate_fatness()
 	fatness = fatness_real
 	hiders_apply()
 	perma_apply()
