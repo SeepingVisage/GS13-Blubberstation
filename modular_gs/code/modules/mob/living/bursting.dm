@@ -152,8 +152,10 @@
 	/// Their highest capacity percentage value to determine if they should burst
 	var/bursting_capacity_percentage = -1
 
+/mob/living/carbon/proc/handle_bursting()
+	return FALSE
 ///Handles bursting for either eating too much or too high of a BFI, returns a bool for whether or not the character burst or is in the process of doing so
-/mob/living/carbon/human/proc/handle_bursting()
+/mob/living/carbon/human/handle_bursting()
 
 	//Get prefs
 	var/fullness_bursting_pref = client?.prefs?.read_preference(/datum/preference/numeric/helplessness/glutton_fullness_before_burst)
