@@ -23,5 +23,5 @@
 		to_chat(crosser, "<span class='danger'><B>You feel all of the air leave your stomach!</B></span>")
 		crosser.emote(pick("belch","burp"))
 
-	crosser.Knockdown(500)
+	crosser.Knockdown(100)
 

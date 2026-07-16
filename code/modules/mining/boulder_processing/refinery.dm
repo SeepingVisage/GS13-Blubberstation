@@ -50,6 +50,7 @@
 			/datum/material/bluespace,
 			/datum/material/bananium,
 			/datum/material/plastic,
+			/datum/material/calorite,
 		)
 	return is_type_in_list(possible_mat, processable_materials)
 
