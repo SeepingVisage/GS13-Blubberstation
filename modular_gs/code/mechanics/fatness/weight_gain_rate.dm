@@ -3,6 +3,7 @@
 	var/total_modifier = 0
 	for (var/key in weight_gain_modifiers)
 		total_modifier += clamp(weight_gain_modifiers[key], -2, 2)
+
 	return total_modifier
 
 /// returns the total value of all WL modifiers
@@ -10,6 +11,7 @@
 	var/total_modifier = 0
 	for (var/key in weight_loss_modifiers)
 		total_modifier += clamp(weight_loss_modifiers[key], -2, 2)
+
 	return total_modifier
 
 /**

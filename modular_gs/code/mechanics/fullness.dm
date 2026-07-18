@@ -8,6 +8,7 @@
 	fullness = .	// old fullness
 	return max(0, fullness + fullness_adjustment)
 
+/// reduces the fullness amount that was adjusted from any external sources, as well as caps it to reasonable values
 /mob/living/carbon/proc/fullness_adjustment()
 	var/max_fullness_reduction = max(fullness + 500, 600)
 	if(fullness_adjustment > 15)

@@ -152,9 +152,21 @@
 	/// Their highest capacity percentage value to determine if they should burst
 	var/bursting_capacity_percentage = -1
 
+/** 
+ * Handles bursting for either eating too much or having too high of a BFI. It checks
+ * for preferences, handles bursting capacity, sound and messages. Also responsible for 
+ * triggering the bursting prompt. Returns a bool for whether or not the character 
+ * burst or is in the process of doing so.
+ * 
+ * The proc on carbon is for compatibility reasons; the real magic happens in the one
+ * defined a few lines below on `/mob/living/carbon/human`.
+ * 
+ * Returns TRUE if the character has burst or is in the process of bursting
+ * Returns FALSE otherwise
+ */
 /mob/living/carbon/proc/handle_bursting()
 	return FALSE
-///Handles bursting for either eating too much or too high of a BFI, returns a bool for whether or not the character burst or is in the process of doing so
+
 /mob/living/carbon/human/handle_bursting()
 
 	//Get prefs

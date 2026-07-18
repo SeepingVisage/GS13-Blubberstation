@@ -1,4 +1,4 @@
-
+/// Updates the size of genitals after weight has been gained or lost
 /mob/living/carbon/proc/update_body_size(size_change)
 	var/obj/item/organ/genital/butt/butt = get_organ_slot(ORGAN_SLOT_BUTT)
 	var/obj/item/organ/genital/belly/belly = get_organ_slot(ORGAN_SLOT_BELLY)
@@ -28,6 +28,7 @@
 	else
 		set_size(size_change + set_genital_size)
 
+/// Handles applying and removing the appropriate weight stage trait
 /mob/living/carbon/proc/handle_fatness_trait(trait, trait_lose, trait_gain, fatness_lose, fatness_gain, chat_lose, chat_gain, weight_stage)
 	if(fatness < fatness_lose)
 		if (chat_lose)
@@ -46,6 +47,7 @@
 			ADD_TRAIT(src, trait_gain, OBESITY)
 		update_body_size(weight_stage + 1)
 
+/// Handles applying and removing helplessness mechanics
 /mob/living/carbon/proc/handle_helplessness()
 	for (var/datum/helplessness/helplessness_mechanic as anything in GLOB.helplessness_mechanics)
 		helplessness_mechanic.handle_helplessness(src)
@@ -93,6 +95,7 @@
 	fatness_delay = min(fatness_delay, delay_cap)
 	return fatness_delay
 
+/// handles applying fatness slowdown penalties and preparing weight stage traits for application via `handle_fatness_trait`
 /mob/living/carbon/proc/handle_fatness()
 	var/effective_fatness = calculate_effective_fatness()
 	// update movement speed
