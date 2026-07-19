@@ -71,17 +71,13 @@
 
 /datum/movespeed_modifier/nutricious_boost
 	blacklisted_movetypes = (FLYING|FLOATING)
-	// multiplicative_slowdown = -0.5
 	conflicts_with = TRAIT_NUTRICIOUS_BOOST
 
-/datum/movespeed_modifier/nutricious_boost/nutriment	// not actually implemented, we need to have WG from food first...
-	multiplicative_slowdown = -0.3
-
 /datum/movespeed_modifier/nutricious_boost/lipoifier
-	multiplicative_slowdown = -0.5
+	multiplicative_slowdown = -0.1
 
 /datum/movespeed_modifier/nutricious_boost/galbanic
-	multiplicative_slowdown = -0.8
+	multiplicative_slowdown = -0.3
 
 /datum/quirk/strong_legs
 	name = "Strong legs"
