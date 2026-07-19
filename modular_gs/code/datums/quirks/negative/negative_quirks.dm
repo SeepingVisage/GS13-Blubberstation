@@ -3,7 +3,7 @@
 	desc = "Your legs can't carry the heaviest of weights. You will become much slower when fat."
 	icon = "fa-weight-hanging"
 	medical_record_text = "Patients legs cannot carry heavy weights well."
-	value = -4
+	value = -6
 	gain_text = span_notice("You feel your legs tremble under your weight")
 	lose_text = span_notice("Your legs seem to have gotten stronger")
 	quirk_flags = 0

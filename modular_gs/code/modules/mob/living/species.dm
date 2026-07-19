@@ -86,7 +86,7 @@
 /mob/living/carbon/proc/apply_fatness_speed_modifiers(fatness_delay)
 	var/delay_cap = FATNESS_MAX_MOVE_PENALTY
 	if(HAS_TRAIT(src, TRAIT_WEAKLEGS))
-		delay_cap = 60
+		delay_cap = WEAKLEGS_MAX_MOVE_PENALTY
 	for(var/datum/fatness_delay_modifier/modifier in fatness_delay_modifiers)
 		fatness_delay = fatness_delay + modifier.amount
 	for(var/datum/fatness_delay_modifier/modifier in fatness_delay_modifiers)
@@ -108,11 +108,7 @@
 			fatness_delay = fatness_delay * FATNESS_STRONGLEGS_MODIFIER
 
 		if(HAS_TRAIT(src, TRAIT_WEAKLEGS))
-			if(effective_fatness <= FATNESS_LEVEL_IMMOBILE)
-				fatness_delay += fatness_delay * FATNESS_WEAKLEGS_MODIFIER / 100
-			if(effective_fatness > FATNESS_LEVEL_IMMOBILE)
-				fatness_delay += (effective_fatness / FATNESS_LEVEL_IMMOBILE) * FATNESS_WEAKLEGS_MODIFIER
-				fatness_delay = min(fatness_delay, 60)
+			fatness_delay *= FATNESS_WEAKLEGS_MODIFIER
 
 	if(fatness_delay)
 		fatness_delay = apply_fatness_speed_modifiers(fatness_delay)
