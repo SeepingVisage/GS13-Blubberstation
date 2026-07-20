@@ -27,7 +27,7 @@
 /// Maximum move speed penalty for being fat, if you don't have the weak legs trait
 #define FATNESS_MAX_MOVE_PENALTY 5
 /// Maximum move speed penalty with the weak legs trait
-#define WEAKLEGS_MAX_MOVE_PENALTY 10
+#define WEAKLEGS_MAX_MOVE_PENALTY 7.5
 /// effective fatness gets divided by this to figure out how much slowness to apply
 #define FATNESS_DIVISOR (FATNESS_LEVEL_IMMOBILE / FATNESS_MAX_MOVE_PENALTY)
 /// slowness modifier grows this many times faster
