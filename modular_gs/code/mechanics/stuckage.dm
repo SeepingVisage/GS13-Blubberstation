@@ -20,7 +20,7 @@
 	if (stuckage_weight == 0)
 		return
 
-	if (got_stuck_in_door(fatty, stuckage_weight, custom_chance_to_get_stuck))
+	if (got_stuck_in_door(fatty, stuckage_weight, custom_chance_to_get_stuck, src))
 		fatty.visible_message("<span class'danger'>[fatty] gets stuck in the doorway!</span>")
 		if (prob(15))
 			to_chat(fatty, "<span class='danger'>As you attempt to pass through  \the [src], your ample curves get wedged in the narrow opening. You find yourself stuck in the [src] frame, struggling to free yourself from the tight squeeze.</span>")
@@ -28,7 +28,7 @@
 		update_integrity(atom_integrity - 1)
 		return COMPONENT_ATOM_BLOCK_EXIT
 
-/proc/got_stuck_in_door(mob/living/carbon/fatty, stuckage_weight, custom_chance_to_get_stuck)
+/proc/got_stuck_in_door(mob/living/carbon/fatty, stuckage_weight, custom_chance_to_get_stuck, door)
 	if(custom_chance_to_get_stuck && fatty.fatness > stuckage_weight)
 		if(prob(custom_chance_to_get_stuck))
 			return TRUE
@@ -43,13 +43,13 @@
 		if(prob(40))
 			return TRUE
 		if(prob(20))
-			to_chat(fatty, "<span class='danger'>With great effort, you manage to squeeze your massive form through  \the [src]. It's a tight fit, but you successfully navigate the narrow opening, barely avoiding getting stuck.</span>")
+			to_chat(fatty, "<span class='danger'>With great effort, you manage to squeeze your massive form through  \the [door]. It's a tight fit, but you successfully navigate the narrow opening, barely avoiding getting stuck.</span>")
 			return FALSE
 
 	if(fatty.fatness > (stuckage_weight / 2))
 		if(prob(20))
 			fatty.visible_message("<span class'danger'>[fatty]'s hips brush against the doorway...</span>")
-			to_chat(fatty, "<span class='danger'>As you pass through  \the [src], you feel a slight brushing against your hips. The [src] frame accommodates your form, but it's a close fit..</span>")
+			to_chat(fatty, "<span class='danger'>As you pass through  \the [door], you feel a slight brushing against your hips. The [door] frame accommodates your form, but it's a close fit..</span>")
 	
 	return FALSE
 
@@ -82,7 +82,7 @@
 	if (stuckage_weight == 0)
 		return
 
-	if (got_stuck_in_door(fatty, stuckage_weight, custom_chance_to_get_stuck))
+	if (got_stuck_in_door(fatty, stuckage_weight, custom_chance_to_get_stuck, src))
 		fatty.visible_message("<span class'danger'>[fatty] gets stuck in the doorway!</span>")
 		if (prob(15))
 			to_chat(fatty, "<span class='danger'>As you attempt to pass through  \the [src], your ample curves get wedged in the narrow opening. You find yourself stuck in the [src] frame, struggling to free yourself from the tight squeeze.</span>")
