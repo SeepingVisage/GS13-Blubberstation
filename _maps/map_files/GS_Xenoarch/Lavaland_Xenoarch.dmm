@@ -14938,7 +14938,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/power/adipoelectric_generator,
+/obj/machinery/power/adipoelectric_generator/anchored,
 /turf/open/floor/iron,
 /area/mine/xenoarch/engineering)
 "kHJ" = (
