@@ -69,6 +69,10 @@
 	name = "Xenoarchaeology Construction"
 	icon_state = "xenoeng"
 
+/area/xenoarch/lavaland/engineering
+	name = "Xenoarcheology Engineering"
+	icon_state = "yellow"
+
 /area/xenoarch/lavaland/foyer
 	name = "Xenoarchaeology Foyer"
 	icon_state = "xenoarch"
