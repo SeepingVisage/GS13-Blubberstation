@@ -7,6 +7,7 @@
 	var/poisoning_per_stab = 0.05
 	var/fat_per_stab = 0
 	var/permafat_per_stab = 0
+	can_click = FALSE
 
 /obj/item/pen/calorite/attack(mob/living/carbon/target, mob/living/user)
 	. = ..()
@@ -19,8 +20,6 @@
 	target.adjust_perma(permafat_per_stab)
 
 	to_chat(user, span_notice("You prick [target] with the pen."))
-	if(target != user)
-		to_chat(target, span_warning("You feel a tiny prick."))
 
 /obj/item/pen/calorite/syndicate
 	name = "nefarious calorite pen"
@@ -28,5 +27,5 @@
 	icon = 'modular_gs/icons/obj/caloritepen.dmi'
 	icon_state = "caloritepen"
 	poisoning_per_stab = 0.5
-	fat_per_stab = 2
-	permafat_per_stab = 10
+	fat_per_stab = 5
+	permafat_per_stab = 20

@@ -36,6 +36,8 @@
 		/obj/item/stack/sheet/iron/twenty,
 		/obj/item/stack/sheet/glass/fifty,
 		/obj/item/stack/sheet/mineral/titanium/five,
+		/obj/item/stack/sheet/mineral/silver/five,
+		/obj/item/stack/sheet/mineral/plasteel/ten,
 		/obj/item/stack/sheet/mineral/gold/five,
 		/obj/item/stack/sheet/mineral/uranium/five,
 		/obj/item/stack/sheet/mineral/diamond,

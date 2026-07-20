@@ -76,7 +76,12 @@
 		/area/centcom/holding/cafe/ruin/caves,\
 		/area/centcom/holding/cafe/ruin/ash_walkers,\
 		/area/centcom/holding/cafe/ruin/xenonest,\
-		/area/centcom/holding/cafe/beach,\
+		/area/centcom/holding/cafe/beach,/* GS13 edit*/\
+		/area/lavaland/underground/xenoarch, \
+		/area/xenoarch/lavaland,\
+		/area/ruin/space/has_grav/hotel,\
+		/area/ruin/space/has_grav/bubbers/persistance,\
+		/area/station/maintenance,\
 		)
 
 /// Applied to a mob wearing gloves that should be passable for hand surgery (e.g. ball mittens).
