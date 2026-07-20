@@ -2961,7 +2961,7 @@
 	},
 /obj/effect/turf_decal/box,
 /obj/structure/cable,
-/turf/open/floor/carpet/blue,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/blueshield)
 "aTU" = (
 /obj/structure/stairs/west,
@@ -3630,6 +3630,7 @@
 /obj/item/clothing/glasses/science{
 	pixel_y = -3
 	},
+/obj/structure/sign/gatofull_2/directional/north,
 /turf/open/floor/glass/reinforced,
 /area/station/science/research)
 "bev" = (
@@ -7969,7 +7970,7 @@
 	pixel_y = 24
 	},
 /obj/effect/landmark/start/blueshield,
-/turf/open/floor/carpet/blue,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/blueshield)
 "coK" = (
 /obj/effect/turf_decal/tile/yellow/opposingcorners{
@@ -14985,7 +14986,10 @@
 /area/station/command/teleporter)
 "epE" = (
 /obj/structure/lattice,
-/obj/structure/sign/gatofull_2/directional/north,
+/obj/structure/sign/gatofull_2/directional/north{
+	pixel_x = 10;
+	pixel_y = 32
+	},
 /turf/open/openspace,
 /area/station/hallway/secondary/command)
 "epH" = (
@@ -15031,6 +15035,7 @@
 	color = "2c2c2c"
 	},
 /obj/effect/landmark/start/hangover,
+/obj/structure/sign/gatofull_1/directional/north,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
 "epT" = (
@@ -17776,6 +17781,7 @@
 	c_tag = "Science - Research & Development";
 	network = list("ss13","rd")
 	},
+/obj/structure/sign/gatofull_3/directional/north,
 /turf/open/floor/glass/reinforced,
 /area/station/science/research)
 "ffR" = (
@@ -19401,8 +19407,9 @@
 /area/station/engineering/atmos/office)
 "fGw" = (
 /obj/structure/dresser,
-/obj/item/sign/flag/nanotrasen{
-	pixel_y = 11
+/obj/item/sign/flag/gato{
+	pixel_x = 1;
+	pixel_y = 13
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/blueshield)
@@ -22547,7 +22554,10 @@
 /area/station/commons/dorms)
 "gBG" = (
 /obj/structure/lattice,
-/obj/structure/sign/gatofull_3/directional/north,
+/obj/structure/sign/gatofull_3/directional/north{
+	pixel_x = 10;
+	pixel_y = 32
+	},
 /turf/open/openspace,
 /area/station/hallway/secondary/command)
 "gBH" = (
@@ -26392,7 +26402,7 @@
 /area/station/engineering/atmos/upper)
 "hHf" = (
 /obj/structure/bed/double,
-/obj/item/bedsheet/nanotrasen/double,
+/obj/item/bedsheet/double_gato,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/command/heads_quarters/blueshield)
 "hHg" = (
@@ -34833,7 +34843,7 @@
 	pixel_x = 7;
 	pixel_y = 6
 	},
-/turf/open/floor/carpet/blue,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/blueshield)
 "jZl" = (
 /obj/effect/turf_decal/tile/yellow/opposingcorners{
@@ -36061,8 +36071,12 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "kqN" = (
-/turf/closed/wall/r_wall,
-/area/station/engineering/supermatter/engine)
+/obj/structure/sign/gatofull_2/directional/north{
+	pixel_x = 10;
+	pixel_y = 32
+	},
+/turf/open/floor/iron/dark/small,
+/area/station/command/gateway)
 "kqU" = (
 /obj/structure/table,
 /obj/effect/spawner/random/entertainment/lighter{
@@ -37174,7 +37188,7 @@
 	fax_name = "Blueshield's Office"
 	},
 /obj/item/radio/intercom/command/directional/east,
-/turf/open/floor/carpet/blue,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/blueshield)
 "kGw" = (
 /obj/machinery/camera/directional/west{
@@ -40432,6 +40446,7 @@
 /obj/structure/chair/sofa/left{
 	color = "2c2c2c"
 	},
+/obj/structure/sign/gatofull_2/directional/north,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
 "lBp" = (
@@ -45029,6 +45044,10 @@
 /area/station/command/meeting_room/council)
 "mPl" = (
 /obj/machinery/light/small/red/directional/north,
+/obj/structure/sign/gatofull_3/directional/north{
+	pixel_x = 10;
+	pixel_y = 32
+	},
 /turf/open/floor/iron/dark/small,
 /area/station/command/gateway)
 "mPp" = (
@@ -49709,7 +49728,7 @@
 /area/station/maintenance/port/greater)
 "ohm" = (
 /obj/effect/mapping_helpers/turn_off_lights_with_lightswitch,
-/turf/open/floor/carpet/blue,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/blueshield)
 "ohn" = (
 /obj/effect/turf_decal/stripes/line{
@@ -53118,6 +53137,10 @@
 	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
 	pixel_x = -3;
 	pixel_y = 3
+	},
+/obj/effect/decal/big_gato{
+	pixel_x = -32;
+	pixel_y = -48
 	},
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 8
@@ -69033,6 +69056,7 @@
 /area/station/engineering/atmos/upper)
 "tUq" = (
 /obj/item/kirbyplants/organic/plant22,
+/obj/structure/sign/gatofull_3/directional/north,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
 "tUt" = (
@@ -71706,6 +71730,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/cargo/lobby)
+"uHt" = (
+/obj/machinery/light/small/red/directional/north,
+/obj/structure/sign/gatofull_1/directional/north{
+	pixel_x = 10;
+	pixel_y = 32
+	},
+/turf/open/floor/iron/dark/small,
+/area/station/command/gateway)
 "uHw" = (
 /obj/effect/turf_decal/tile/green/opposingcorners{
 	dir = 1
@@ -75403,7 +75435,7 @@
 /obj/item/food/donut/apple{
 	pixel_y = 3
 	},
-/turf/open/floor/carpet/blue,
+/turf/open/floor/carpet/gato,
 /area/station/command/heads_quarters/blueshield)
 "vHo" = (
 /obj/structure/lattice,
@@ -75449,6 +75481,7 @@
 /obj/item/book/manual/wiki/research_and_development{
 	pixel_x = -8
 	},
+/obj/structure/sign/gatofull_1/directional/north,
 /turf/open/floor/glass/reinforced,
 /area/station/science/research)
 "vHE" = (
@@ -81831,7 +81864,10 @@
 /area/station/service/chapel/funeral)
 "xyL" = (
 /obj/structure/lattice,
-/obj/structure/sign/gatofull_1/directional/north,
+/obj/structure/sign/gatofull_1/directional/north{
+	pixel_x = 10;
+	pixel_y = 32
+	},
 /turf/open/openspace,
 /area/station/hallway/secondary/command)
 "xyP" = (
@@ -115055,7 +115091,7 @@ ooZ
 uMX
 xkw
 aBk
-mPl
+uHt
 dYf
 wwh
 nYA
@@ -115312,7 +115348,7 @@ xkw
 xkw
 xkw
 aBk
-dYf
+kqN
 nfV
 dYf
 sAc
@@ -181577,11 +181613,11 @@ fac
 jmr
 fac
 fac
-kqN
+iFU
 jZA
 gEs
 gEs
-kqN
+iFU
 vQT
 aDb
 qPA
@@ -181834,11 +181870,11 @@ ikB
 jmr
 ikB
 ikB
-kqN
+iFU
 msn
 afS
 uep
-kqN
+iFU
 ghP
 kvn
 rOa
@@ -182091,12 +182127,12 @@ fac
 eUL
 fac
 fac
-kqN
+iFU
 hmS
 oRY
 hmS
 fKM
-kqN
+iFU
 iFU
 uYL
 oDB
@@ -182348,7 +182384,7 @@ fac
 eUL
 eUL
 fac
-kqN
+iFU
 dCi
 hrK
 jbK
@@ -182605,7 +182641,7 @@ eUL
 eUL
 fac
 fac
-kqN
+iFU
 rFa
 eAP
 gnf
@@ -182862,7 +182898,7 @@ fac
 eUL
 eUL
 fac
-kqN
+iFU
 wxV
 aCw
 rvG
@@ -183119,13 +183155,13 @@ fac
 eUL
 fac
 fac
-kqN
+iFU
 gLy
 him
 gLy
 rFH
-kqN
-kqN
+iFU
+iFU
 hBb
 uJw
 cjF
@@ -183376,11 +183412,11 @@ ikB
 jmr
 ikB
 ikB
-kqN
+iFU
 nuI
 afS
 uep
-kqN
+iFU
 wiz
 kvn
 rOa
@@ -183633,11 +183669,11 @@ fac
 jmr
 fac
 fac
-kqN
+iFU
 ccQ
 tOp
 tOp
-kqN
+iFU
 xFv
 tcV
 eLf
