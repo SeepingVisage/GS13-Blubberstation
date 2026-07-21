@@ -78,7 +78,11 @@
 		/area/centcom/holding/cafe/ruin/xenonest,\
 		/area/centcom/holding/cafe/beach,/* GS13 edit*/\
 		/area/lavaland/underground/xenoarch, \
-		/area/xenoarch/lavaland,\
+		/area/xenoarch/lavaland/gym,\
+		/area/xenoarch/lavaland/construction,\
+		/area/xenoarch/lavaland/maint_west,\
+		/area/xenoarch/lavaland/maint_east,\
+		/area/xenoarch/lavaland/lowerlevel,\
 		/area/ruin/space/has_grav/hotel,\
 		/area/ruin/space/has_grav/bubbers/persistance,\
 		/area/station/maintenance,\

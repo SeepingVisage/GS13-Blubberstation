@@ -19,8 +19,6 @@
 	target.adjust_fatness(fat_per_stab) //both of these vars don't do anything in base form, mostly used for the syndie variant
 	target.adjust_perma(permafat_per_stab)
 
-	to_chat(user, span_notice("You prick [target] with the pen."))
-
 /obj/item/pen/calorite/syndicate
 	name = "nefarious calorite pen"
 	desc = "An EVIL syndicate branded pen. Allegedly the tip is made out of galbanic-infused calorite."
