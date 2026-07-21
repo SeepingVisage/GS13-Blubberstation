@@ -9,6 +9,10 @@
 
 	return VOTE_AVAILABLE
 
+/datum/vote/storyteller/instant/create_vote(mob/vote_creator)
+	default_choices = SSgamemode.storyteller_vote_choices()
+	. = ..()
+
 /datum/vote/storyteller/instant/finalize_vote(winning_option)
 	..()
 	/// Find the winner
