@@ -19985,6 +19985,7 @@
 	pixel_x = -2;
 	pixel_y = 0
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/wood/tile,
 /area/station/maintenance/department/engine)
 "bTj" = (
@@ -19992,6 +19993,7 @@
 /area/station/hallway/primary/central/fore)
 "bTk" = (
 /obj/structure/table,
+/obj/item/reagent_containers/cup/beaker/large,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "bTl" = (
@@ -20232,7 +20234,6 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "bUb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/reagent_dispensers/servingdish,
 /turf/open/floor/wood/tile,
 /area/station/maintenance/department/engine)
@@ -27302,6 +27303,12 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/medical)
+"dCv" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/department/engine)
 "dCT" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/rack,
@@ -28677,7 +28684,9 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos/hfr_room)
 "ewb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "ewf" = (
@@ -34683,8 +34692,11 @@
 /turf/open/floor/iron/dark,
 /area/station/service/chapel/dock)
 "int" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/closed/wall,
+/obj/effect/mapping_helpers/broken_floor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "inF" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -40299,8 +40311,11 @@
 /turf/closed/wall/r_wall,
 /area/station/maintenance/disposal/incinerator)
 "lPe" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/maintenance,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "lPi" = (
@@ -40585,7 +40600,6 @@
 /turf/open/floor/iron,
 /area/station/science/robotics/mechbay)
 "lZz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/wood/tile,
 /area/station/maintenance/department/engine)
 "lZC" = (
@@ -41894,6 +41908,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "mRD" = (
@@ -48999,6 +49014,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "qXA" = (
@@ -52175,7 +52191,7 @@
 /area/station/maintenance/department/engine)
 "sZX" = (
 /obj/effect/turf_decal/bot,
-/obj/machinery/computer/rdconsole{
+/obj/machinery/computer/rdconsole/unlocked{
 	dir = 4
 	},
 /turf/open/floor/iron,
@@ -53579,7 +53595,6 @@
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance/storage)
 "tIt" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/vending/mealdor,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
@@ -54876,6 +54891,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/department/engine)
 "uuN" = (
@@ -85527,7 +85543,7 @@ bDi
 bva
 bva
 bva
-int
+bva
 bva
 bva
 bva
@@ -86294,9 +86310,9 @@ sOB
 aht
 bva
 pbo
-ewb
+iFA
 lPe
-ewb
+iFA
 ewb
 tIt
 bva
@@ -86553,8 +86569,8 @@ bIZ
 xbD
 bGj
 bva
-ftp
-bDi
+int
+dCv
 bDi
 bva
 bva

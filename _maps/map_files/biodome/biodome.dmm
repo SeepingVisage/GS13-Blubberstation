@@ -8654,10 +8654,10 @@
 /turf/closed/wall/mineral/titanium/interior,
 /area/station/asteroid)
 "cZQ" = (
-/obj/machinery/computer/rdconsole{
+/obj/effect/turf_decal/bot,
+/obj/machinery/computer/rdconsole/unlocked{
 	dir = 8
 	},
-/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/station/science/lab)
 "cZT" = (
@@ -14336,12 +14336,6 @@
 "eYO" = (
 /turf/open/openspace,
 /area/station/service/barber)
-"eYS" = (
-/obj/machinery/camera/directional/south{
-	c_tag = "Departures - Port Aft"
-	},
-/turf/open/floor/iron,
-/area/station/hallway/secondary/exit/departure_lounge)
 "eZh" = (
 /obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
@@ -24342,10 +24336,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
-"iHl" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/space)
 "iHp" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/spawner/directional/west,
@@ -54239,10 +54229,6 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-"sIn" = (
-/obj/effect/decal/cleanable/food/pie_smudge,
-/turf/open/misc/asteroid/airless,
-/area/station/asteroid)
 "sIU" = (
 /obj/structure/bookcase/random/religion,
 /obj/structure/sign/painting/library{
@@ -89033,7 +89019,7 @@ cCZ
 cCZ
 rRv
 hNy
-rRv
+hNy
 hNy
 hNy
 blT
@@ -89289,8 +89275,8 @@ cCZ
 cCZ
 cCZ
 rRv
-jCd
 rRv
+hNy
 hNy
 blT
 blT
@@ -89547,7 +89533,7 @@ cCZ
 rRv
 rRv
 rRv
-rRv
+hNy
 hNy
 blT
 pAV
@@ -89804,8 +89790,8 @@ cCZ
 rRv
 rRv
 rRv
-sIn
-rRv
+hNy
+hNy
 blT
 nDS
 xsI
@@ -90061,8 +90047,8 @@ cCZ
 cCZ
 cCZ
 rRv
-rRv
-rRv
+hNy
+hNy
 blT
 wUc
 xsI
@@ -90318,8 +90304,8 @@ cCZ
 cCZ
 cCZ
 rRv
-rRv
-rRv
+hNy
+hNy
 blT
 wUc
 xsI
@@ -90575,7 +90561,7 @@ cCZ
 cCZ
 cCZ
 rRv
-rRv
+hNy
 hNy
 blT
 blT
@@ -90832,7 +90818,7 @@ cCZ
 cCZ
 rRv
 rRv
-rRv
+hNy
 hNy
 hNy
 blT
@@ -155083,7 +155069,7 @@ hHc
 hHc
 hHc
 cPE
-iHl
+gUy
 qho
 fDn
 txi
@@ -155340,7 +155326,7 @@ hHc
 hHc
 hHc
 dUQ
-iHl
+gUy
 iey
 fDn
 txi
@@ -155597,7 +155583,7 @@ hHc
 hHc
 hHc
 dUQ
-iHl
+gUy
 duw
 fDn
 txi
@@ -182585,7 +182571,7 @@ sBt
 xdO
 xdO
 xdO
-eYS
+sBt
 exD
 xdO
 hNy

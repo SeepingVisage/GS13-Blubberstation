@@ -85,7 +85,7 @@
 		/area/xenoarch/lavaland/lowerlevel,\
 		/area/ruin/space/has_grav/hotel,\
 		/area/ruin/space/has_grav/bubbers/persistance,\
-		/area/station/maintenance,\
+		/area/station/maintenance,/*GS13 edit end*/\
 		)
 
 /// Applied to a mob wearing gloves that should be passable for hand surgery (e.g. ball mittens).
