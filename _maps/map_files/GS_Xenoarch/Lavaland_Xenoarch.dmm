@@ -36,7 +36,7 @@
 "abH" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 1;
-	name = "Maintenance"
+	name = "MiniMed Maintenance"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
@@ -236,6 +236,14 @@
 /obj/effect/turf_decal/sand/plating/volcanic,
 /turf/open/floor/plating/lavaland_baseturf,
 /area/lavaland/underground/xenoarch/caloriteresearch/unpowered)
+"aie" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
+/obj/effect/mapping_helpers/airlock/access/all/science/robotics,
+/turf/open/floor/carpet/black,
+/area/xenoarch/lavaland/public)
 "aiD" = (
 /obj/effect/turf_decal/trimline/white/tram{
 	dir = 4;
@@ -2808,6 +2816,14 @@
 /obj/structure/broken_flooring/singular/directional/north,
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/lowerlevel)
+"bSi" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/science/research,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/construction,
+/turf/open/floor/carpet/black,
+/area/xenoarch/lavaland/public)
 "bSm" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -7079,7 +7095,8 @@
 /obj/structure/table/reinforced,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/window/right/directional/north{
-	req_access = list("hydroponics")
+	req_access = list("hydroponics");
+	name = "Hydroponics"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
@@ -9962,7 +9979,9 @@
 	name = "Station Intercom (General)";
 	pixel_x = 28
 	},
-/obj/machinery/door/window/brigdoor/security/cell/left/directional/north,
+/obj/machinery/door/window/brigdoor/security/cell/left/directional/north{
+	name = "Holding Cell"
+	},
 /obj/structure/ladder{
 	name = "Lower Construction Hall"
 	},
@@ -11150,7 +11169,7 @@
 	},
 /obj/machinery/autolathe,
 /obj/machinery/door/window/right/directional/west{
-	req_access = list("science")
+	name = "Xenoarcheology Office"
 	},
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/machinery/door/firedoor,
@@ -11955,7 +11974,7 @@
 "ild" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/left/directional/west{
-	name = "Cargo Desk";
+	name = "Mining Supplies";
 	req_access = list("cargo")
 	},
 /obj/machinery/door/firedoor,
@@ -12089,7 +12108,7 @@
 	output_dir = 4
 	},
 /obj/machinery/door/window/right/directional/west{
-	req_access = list("cargo")
+	name = "Mining Supplies"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
@@ -14301,7 +14320,7 @@
 /obj/machinery/biogenerator,
 /obj/effect/turf_decal/delivery,
 /obj/machinery/door/window/left/directional/north{
-	req_access = list("hydroponics")
+	name = "Hydroponics"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
@@ -16597,10 +16616,10 @@
 /turf/open/floor/iron/edge,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "lBU" = (
-/obj/machinery/vending/sovietsoda,
 /obj/effect/turf_decal/trimline/brown/corner{
 	dir = 8
 	},
+/obj/machinery/vending/starshine,
 /turf/open/floor/iron/dark,
 /area/xenoarch/lavaland/public)
 "lCu" = (
@@ -19677,7 +19696,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/hydroponics/glass,
+/obj/machinery/door/airlock/hydroponics/glass{
+	name = "Hydroponics"
+	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/full,
@@ -21282,6 +21303,14 @@
 /obj/structure/flora/tree/jungle/small/style_6,
 /turf/open/misc/grass,
 /area/lavaland/underground)
+"oDv" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Engineering"
+	},
+/obj/effect/mapping_helpers/airlock/access/any/engineering,
+/obj/effect/mapping_helpers/airlock/access/all/science,
+/turf/open/floor/carpet/black,
+/area/xenoarch/lavaland/public)
 "oDy" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/brown/corner{
@@ -23729,11 +23758,12 @@
 /turf/open/floor/iron,
 /area/xenoarch/lavaland/public)
 "qtr" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "T-Comms & Silo"
+	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/tcoms,
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /turf/open/floor/iron/dark/textured_large,
@@ -23970,7 +24000,9 @@
 /obj/structure/ladder{
 	name = "Upper Construction Hall"
 	},
-/obj/machinery/door/window/brigdoor/security/cell/left/directional/north,
+/obj/machinery/door/window/brigdoor/security/cell/left/directional/north{
+	name = "Holding Cell"
+	},
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/iron/textured,
 /area/xenoarch/lavaland/construction)
@@ -27712,7 +27744,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
-/obj/effect/mapping_helpers/airlock/access/any/engineering/atmos,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /obj/structure/cable,
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
@@ -33937,7 +33968,6 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
-/obj/effect/mapping_helpers/airlock/access/any/engineering/atmos,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /turf/open/floor/iron/dark/textured_large,
@@ -34169,7 +34199,9 @@
 /turf/open/floor/iron,
 /area/lavaland/underground/xenoarch/candy_outpost)
 "xww" = (
-/obj/machinery/door/airlock/mining/glass,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Mining Supplies"
+	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -34183,7 +34215,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/effect/mapping_helpers/airlock/access/all/service/hydroponics,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/general,
-/obj/effect/mapping_helpers/airlock/access/all/science/general,
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/arch)
 "xwA" = (
@@ -109640,7 +109671,7 @@ nZh
 cRO
 cBR
 vWL
-gjn
+oDv
 xyG
 jqY
 mLb
@@ -110672,7 +110703,7 @@ dMT
 dMT
 nTY
 inV
-gjn
+aie
 xyG
 jqY
 oaN
@@ -111446,7 +111477,7 @@ mfm
 dMT
 xSe
 inV
-gjn
+bSi
 xyG
 jqY
 qPj
