@@ -88,7 +88,7 @@
 	desc = "Your legs are used to carrying heavy loads. Being fat slows you down less. You can still become immobile, though."
 	icon = "fa-bone"
 	medical_record_text = "Patients legs can carry heavy weights well."
-	value = 3
+	value = 2
 	gain_text = span_notice("Your legs seem to have gotten stronger")
 	lose_text = span_notice("You feel your legs tremble under your weight")
 	quirk_flags = 0

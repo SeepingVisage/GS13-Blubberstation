@@ -33,7 +33,7 @@
 /// slowness modifier grows this many times faster
 #define FATNESS_WEAKLEGS_MODIFIER (WEAKLEGS_MAX_MOVE_PENALTY / FATNESS_MAX_MOVE_PENALTY)
 /// the slowdown from weight gets multiplied by this, meaning the lower this is, the lower the slowdown
-#define FATNESS_STRONGLEGS_MODIFIER 0.67	// SIX-SEVEN!!!!!
+#define FATNESS_STRONGLEGS_MODIFIER 0.5
 
 #define MAX_PREFS_WEIGHT_GAIN_AND_LOSS_RATE 2
 #define MIN_PREFS_WEIGHT_GAIN_AND_LOSS_RATE 0
