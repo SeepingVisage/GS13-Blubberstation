@@ -36,12 +36,10 @@
 		RegisterSignal(user, COMSIG_HUMAN_TOGGLE_GENITALS, PROC_REF(refresh_modular_item), user)
 	..()
 
+/// deletes all modular overlays and forces them to be reapplied
 /obj/item/proc/refresh_modular_item(mob/user)
 	delete_modular_overlays(user)
-	mod_breasts_rec = null
-	mod_butt_rec = null
-	mod_belly_rec = null
-	update_modular_overlays(user)
+	add_modular_item(user)
 
 //General condition for deactivating modular sprites for an item.
 //When dropped. And/or moved to another slot, works together with equipped checking the approporiate slot
