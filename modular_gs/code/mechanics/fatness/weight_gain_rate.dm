@@ -2,7 +2,7 @@
 /mob/living/carbon/proc/get_weight_gain_modifiers()
 	var/total_modifier = 0
 	for (var/key in weight_gain_modifiers)
-		total_modifier += clamp(weight_gain_modifiers[key], -2, 2)
+		total_modifier += clamp(weight_gain_modifiers[key], WEIGHT_RATE_MODIFIER_MIN_VALUE, WEIGHT_RATE_MODIFIER_MAX_VALUE)
 
 	return total_modifier
 
@@ -10,7 +10,7 @@
 /mob/living/carbon/proc/get_weight_loss_modifiers()
 	var/total_modifier = 0
 	for (var/key in weight_loss_modifiers)
-		total_modifier += clamp(weight_loss_modifiers[key], -2, 2)
+		total_modifier += clamp(weight_loss_modifiers[key], WEIGHT_RATE_MODIFIER_MIN_VALUE, WEIGHT_RATE_MODIFIER_MAX_VALUE)
 
 	return total_modifier
 
@@ -28,12 +28,13 @@
 		weight_gain_modifiers[source] += value
 		return
 
-	weight_gain_modifiers[source] = value
+	set_weight_gain_modifier(source, value)
 
 /**
  * Sets a weight gain modifier in the modifier list
  *
  * Will always set the modifier to the set value, regardless of the previously stored value
+ * 
  * Arguments:
  * * source - value containing the identifier of the source, IDEALLY a string
  * * value - value to add to the modifier
@@ -55,12 +56,13 @@
 		weight_loss_modifiers[source] += value
 		return
 
-	weight_loss_modifiers[source] = value
+	set_weight_loss_modifier(source, value)
 
 /**
  * Sets a weight loss modifier in the modifier list
  *
  * Will always set the modifier to the set value, regardless of the previously stored value
+ * 
  * Arguments:
  * * source - value containing the identifier of the source, IDEALLY a string
  * * value - value to add to the modifier
@@ -82,14 +84,14 @@
 
 	return 0
 
-/// completely removes a weight gain modifier from the list
+/// completely removes a weight gain modifier from the list. Does nothing if the modifier does not exist
 /mob/living/carbon/proc/remove_weight_gain_modifier(source)
 	if (!weight_gain_modifiers[source])
 		return
 
 	weight_gain_modifiers.Remove(source)
 
-/// completely removes a weight loss modifier from the list
+/// completely removes a weight loss modifier from the list. Does nothing if the modifier does not exist
 /mob/living/carbon/proc/remove_weight_loss_modifier(source)
 	if (!weight_loss_modifiers[source])
 		return
@@ -109,7 +111,7 @@
 	var/local_gain_rate = weight_gain_rate
 
 	if (HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
-		local_gain_rate = max(0.2, local_gain_rate)
+		local_gain_rate = max(UNIVERSAL_GAINER_MINIMUM_WG_RATE, local_gain_rate)
 
 	local_gain_rate += get_weight_gain_modifiers()
 
@@ -123,7 +125,7 @@
 	var/local_loss_rate = weight_loss_rate
 
 	if (HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
-		local_loss_rate = min(0.5, local_loss_rate)
+		local_loss_rate = min(UNIVERSAL_GAINER_MAXIMUM_WL_RATE, local_loss_rate)
 
 	local_loss_rate += get_weight_loss_modifiers()
 

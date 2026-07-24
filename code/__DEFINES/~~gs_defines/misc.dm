@@ -11,7 +11,7 @@
 #define FATTENING_TYPE_RADIATIONS "radiations"
 #define FATTENING_TYPE_MOBS "mobs"
 #define FATTENING_TYPE_WEIGHT_LOSS "weight_loss"
-/// This ignores prefs, please only use this for admin stuff and when you have a VERY good reason.
+/// This ignores prefs, please only use this for admin stuff or when you have a VERY good reason.
 #define FATTENING_TYPE_ALMIGHTY "almighty"
 
 #define FATNESS_TO_WEIGHT_RATIO 0.25
