@@ -1,4 +1,4 @@
-/** 
+/**
 * Adjusts the fatness level of the parent mob.
 *
 * * adjustment_amount - adjusts how much weight is gained or loss. Positive numbers add weight.
@@ -28,7 +28,7 @@
 
 	return adjustment_amount
 
-/** 
+/**
 * Adjusts the perma fatness level of the parent mob.
 *
 * * adjustment_amount - adjusts how much weight is gained or loss. Positive numbers add weight.
@@ -43,7 +43,7 @@
 
 	if(!check_weight_prefs(type_of_fattening, TRUE))
 		return FALSE
-	
+
 	adjustment_amount = get_fatness_adjustment_amount(adjustment_amount, ignore_rate)
 
 	if(fatness_perma + adjustment_amount < 0)
@@ -56,16 +56,16 @@
 
 	return adjustment_amount
 
-/** 
+/**
  * Returns the actual amount of fatness that should be applied to a mob when WG/L rate modifiers are applied.
  * If `adjustment_amount` if positive, uses WG rate. If `adjustment_amount` is negative uses the WL rate.
- * 
+ *
  * Params:
- * 
+ *
  * `adjustment_amount` - the base amount of fatness we want to apply
  * `ignore_rate` - whether we take into consideration the WG/L rates. Default is `FALSE`
- * 
- * Returns `adjustment_amount` if `ignore_rate` is set to `TRUE`. Returns `adjustment_amount` multiplied by 
+ *
+ * Returns `adjustment_amount` if `ignore_rate` is set to `TRUE`. Returns `adjustment_amount` multiplied by
  * our current WG/L rate if `ignore_rate` is set to `FALSE`
 */
 /mob/living/carbon/proc/get_fatness_adjustment_amount(adjustment_amount, ignore_rate = FALSE)
@@ -78,7 +78,7 @@
 	else
 		var/lose_rate = get_weight_loss_rate()
 		adjustment_amount = adjustment_amount * lose_rate
-	
+
 	return adjustment_amount
 
 /// Remove all of the real fatness from a mob.
@@ -113,15 +113,15 @@
 
 	fully_heal_fatness(remove_perma, regular_text, perma_text)
 
-/** 
+/**
  * Checks the parent mob's prefs to see if they can be fattened by the fattening_type
- * 
- * type_of_fattening - the type of fattening we are being affected by, as defined in 
+ *
+ * type_of_fattening - the type of fattening we are being affected by, as defined in
  * `code/__DEFINES/~~gs_defines/misc.dm`
  * perma - whether we are adjusting perma fatness or not, default is FALSE
- * 
+ *
  * returns TRUE if our prefs match or we for some reason override them.
- * 
+ *
  * returns FALSE if our prefs don't match and we don't have anything that overrides them
 */
 /mob/living/carbon/proc/check_weight_prefs(type_of_fattening = FATTENING_TYPE_ITEM, perma = FALSE)
@@ -139,45 +139,34 @@
 
 	switch(type_of_fattening)
 		if(FATTENING_TYPE_ITEM)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_items))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_items)
 
 		if(FATTENING_TYPE_FOOD)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_food))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_food)
 
 		if(FATTENING_TYPE_CHEM)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_chems)
 
 		if(FATTENING_TYPE_WEAPON)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_weapons))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_weapons)
 
 		if(FATTENING_TYPE_MAGIC)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_magic))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_magic)
 
 		if(FATTENING_TYPE_VIRUS)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_viruses))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_viruses)
 
 		if(FATTENING_TYPE_NANITES)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_nanites))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_nanites)
 
 		if(FATTENING_TYPE_ATMOS)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_atmos))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_atmos)
 
 		if(FATTENING_TYPE_MOBS)
-			if(client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_mobs))
-				return TRUE
+			return client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_mobs)
 
 		if(FATTENING_TYPE_WEIGHT_LOSS)
-			if(HAS_TRAIT(src, TRAIT_WEIGHT_LOSS_IMMUNE))
-				return FALSE
-			return TRUE
+			return (!HAS_TRAIT(src, TRAIT_WEIGHT_LOSS_IMMUNE))
 
 	return FALSE
 
@@ -245,7 +234,7 @@
 
 	return needed_fatness
 
-/mob/living/carbon/proc/applyFatnessDamage(amount)
+/mob/living/carbon/proc/apply_fatness_damage(amount)
 	if(!client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_weapons)) // If we can't fatten them through weapons, apply stamina damage
 		adjust_stamina_loss(amount)
 		return TRUE
@@ -254,12 +243,12 @@
 	adjust_fatness(fat_to_add, FATTENING_TYPE_WEAPON)
 	return fat_to_add
 
-/mob/living/carbon/proc/applyPermaFatnessDamage(amount)
+/mob/living/carbon/proc/apply_perma_fatness_damage(amount)
 	if (isnull(client))
 		return
 
 	if (!client.prefs.read_preference(/datum/preference/toggle/weight_gain_permanent)) // If we cant apply permafat, apply regular fat
-		return applyFatnessDamage(amount)
+		return apply_fatness_damage(amount)
 
 	var/fat_to_add = ((amount * CONFIG_GET(number/damage_multiplier)) * PERMA_FAT_DAMAGE_TO_FATNESS)
 	adjust_perma(fat_to_add, FATTENING_TYPE_WEAPON)
@@ -280,8 +269,8 @@
 	wound_clothing = TRUE,
 )
 	if (damagetype == FAT)
-		applyFatnessDamage(damage)
+		apply_fatness_damage(damage)
 	if (damagetype == PERMA_FAT)
-		applyPermaFatnessDamage(damage)
+		apply_perma_fatness_damage(damage)
 
 	. = ..()
