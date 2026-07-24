@@ -7333,6 +7333,7 @@
 #include "modular_gs\code\modules\customization\modules\mob\living\carbon\human\species\hemophage\hemophage_status_effects.dm"
 #include "modular_gs\code\modules\customization\species\proteans\organs\protean_stomach.dm"
 #include "modular_gs\code\modules\event_perk_redeemer\event_perk.dm"
+#include "modular_gs\code\modules\events\fatty_alert.dm"
 #include "modular_gs\code\modules\food_and_drinks\big_pizza.dm"
 #include "modular_gs\code\modules\food_and_drinks\big_shake.dm"
 #include "modular_gs\code\modules\food_and_drinks\bigbottle.dm"
