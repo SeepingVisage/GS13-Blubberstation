@@ -104,7 +104,7 @@
 
 /// Virtual sin forgiveness
 /mob/living/carbon/proc/fully_heal_fatness_shitpost(remove_perma = FALSE)
-	var/regular_text = "I absolve you of your sins, you have been forgvien"
+	var/regular_text = "I absolve you of your sins, you have been forgiven"
 	var/perma_text = ""
 
 	if(remove_perma)
