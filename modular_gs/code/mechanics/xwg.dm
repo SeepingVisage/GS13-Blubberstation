@@ -1,7 +1,9 @@
-//GLOBAL_LIST_INIT(uncapped_resize_areas, list(/area/command/bridge, /area/maintenance, /area/security/prison, /area/holodeck, /area/commons/vacant_room/office, /area/space, /area/ruin, /area/lavaland, /area/awaymission, /area/centcom, /area/fatlab, /area/xenoarch))
-
 /mob/living/carbon/proc/xwg_resize()
 	if(!ishuman(src) || !client?.prefs.read_preference(/datum/preference/toggle/weight_size_scaling))
+		return FALSE
+
+	var/datum/component/temporary_size/existing_size_component = GetComponent(/datum/component/temporary_size)
+	if(!isnull(existing_size_component) && !istype(existing_size_component, /datum/component/temporary_size/xwg))
 		return FALSE
 
 	if(!GetComponent(/datum/component/temporary_size/xwg))
@@ -19,7 +21,6 @@
 				xwg_size = RESIZE_A_HUGEBIG
 		resize(xwg_size)
 */
-/datum/component/temporary_size/xwg
 
 /datum/component/temporary_size/xwg/Initialize(size_to_apply)
 	. = ..()
