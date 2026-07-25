@@ -13,8 +13,6 @@
 
 	if (HAS_TRAIT(fatty, override_quirk))
 		trigger_weight = default_trigger_weight
-		if (HAS_TRAIT(fatty, TRAIT_STRONGLEGS))
-			trigger_weight = FATNESS_LEVEL_BLOB
 		if (HAS_TRAIT(fatty, TRAIT_WEAKLEGS))
 			trigger_weight = FATNESS_LEVEL_BARELYMOBILE
 
