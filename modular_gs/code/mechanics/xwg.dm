@@ -1,5 +1,8 @@
 /mob/living/carbon/proc/xwg_resize()
 	var/datum/component/temporary_size/existing_size_component = GetComponent(/datum/component/temporary_size)
+	if (!ishuman(src))
+		return FALSE
+	
 	if(isnull(existing_size_component))
 		AddComponent(/datum/component/temporary_size/xwg)
 
