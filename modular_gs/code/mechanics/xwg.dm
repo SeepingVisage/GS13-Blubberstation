@@ -1,12 +1,6 @@
 /mob/living/carbon/proc/xwg_resize()
-	if(!ishuman(src) || !client?.prefs.read_preference(/datum/preference/toggle/weight_size_scaling))
-		return FALSE
-
 	var/datum/component/temporary_size/existing_size_component = GetComponent(/datum/component/temporary_size)
-	if(!isnull(existing_size_component) && !istype(existing_size_component, /datum/component/temporary_size/xwg))
-		return FALSE
-
-	if(!GetComponent(/datum/component/temporary_size/xwg))
+	if(isnull(existing_size_component))
 		AddComponent(/datum/component/temporary_size/xwg)
 
 	SEND_SIGNAL(src, COMSIG_WEIGHT_ADJUSTED)
@@ -19,26 +13,47 @@
 	. = ..()
 	if (. == COMPONENT_INCOMPATIBLE)
 		return .
+	
+	RegisterSignal(parent, COMSIG_WEIGHT_ADJUSTED, PROC_REF(calculate_weight_size))
 
-	RegisterSignal(parent, COMSIG_WEIGHT_ADJUSTED, PROC_REF(recalculate_weight_size))
-
-/datum/component/temporary_size/xwg/proc/recalculate_weight_size()
+/datum/component/temporary_size/xwg/proc/calculate_weight_size()
 	SIGNAL_HANDLER
 
 	var/mob/living/carbon/human/human_parent = parent
-	if(!istype(human_parent))
-		return FALSE
+	if (!istype(human_parent))
+		return
+	
+	var/weight_scaling_pref = human_parent?.client?.prefs.read_preference(/datum/preference/toggle/weight_size_scaling)
+	var/fatness_size_modifier = sqrt(human_parent.fatness / FATNESS_LEVEL_BLOB)
 
-	if(!human_parent?.client?.prefs.read_preference(/datum/preference/toggle/weight_size_scaling))
-		return FALSE
+	if (!weight_scaling_pref)
+		// in case someone disabled XWG while being large, make sure to reset
+		if (target_size != original_size)
+			target_size = original_size
+			apply_size(original_size)
+		return
 
+	// if this is true then applying would shrink us which makes no sense
+	if (fatness_size_modifier <= original_size)
+		// if this is true, then that means we just lost weight and we've fallen
+		// below the threshold for xwg. Apply default size
+		if (target_size != original_size)
+			target_size = original_size
+			apply_size(original_size)
+		return
+	
 	var/max_size = RESIZE_BIG
 	if(human_parent?.client?.prefs.read_preference(/datum/preference/toggle/size_xwg))
 		max_size = RESIZE_MACRO
+	
+	fatness_size_modifier = max(fatness_size_modifier, original_size)
+	fatness_size_modifier = min(fatness_size_modifier, max_size)
 
-	target_size = sqrt(human_parent.fatness / FATNESS_LEVEL_BLOB)
-	target_size = max(target_size, original_size)
-	target_size = min(target_size, max_size)
+	// don't change if we're at the target size already
+	if (fatness_size_modifier == target_size)
+		return
+	
+	target_size = fatness_size_modifier
 
 	check_area()
 
@@ -59,6 +74,13 @@
 	return ..()
 
 /datum/component/temporary_size/xwg/apply_size(size_to_apply)
+	/*
+	This component will pretty much only get destroyed when the default
+	`/datum/component/temporary_size` is applied and destroys this one.
+
+	By that time, the default component has already applied its size, 
+	so reseting it back to default here would remove the correctly applied size
+	*/
 	if (being_destroyed)
 		return FALSE
 	
