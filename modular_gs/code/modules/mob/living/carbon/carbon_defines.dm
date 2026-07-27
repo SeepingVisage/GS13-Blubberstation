@@ -39,3 +39,7 @@
 
 	/// How many humanoid mobs have been digested by this mob?
 	var/carbons_digested = 0
+
+	/// How many times have we bursted?
+	var/times_blueberry_bursted = 0
+	var/datum/looping_sound/blueberry_inflation/blueberry_inflate_loop
