@@ -1,12 +1,3 @@
-/obj/structure/chair/is_user_buckle_possible(mob/living/target, mob/user, check_loc)
-	if (!iscarbon(target))
-		return ..()
-	
-	if(HAS_TRAIT(target, TRAIT_NO_BUCKLE))
-		return FALSE
-
-	return ..()
-
 /obj/structure/chair/user_buckle_mob(mob/living/M, force, check_loc)
 	if (!istype(M, /mob/living/carbon))
 		return ..()
