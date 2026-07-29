@@ -22,7 +22,7 @@
 /mob/living/proc/peer_into_distance(turf/target)
 	if(!client || !istype(target))
 		return FALSE
-	if(HAS_TRAIT(client, TRAIT_KNOCKEDOUT) || is_blind())
+	if(HAS_TRAIT(src, TRAIT_KNOCKEDOUT) || is_blind())
 		return FALSE
 	// Don't fight the vertical look (look up/down) system or any non-standard perspective.
 	if(client.perspective != MOB_PERSPECTIVE || looking_vertically)
