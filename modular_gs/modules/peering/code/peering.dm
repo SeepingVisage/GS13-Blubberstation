@@ -48,7 +48,7 @@
 	var/offset_y = clamp(target.y - our_turf.y, -PEER_MAX_OFFSET, PEER_MAX_OFFSET)
 	AddElement(/datum/element/peering, offset_x, offset_y)
 	visible_message(
-		span_notice("[src] easily peers into the distance."),
+		span_notice("[src] peers into the distance."),
 		span_notice("You peer into the distance."),
 	)
 	return TRUE
