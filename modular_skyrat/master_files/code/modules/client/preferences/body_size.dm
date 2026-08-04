@@ -3,7 +3,7 @@
 	savefile_identifier = PREFERENCE_CHARACTER
 	savefile_key = "body_size"
 	minimum = RESIZE_DEFAULT_SIZE * 0.8
-	maximum = RESIZE_DEFAULT_SIZE * 2
+	maximum = RESIZE_DEFAULT_SIZE * 2	// GS13 EDIT increases max size, original: 1.5
 	step = 0.01
 
 /datum/preference/numeric/body_size/is_accessible(datum/preferences/preferences)
