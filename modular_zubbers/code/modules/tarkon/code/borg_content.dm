@@ -84,18 +84,23 @@
 		/obj/item/borg/apparatus/illegal,// Research borg plus they get a gun
 		/obj/item/gun/energy/printer // Tarkon has become a place for toys, and borgs should get one too.
 	)
+	/* GS13 EDIT - GO AWAY QUAD BORGS
 	cyborg_base_icon = "draketarkon"
 	cyborg_icon_override = CYBORG_ICON_TARKON_WIDE_BUBBER
+	*/
+	cyborg_base_icon = CYBORG_ICON_STATE_TARKON_FELI
+	cyborg_icon_override = CYBORG_ICON_ALL_FELI
 	model_select_icon = "research"
 	model_select_alternate_icon = 'modular_zubbers/code/modules/silicons/borgs/sprites/screen_robot.dmi'
 	model_traits = list(TRAIT_KNOW_ROBO_WIRES, TRAIT_RESEARCH_CYBORG)
 	borg_skins = list(
+		/* GS13 EDIT - quadborgs begone
 		"Drake" = list(
 			SKIN_ICON_STATE = "draketarkon",
 			SKIN_ICON = CYBORG_ICON_TARKON_WIDE_BUBBER,
 			SKIN_FEATURES = list(TRAIT_R_UNIQUEWRECK, TRAIT_R_WIDE),
 			DRAKE_HAT_OFFSET
-		),
+		), */
 		"F3-LINE" = list(
 			SKIN_ICON_STATE = CYBORG_ICON_STATE_TARKON_FELI,
 			SKIN_ICON = CYBORG_ICON_ALL_FELI,
