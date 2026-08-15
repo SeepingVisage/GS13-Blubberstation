@@ -1,4 +1,0 @@
-author: "GraremKosziriji"
-delete-after: True
-changes:
-  - code_imp: "Gave limb alpha pref more control over player's alpha"
