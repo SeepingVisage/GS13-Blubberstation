@@ -1,0 +1,7 @@
+author: "Swan"
+delete-after: True
+changes:
+  - rscadd: "Chairs can now break when someone gains weight while buckled to them, instead of only on buckling to them"
+  - bugfix: "fixes bellies not showing when the outfits are worn casually"
+  - bugfix: "fixes grey modular clothing not being colored in the loadout menu. Also fixes one wrongly named modular jumpsuit."
+  - code_imp: "Adds signals which are emitted whenever the players weight changes"
