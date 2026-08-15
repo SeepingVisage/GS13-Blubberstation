@@ -858,7 +858,7 @@ GLOBAL_ALIST_INIT(human_heights_to_offsets, alist(
 // BUBBER EDIT BEGIN
 #define PENIS_LAYER_FRONT 5.1
 #define BREASTS_FRONT_LAYER 5.2
-#define BELLY_FRONT_LAYER 5.3
+// #define BELLY_FRONT_LAYER 5.3	// GS13 EDIT ours is better
 #define VAGINA_FRONT_LAYER 5.4
 #define BALLS_LAYER_FRONT 5.5
 // BUBBER EDIT END
@@ -878,7 +878,7 @@ GLOBAL_ALIST_INIT(human_heights_to_offsets, alist(
 /// Modular clothing layer
 #define MODULAR_CLOTHING_LAYER 9
 /// Modular Clothes Layer
-#define BREASTS_FRONT_LAYER		9.1
+// #define BREASTS_FRONT_LAYER		9.1
 /// Modular Clothes Layer
 #define BELLY_FRONT_LAYER		9.2
 /// Modular Clothes Layer
