@@ -1,5 +1,5 @@
 /obj/item/toy/plush/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
-	if(attempt_to_feed(I, user))
+	if(attempt_to_feed(tool, user))
 		return
 	
 	return ..()

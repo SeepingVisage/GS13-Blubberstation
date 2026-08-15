@@ -282,7 +282,7 @@
 			dmgreport += "</table></font>"
 			render_list += dmgreport // tables do not need extra linebreak
 		//GS13 EDIT START BFI/WEIGHT ON SCANNERS
-		render_list += healthscan_bfi_info(carbontarget, advanced)
+		render_list += healthscan_bfi_info(carbontarget, scanpower)
 		//GS13 EDIT END
 
 	if(ishuman(target))
