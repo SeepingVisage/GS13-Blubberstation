@@ -74476,7 +74476,7 @@
 	},
 /obj/item/seeds/potato,
 /obj/item/food/grown/wheat,
-/obj/item/food/grown/watermelon,
+/obj/item/food/grown/melonlike/watermelon,
 /obj/item/food/grown/grapes,
 /obj/item/food/grown/tomato,
 /turf/open/floor/iron/dark/side{
@@ -106004,7 +106004,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/security)
 "ubp" = (
-/obj/structure/reagent_dispensers/beerkeg,
+/obj/structure/reagent_dispensers/keg/beer,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "ubt" = (
@@ -114194,7 +114194,7 @@
 /turf/open/floor/plating,
 /area/station/cargo/miningdock)
 "vCY" = (
-/obj/structure/reagent_dispensers/beerkeg,
+/obj/structure/reagent_dispensers/keg/beer,
 /obj/effect/turf_decal/bot,
 /obj/machinery/camera/autoname/directional/north,
 /obj/machinery/firealarm/directional/north,
@@ -125141,7 +125141,7 @@
 /obj/structure/closet/crate/freezer,
 /obj/effect/turf_decal/bot,
 /obj/item/food/grown/banana,
-/obj/item/food/grown/watermelon,
+/obj/item/food/grown/melonlike/watermelon,
 /obj/item/food/grown/wheat,
 /obj/item/seeds/watermelon,
 /obj/item/seeds/grape{

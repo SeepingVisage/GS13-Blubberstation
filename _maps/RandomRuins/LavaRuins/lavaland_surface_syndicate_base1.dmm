@@ -2009,7 +2009,7 @@
 	},
 /area/ruin/syndicate_lava_base/medbay)
 "qA" = (
-/obj/structure/reagent_dispensers/beerkeg,
+/obj/structure/reagent_dispensers/keg/beer,
 /turf/open/floor/iron/dark,
 /area/ruin/syndicate_lava_base/bar)
 "qN" = (
