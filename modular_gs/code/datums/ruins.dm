@@ -78,3 +78,12 @@
 	suffix = "SpaceCandyMaze.dmm"
 	cost = 2
 	allow_duplicates = TRUE
+
+/datum/map_template/ruin/space/gato_fastfood
+	name = "GATO Fast Food Restaurant"
+	id = "gato_fastfood"
+	description = "The beloved, pink-slathered, grease-smelling GATO Fast Food Restaurant."
+	prefix = "_maps/RandomRuins/SpaceRuins/GS13/"
+	suffix = "GATO_FastFood.dmm"
+	cost = 1
+	allow_duplicates = FALSE
