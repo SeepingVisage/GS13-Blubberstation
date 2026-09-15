@@ -1,5 +1,0 @@
-author: "evilew"
-delete-after: True
-changes:
-  - map: "Ported the GATO Fast Food Map - a new and updated ghost role for managing a GATO-themed restaurant"
-  - rscadd: "added 2 ghost roles: GATO Fast Food Worker & Manager"
