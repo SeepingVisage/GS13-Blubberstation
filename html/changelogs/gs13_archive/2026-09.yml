@@ -38,3 +38,6 @@
   - map: Ported the GATO Fast Food Map - a new and updated ghost role for managing
       a GATO-themed restaurant
   - rscadd: 'added 2 ghost roles: GATO Fast Food Worker & Manager'
+2026-09-16:
+  Swan:
+  - bugfix: fixes the character height setting working with modular outfits
