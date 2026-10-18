@@ -16,7 +16,7 @@
 #define TRAIT_VERY_LOW_FOV "fat_blocking_view_HARD"
 #define TRAIT_NEARSIGHTED	"nearsighted_from_weight"
 
-#define TRAIT_RADRESONANCE "radresonance" //FIX THIS LATER
+#define TRAIT_RADRESONANCE "radresonance"
 #define COMSIG_MICRO_PICKUP_FEET "micro_force_grabbed"			//From /datum/element/mob_holder/micro
 #define COMSIG_MOBSIZE_CHANGED "mobsize_changed"				//Adding this in so items and whatnot can check when someone changes size. -Cap'n
 
@@ -48,6 +48,7 @@
 #define TRAIT_MILKY				"milky" //basically faster milk production
 #define TRAIT_BIOFUEL			"biofuel_processor"
 #define TRAIT_LARGE_SURFACE_AREA	"too_fat_to_slip"
+#define TRAIT_PORCINE			"porcine_aspect"
 
 #define TRAIT_DEMONIC	"demonic"
 
@@ -70,6 +71,9 @@
 #define TRAIT_HELPLESS_LISP				"lisp_helpless"
 #define TRAIT_LISP						"lisp"
 #define TRAIT_HELPLESS_NEARSIGHTED		"nearsighted_from_weight_helpless"
+#define TRAIT_STOMP						"stomping"
+#define TRAIT_HELPLESS_STOMP			"stomping_helpless"
+#define FOOTSTEP_MOB_STOMP				"mob_stomp"
 
 // GS13 positive quirks
 #define TRAIT_BLOB_BED					"blob_bed"

@@ -3,7 +3,7 @@
 	desc = "A particularly stretchy bunny suit."
 
 	modular_icon_location = 'modular_gs/icons/mob/modclothes/bunny_suit.dmi'
-	greyscale_colors = "#FFFFFF#FFFFFF#FFFFFF"
+	greyscale_colors = "#FFFFFF#FFFFFF#FFFFFF#FFFFFF#FFFFFF#FFFFFF"
 
 	icon = 'icons/map_icons/clothing/under/_under.dmi'
 	icon_state = "/obj/item/clothing/under/dual_tone/bunny_suit"
@@ -41,10 +41,34 @@
 	var/color = organ.bodypart_overlay.draw_color
 	if (islist(color))
 		color = color[1]
-	
+
 	modular_icon_state = (modular_icon + "-1")
 	add_modular_overlay(user, modular_icon_state, modular_layer, color)
 
-	for (var/i = 2, i < 5, i++)
+	for (var/i = 2, i < 8, i++)
 		modular_icon_state = modular_icon + "-" + num2text(i)
 		add_modular_overlay(user, modular_icon_state, modular_layer, suit_colors[i-1])
+
+/obj/item/clothing/under/dual_tone/bunny_suit/get_belly_size(obj/item/organ/genital/belly)
+	var/size = belly.genital_size
+	var/shape = "soft"
+	var/stuffed_modifier = 0
+
+	switch(belly.genital_type)
+		if("belly")
+			shape = "soft"
+		if("round")
+			shape = "round"
+
+	switch(belly.owner.fullness)
+		if(FULLNESS_LEVEL_BLOATED to FULLNESS_LEVEL_BEEG)
+			stuffed_modifier = 0
+		if(FULLNESS_LEVEL_BEEG to FULLNESS_LEVEL_NOMOREPLZ)
+			stuffed_modifier = 1
+		if(FULLNESS_LEVEL_NOMOREPLZ to INFINITY)
+			stuffed_modifier = 2
+
+	size += stuffed_modifier
+	size = min(size, 9)
+
+	return "[shape]_[size]"
