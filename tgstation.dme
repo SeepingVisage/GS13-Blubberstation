@@ -7593,6 +7593,7 @@
 #include "modular_gs\code\modules\surgery\organs\internal\stomach\stomach_ethereal.dm"
 #include "modular_gs\code\modules\taur_mechanics\taur_body.dm"
 #include "modular_gs\code\modules\uplink\uplink_items\adipowarfare.dm"
+#include "modular_gs\code\modules\vehicles\grocery_cart.dm"
 #include "modular_gs\code\modules\vending\games.dm"
 #include "modular_gs\code\modules\vending\gs_vendors.dm"
 #include "modular_gs\code\modules\vending\vending.dm"
