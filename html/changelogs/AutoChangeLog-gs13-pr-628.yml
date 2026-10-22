@@ -1,0 +1,5 @@
+author: "sheepishgoat"
+delete-after: True
+changes:
+  - qol: "adds a weight gain toggle button"
+  - qol: "adds disclaimer text for helplessness quirks"
