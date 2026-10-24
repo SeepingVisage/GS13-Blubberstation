@@ -60,3 +60,7 @@
   - qol: adds disclaimer text for helplessness quirks
   - rscadd: Introduces the hardcore fatty quirk, see https://github.com/sheepishgoat/GS13-Blubberstation/pull/601
       for more details.
+2026-10-24:
+  Icepick200:
+  - qol: Shoved everything we didn't have from the autodrobe into the loadout section,
+      and added the pharaoh tunic and headdress of nemes too.
