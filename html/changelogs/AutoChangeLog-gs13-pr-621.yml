@@ -1,0 +1,5 @@
+author: "Swan"
+delete-after: True
+changes:
+  - bugfix: "Fixes air in the calorite temple not being breathable"
+  - qol: "makes server initialization times a few seconds faster"

@@ -1,0 +1,5 @@
+author: "Icepick200"
+delete-after: True
+changes:
+  - rscadd: "Added the Bluespace Serving Tray to research and protolathes, for ease of access cooking."
+  - qol: "Tweaked the numbers on the Griddle, Oven, and standard Serving Tray to be able to hold 20 items each."
